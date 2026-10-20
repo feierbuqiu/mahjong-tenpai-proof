@@ -1,0 +1,10 @@
+classes loaded: 2846
+hands: core-unit hands=50844222 tanki=3902823 seven-pairs-only=37624636 kokushi=157 (unknown class 0)
+distinct (class, core) units: 5261114 (two-category: 5094402); by |A|: 4:2367 7:47877 10:565181 13:4645689
+  [4.7 s]
+phase F (reserved families): 4565 codes, 0 failures
+multisets touched by some unit: 26186 ; with demand > orderings: 26186  [10.8 s]
+phase T (|A|=4 units): 2367 new codes, 0 units with all orderings already taken
+phase G (greedy): 4191 new codes, 0 units left without any free code  [13.4 s]
+plan written: 2846 classes, 11123 ordered codes, 0 classes without codes -> out/my_plan_v1.txt
+elapsed 13.4 s

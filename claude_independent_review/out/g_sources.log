@@ -1,0 +1,3 @@
+distinct standard 14-tile winning hands: 11498658
+  ... that are H + min W_std(H) for some standard-tenpai H: 11456646
+  ... that are H + min W(H) for some tenpai H:              11456646

@@ -1,0 +1,18 @@
+number-suit options (M or P, <=14 tiles): 21743 ; honor options: 498 ; work items: 22305
+[plan] classes=2846 codes=11123 k=4  bad_tile_index=0 mult>4=0 duplicate_ordered_codes=0 empty_classes=0
+winning 14-tile vectors: standard=11498658  seven-pairs(all)=5379616 (of which also standard=4668)  kokushi=13
+sanity (G-t not tenpai on t, must be 0): 0
+naive recursive W recomputed for every hand: mismatches with table-driven W = 0
+TENPAI HANDS (distinct 13-tile multisets): 92371838
+  standard-form tenpai: 54747045
+  seven-pairs tenpai: 37657312
+  both standard & seven-pairs: 32676
+  kokushi tenpai: 157
+  single-category hands: m=40196 p=40196 s=40196 z=322
+DISTINCT WAIT SETS (classes): 2846   (classes containing a single-category hand: 1189)
+  |W| distribution (classes / hands):  1:34/64152121  2:561/25337340  3:894/2549634  4:738/271155  5:372/56145  6:156/4686  7:69/471  8:18/282  9:3/3  13:1/1
+[plan check] true classes missing from plan: 0 ; plan rows that are not a real class: 0
+[plan check] hands whose class is missing: 0 ; hands with NO usable code of their class: 0 (out of 92371838)
+[plan check] codes never used as first hit: 153
+[plan check] VERDICT: every tenpai hand has a code of its own class (coverage OK)
+elapsed 46.0 s

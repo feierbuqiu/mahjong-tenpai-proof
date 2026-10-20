@@ -1,0 +1,361 @@
+﻿start 10/20/2026 10:49:56
+     0s procs=1 totalMB=43
+     5s procs=6 totalMB=1,389
+    11s procs=2 totalMB=1,112
+    16s procs=2 totalMB=1,685
+    21s procs=2 totalMB=1,285
+    26s procs=2 totalMB=1,460
+    31s procs=1 totalMB=1,349
+    36s procs=1 totalMB=1,582
+    42s procs=7 totalMB=1,687
+    47s procs=6 totalMB=3,665
+    52s procs=6 totalMB=3,921
+    57s procs=6 totalMB=5,399
+    62s procs=6 totalMB=7,174
+    67s procs=6 totalMB=4,962
+    73s procs=6 totalMB=4,201
+    78s procs=6 totalMB=4,478
+    83s procs=6 totalMB=4,751
+    88s procs=6 totalMB=6,512
+    93s procs=6 totalMB=7,600
+    99s procs=5 totalMB=7,183
+   104s procs=5 totalMB=5,830
+   109s procs=5 totalMB=4,413
+   114s procs=4 totalMB=3,454
+   119s procs=3 totalMB=1,787
+   124s procs=2 totalMB=1,183
+   130s procs=1 totalMB=837
+   135s procs=1 totalMB=465
+   140s procs=6 totalMB=1,640
+   145s procs=6 totalMB=4,722
+   150s procs=6 totalMB=7,079
+   155s procs=6 totalMB=5,556
+   161s procs=6 totalMB=5,792
+   166s procs=6 totalMB=6,567
+   171s procs=6 totalMB=7,934
+   176s procs=6 totalMB=8,367
+   181s procs=6 totalMB=4,692
+   187s procs=6 totalMB=6,015
+   192s procs=6 totalMB=6,786
+   197s procs=6 totalMB=6,450
+   202s procs=5 totalMB=6,700
+   207s procs=4 totalMB=3,469
+   213s procs=3 totalMB=2,933
+   218s procs=2 totalMB=1,352
+   223s procs=2 totalMB=1,053
+   228s procs=2 totalMB=1,606
+   233s procs=6 totalMB=3,106
+   238s procs=6 totalMB=5,075
+   244s procs=6 totalMB=4,329
+   249s procs=6 totalMB=5,173
+   254s procs=6 totalMB=6,277
+   259s procs=6 totalMB=5,732
+   264s procs=6 totalMB=7,416
+   269s procs=6 totalMB=9,659
+   275s procs=6 totalMB=11,799
+   280s procs=6 totalMB=10,591
+   285s procs=6 totalMB=5,679
+   290s procs=5 totalMB=5,907
+   295s procs=4 totalMB=5,483
+   301s procs=4 totalMB=5,285
+   306s procs=4 totalMB=5,098
+   311s procs=4 totalMB=2,482
+   316s procs=4 totalMB=3,638
+   321s procs=6 totalMB=3,205
+   327s procs=6 totalMB=3,212
+   332s procs=6 totalMB=3,227
+   337s procs=6 totalMB=6,306
+   342s procs=6 totalMB=4,892
+   347s procs=6 totalMB=5,817
+   352s procs=6 totalMB=6,685
+   358s procs=6 totalMB=6,989
+   363s procs=6 totalMB=4,347
+   368s procs=6 totalMB=5,252
+   373s procs=6 totalMB=6,198
+   378s procs=6 totalMB=7,765
+   383s procs=6 totalMB=4,002
+   389s procs=5 totalMB=3,963
+   394s procs=6 totalMB=4,207
+   399s procs=6 totalMB=6,012
+   404s procs=6 totalMB=5,561
+   409s procs=6 totalMB=3,447
+   415s procs=6 totalMB=5,054
+   420s procs=6 totalMB=5,664
+   425s procs=6 totalMB=5,144
+   430s procs=6 totalMB=4,146
+   435s procs=6 totalMB=5,399
+   440s procs=6 totalMB=3,743
+   446s procs=6 totalMB=5,701
+   451s procs=6 totalMB=5,504
+   456s procs=6 totalMB=4,705
+   461s procs=6 totalMB=3,642
+   466s procs=6 totalMB=4,420
+   472s procs=6 totalMB=3,951
+   477s procs=6 totalMB=5,320
+   482s procs=6 totalMB=7,231
+   487s procs=6 totalMB=7,554
+   492s procs=6 totalMB=6,921
+   498s procs=6 totalMB=6,291
+   503s procs=6 totalMB=4,402
+   508s procs=6 totalMB=4,618
+   513s procs=6 totalMB=6,414
+   518s procs=6 totalMB=7,485
+   523s procs=6 totalMB=10,452
+   529s procs=6 totalMB=5,154
+   534s procs=6 totalMB=6,290
+   539s procs=6 totalMB=3,631
+   544s procs=6 totalMB=3,730
+   549s procs=6 totalMB=5,264
+   555s procs=6 totalMB=3,950
+   560s procs=6 totalMB=4,307
+   565s procs=6 totalMB=4,364
+   570s procs=6 totalMB=4,035
+   575s procs=6 totalMB=4,975
+   581s procs=6 totalMB=5,843
+   586s procs=6 totalMB=4,337
+   591s procs=6 totalMB=4,189
+   596s procs=6 totalMB=4,782
+   601s procs=6 totalMB=4,035
+   606s procs=6 totalMB=5,349
+   612s procs=6 totalMB=4,849
+   617s procs=6 totalMB=4,766
+   622s procs=6 totalMB=5,092
+   627s procs=6 totalMB=7,215
+   632s procs=6 totalMB=6,233
+   638s procs=6 totalMB=5,044
+   643s procs=6 totalMB=5,020
+   648s procs=6 totalMB=6,200
+   653s procs=6 totalMB=7,389
+   658s procs=6 totalMB=4,158
+   664s procs=6 totalMB=4,683
+   669s procs=6 totalMB=4,641
+   674s procs=6 totalMB=5,040
+   679s procs=6 totalMB=4,768
+   684s procs=6 totalMB=4,475
+   690s procs=6 totalMB=5,638
+   695s procs=6 totalMB=4,875
+   700s procs=6 totalMB=6,472
+   705s procs=6 totalMB=4,322
+   710s procs=6 totalMB=4,594
+   715s procs=6 totalMB=5,677
+   721s procs=6 totalMB=6,245
+   726s procs=6 totalMB=3,256
+   731s procs=6 totalMB=4,324
+   736s procs=6 totalMB=4,264
+   741s procs=6 totalMB=3,353
+   747s procs=6 totalMB=3,732
+   752s procs=6 totalMB=5,305
+   757s procs=6 totalMB=4,406
+   762s procs=6 totalMB=5,146
+   767s procs=6 totalMB=3,587
+   772s procs=6 totalMB=4,588
+   778s procs=6 totalMB=5,423
+   783s procs=6 totalMB=3,190
+   788s procs=6 totalMB=3,683
+   793s procs=6 totalMB=4,366
+   798s procs=6 totalMB=4,280
+   804s procs=6 totalMB=4,134
+   809s procs=6 totalMB=4,077
+   814s procs=6 totalMB=4,407
+   819s procs=6 totalMB=5,440
+   824s procs=6 totalMB=4,613
+   830s procs=6 totalMB=4,393
+   835s procs=6 totalMB=4,627
+   840s procs=6 totalMB=5,317
+   845s procs=6 totalMB=5,144
+   850s procs=6 totalMB=4,507
+   856s procs=6 totalMB=6,299
+   861s procs=6 totalMB=4,216
+   866s procs=6 totalMB=4,030
+   871s procs=6 totalMB=5,152
+   876s procs=6 totalMB=5,787
+   882s procs=6 totalMB=6,335
+   887s procs=6 totalMB=7,741
+   892s procs=6 totalMB=9,098
+   897s procs=6 totalMB=7,850
+   902s procs=6 totalMB=4,953
+   908s procs=6 totalMB=5,622
+   913s procs=6 totalMB=6,202
+   918s procs=6 totalMB=7,012
+   923s procs=6 totalMB=3,743
+   928s procs=6 totalMB=4,059
+   934s procs=6 totalMB=5,715
+   939s procs=6 totalMB=4,325
+   944s procs=6 totalMB=3,895
+   949s procs=6 totalMB=3,581
+   954s procs=6 totalMB=3,591
+   959s procs=6 totalMB=5,183
+   965s procs=6 totalMB=6,773
+   970s procs=6 totalMB=6,013
+   975s procs=6 totalMB=4,663
+   980s procs=6 totalMB=3,096
+   985s procs=6 totalMB=4,870
+   991s procs=6 totalMB=7,085
+   996s procs=6 totalMB=7,506
+  1001s procs=6 totalMB=5,990
+  1006s procs=6 totalMB=7,873
+  1011s procs=6 totalMB=9,316
+  1017s procs=6 totalMB=8,525
+  1022s procs=6 totalMB=9,446
+  1027s procs=6 totalMB=4,265
+  1032s procs=6 totalMB=4,800
+  1037s procs=6 totalMB=7,026
+  1043s procs=6 totalMB=4,038
+  1048s procs=6 totalMB=6,979
+  1053s procs=6 totalMB=7,046
+  1058s procs=6 totalMB=7,465
+  1063s procs=6 totalMB=3,841
+  1068s procs=6 totalMB=6,498
+  1074s procs=6 totalMB=6,730
+  1079s procs=6 totalMB=5,632
+  1084s procs=6 totalMB=5,416
+  1089s procs=6 totalMB=6,849
+  1094s procs=6 totalMB=4,756
+  1099s procs=6 totalMB=3,809
+  1105s procs=6 totalMB=5,497
+  1110s procs=6 totalMB=5,520
+  1115s procs=6 totalMB=5,996
+  1120s procs=6 totalMB=5,900
+  1125s procs=6 totalMB=3,181
+  1130s procs=6 totalMB=4,088
+  1136s procs=6 totalMB=4,530
+  1141s procs=6 totalMB=3,910
+  1146s procs=6 totalMB=5,179
+  1151s procs=6 totalMB=3,901
+  1156s procs=6 totalMB=5,246
+  1161s procs=6 totalMB=6,193
+  1167s procs=6 totalMB=7,107
+  1172s procs=6 totalMB=3,657
+  1177s procs=6 totalMB=6,282
+  1182s procs=6 totalMB=6,352
+  1187s procs=6 totalMB=5,792
+  1192s procs=6 totalMB=4,983
+  1198s procs=6 totalMB=5,888
+  1203s procs=5 totalMB=3,837
+  1208s procs=4 totalMB=4,344
+  1213s procs=3 totalMB=1,768
+  1218s procs=3 totalMB=1,543
+  1223s procs=2 totalMB=1,382
+  1229s procs=2 totalMB=1,550
+  1234s procs=2 totalMB=1,633
+  1239s procs=2 totalMB=1,312
+  1244s procs=1 totalMB=628
+  1249s procs=1 totalMB=827
+  1254s procs=1 totalMB=1,055
+  1259s procs=1 totalMB=1,210
+  1265s procs=1 totalMB=363
+  1270s procs=1 totalMB=729
+  1275s procs=1 totalMB=939
+  1280s procs=1 totalMB=1,455
+  1285s procs=1 totalMB=254
+  1290s procs=1 totalMB=560
+  1295s procs=0 totalMB=0
+end 10/20/2026 11:11:31 peakTotalMB=11,799 peakSingleMB=4,777
+peak CheckSound 229MB
+peak Cover3 250MB
+peak Data\ClassTree 830MB
+peak Data\Cuts 232MB
+peak Data\DecodeTree 1,582MB
+peak Data\Witness 232MB
+peak Enum 232MB
+peak EnumSound 249MB
+peak Glue2 231MB
+peak Main 560MB
+peak Run\All 254MB
+peak Run\K0_000 1,259MB
+peak Run\K0_001 3,633MB
+peak Run\K0_002 2,700MB
+peak Run\K0_003 1,273MB
+peak Run\K0_004 1,477MB
+peak Run\K0_005 1,392MB
+peak Run\K0_006 2,599MB
+peak Run\K0_007 1,368MB
+peak Run\K0_008 1,658MB
+peak Run\K0_009 1,224MB
+peak Run\K0_010 915MB
+peak Run\K0_011 1,251MB
+peak Run\K0_012 1,473MB
+peak Run\K0_013 2,701MB
+peak Run\K0_014 1,316MB
+peak Run\K0_015 1,445MB
+peak Run\K1_000 1,881MB
+peak Run\K1_001 1,692MB
+peak Run\K1_002 3,943MB
+peak Run\K1_003 1,443MB
+peak Run\K1_004 1,523MB
+peak Run\K1_005 3,152MB
+peak Run\K1_006 1,563MB
+peak Run\K1_007 1,438MB
+peak Run\K1_008 1,205MB
+peak Run\K1_009 1,500MB
+peak Run\K1_010 4,449MB
+peak Run\K1_011 1,394MB
+peak Run\K1_012 1,516MB
+peak Run\K1_013 2,824MB
+peak Run\K1_014 1,210MB
+peak Run\K1_015 1,455MB
+peak Run\K2_000 1,489MB
+peak Run\K2_001 1,473MB
+peak Run\K2_002 1,413MB
+peak Run\K2_003 1,394MB
+peak Run\K2_004 1,875MB
+peak Run\K2_005 1,510MB
+peak Run\K2_006 1,367MB
+peak Run\K2_007 3,304MB
+peak Run\K2_008 2,612MB
+peak Run\K2_009 1,502MB
+peak Run\K2_010 2,610MB
+peak Run\K2_011 1,467MB
+peak Run\K2_012 1,305MB
+peak Run\K2_013 1,231MB
+peak Run\K2_014 2,408MB
+peak Run\K2_015 1,153MB
+peak Run\K3_000 1,454MB
+peak Run\K3_001 997MB
+peak Run\K3_002 1,471MB
+peak Run\K3_003 1,512MB
+peak Run\K3_004 1,454MB
+peak Run\K3_005 1,761MB
+peak Run\K3_006 1,685MB
+peak Run\K3_007 1,045MB
+peak Run\K3_008 1,134MB
+peak Run\K3_009 1,467MB
+peak Run\K3_010 1,418MB
+peak Run\K3_011 1,481MB
+peak Run\K3_012 1,507MB
+peak Run\K3_013 2,621MB
+peak Run\K3_014 1,472MB
+peak Run\K3_015 1,893MB
+peak Run\K4_000 3,393MB
+peak Run\K4_001 3,927MB
+peak Run\K4_002 3,261MB
+peak Run\K4_003 3,082MB
+peak Run\K4_004 1,412MB
+peak Run\K4_005 3,286MB
+peak Run\K4_006 1,518MB
+peak Run\K4_007 1,243MB
+peak Run\K4_008 1,458MB
+peak Run\K4_009 1,399MB
+peak Run\K4_010 1,525MB
+peak Run\K4_011 3,135MB
+peak Run\K4_012 1,528MB
+peak Run\K4_013 1,479MB
+peak Run\K4_014 1,079MB
+peak Run\K4_015 1,351MB
+peak Run\K5_000 1,327MB
+peak Run\K5_001 1,455MB
+peak Run\K5_002 2,075MB
+peak Run\K5_003 3,349MB
+peak Run\K5_004 1,444MB
+peak Run\K5_005 1,309MB
+peak Run\K5_006 1,394MB
+peak Run\K5_007 1,175MB
+peak Run\K5_008 946MB
+peak Run\K5_009 1,897MB
+peak Run\K5_010 1,550MB
+peak Run\K5_011 1,481MB
+peak Run\K5_012 4,777MB
+peak Run\K5_013 1,674MB
+peak Run\K5_014 1,532MB
+peak Run\K5_015 939MB
+peak Std 43MB

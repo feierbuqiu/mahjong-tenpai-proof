@@ -1,0 +1,12 @@
+(a) generator pass done [2.2 s]
+(b) brute-force pass done [8.8 s]
+  U=1-9m+1-3p                  |U|=12  tenpai: generator    203887 / brute force    203887 ; classes  500 /  500 ; hand+W hashes IDENTICAL
+  U=1-5m+3-6p+ESW              |U|=12  tenpai: generator     97914 / brute force     97914 ; classes  248 /  248 ; hand+W hashes IDENTICAL
+  U=13 orphans                 |U|=13  tenpai: generator     31474 / brute force     31474 ; classes   92 /   92 ; hand+W hashes IDENTICAL
+  U=4-9m+1-3s+7-9s+C           |U|=13  tenpai: generator    197276 / brute force    197276 ; classes  319 /  319 ; hand+W hashes IDENTICAL
+  U=234m567p789s+ESPC          |U|=13  tenpai: generator     95169 / brute force     95169 ; classes  255 /  255 ; hand+W hashes IDENTICAL
+  U=1-9p+NPFC                  |U|=13  tenpai: generator    207971 / brute force    207971 ; classes  481 /  481 ; hand+W hashes IDENTICAL
+  U=11 tiles: 1-4m 6-9m 1p E S |U|=11  tenpai: generator     52073 / brute force     52073 ; classes  140 /  140 ; hand+W hashes IDENTICAL
+  U=1-6m+4-9s+F                |U|=13  tenpai: generator    287229 / brute force    287229 ; classes  425 /  425 ; hand+W hashes IDENTICAL
+VERDICT: generator reproduces brute force exactly on every test universe
+elapsed 8.8 s

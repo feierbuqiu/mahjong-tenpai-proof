@@ -1,0 +1,37 @@
+modules timed: 96 / 96
+family    leaves     est s  measured s
+T1           284      1339        1767
+T2           732      3276        4430
+T4            53       566         775
+small          6        73          94
+total       1075      5254        7066
+module time: min 17s  median 74s  max 110s
+other module Spec: 0.9s
+other module Basic: 0.9s
+other module Packed: 1.2s
+other module Greedy: 1.7s
+other module Loops: 1.7s
+other module Melds: 2.6s
+other module Std: 1.6s
+other module Waits: 1.2s
+other module Checks: 1.7s
+other module Shape: 1.8s
+other module CheckSound: 13.0s
+other module Data.ClassTree: 13.0s
+other module CheckSound2: 1.1s
+other module Glue: 1.2s
+other module Glue2: 1.2s
+other module Cover0: 1.3s
+other module Cover: 1.3s
+other module Lower: 1.3s
+other module Cover2: 1.3s
+other module Cover3: 2.1s
+other module Cover4: 1.8s
+other module Final: 1.1s
+other module Data.Cuts: 36.0s
+other module Data.Witness: 36.0s
+other module Enum: 36.0s
+other module Data.DecodeTree: 36.0s
+other module EnumSound: 1.2s
+other module Run.All: 0.9s
+other module Main: 5.2s
