@@ -1,0 +1,80 @@
+{
+ "note": "strict 天凤七对子口径; 所有数字由 verifier 独立枚举得到",
+ "universes": {
+  "m": {
+   "classes": 387,
+   "hands": 40196,
+   "no_common": {
+    "1": 40,
+    "2": 53,
+    "3": 87,
+    "4": 111
+   },
+   "sum_tau_lb_k1": 427,
+   "budget_k1": 9,
+   "k1_dead": true,
+   "sum_tau_lb_k2": 440,
+   "budget_k2": 81,
+   "k2_dead": true
+  },
+  "p": {
+   "classes": 387,
+   "hands": 40196,
+   "no_common": {
+    "1": 40,
+    "2": 53,
+    "3": 87,
+    "4": 111
+   },
+   "sum_tau_lb_k1": 427,
+   "budget_k1": 9,
+   "k1_dead": true,
+   "sum_tau_lb_k2": 440,
+   "budget_k2": 81,
+   "k2_dead": true
+  },
+  "s": {
+   "classes": 387,
+   "hands": 40196,
+   "no_common": {
+    "1": 40,
+    "2": 53,
+    "3": 87,
+    "4": 111
+   },
+   "sum_tau_lb_k1": 427,
+   "budget_k1": 9,
+   "k1_dead": true,
+   "sum_tau_lb_k2": 440,
+   "budget_k2": 81,
+   "k2_dead": true
+  },
+  "z": {
+   "classes": 28,
+   "hands": 322,
+   "no_common": {
+    "1": 0,
+    "2": 7,
+    "3": 7,
+    "4": 7
+   },
+   "sum_tau_lb_k1": 28,
+   "budget_k1": 7,
+   "k1_dead": true,
+   "sum_tau_lb_k2": 35,
+   "budget_k2": 49,
+   "k2_dead": false
+  }
+ },
+ "global": {
+  "verifier_classes": 2846,
+  "enum_core_classes": 2846,
+  "budget_k1": 34,
+  "budget_k2": 1156,
+  "budget_k3": 39304,
+  "k1_dead_global": true,
+  "k2_dead_global": true,
+  "k3_dead_global": false
+ },
+ "elapsed": 163.5
+}

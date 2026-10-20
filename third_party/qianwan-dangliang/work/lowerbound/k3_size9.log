@@ -1,0 +1,80 @@
+[m-prefix-3      ] |U|= 3   3^3=    27  N=    0 L=    0  N+L=     0  ratio=0.000  (t=0s)
+[m-prefix-3+E    ] |U|= 4   4^3=    64  N=   10 L=    0  N+L=    10  ratio=0.156  (t=0s)
+[m-prefix-4      ] |U|= 4   4^3=    64  N=   16 L=    0  N+L=    16  ratio=0.250  (t=0s)
+[m1+p3           ] |U|= 4   4^3=    64  N=   10 L=    0  N+L=    10  ratio=0.156  (t=0s)
+[m2+p2           ] |U|= 4   4^3=    64  N=    2 L=    0  N+L=     2  ratio=0.031  (t=0s)
+[m3+p1           ] |U|= 4   4^3=    64  N=   10 L=    0  N+L=    10  ratio=0.156  (t=0s)
+[m-prefix-4+E    ] |U|= 5   5^3=   125  N=   36 L=    0  N+L=    36  ratio=0.288  (t=0s)
+[m-prefix-5      ] |U|= 5   5^3=   125  N=   56 L=    1  N+L=    57  ratio=0.456  (t=0s)
+[m1+p4           ] |U|= 5   5^3=   125  N=   36 L=    0  N+L=    36  ratio=0.288  (t=0s)
+[m2+p3           ] |U|= 5   5^3=   125  N=   25 L=    1  N+L=    26  ratio=0.208  (t=0s)
+[m3+p2           ] |U|= 5   5^3=   125  N=   25 L=    1  N+L=    26  ratio=0.208  (t=0s)
+[m4+p1           ] |U|= 5   5^3=   125  N=   36 L=    0  N+L=    36  ratio=0.288  (t=0s)
+[m-prefix-5+E    ] |U|= 6   6^3=   216  N=   70 L=   16  N+L=    86  ratio=0.398  (t=1s)
+[m-prefix-6      ] |U|= 6   6^3=   216  N=  119 L=   20  N+L=   139  ratio=0.644  (t=1s)
+[m1+p5           ] |U|= 6   6^3=   216  N=   70 L=   16  N+L=    86  ratio=0.398  (t=1s)
+[m2+p2+s2        ] |U|= 6   6^3=   216  N=   30 L=    3  N+L=    33  ratio=0.153  (t=2s)
+[m2+p4           ] |U|= 6   6^3=   216  N=   49 L=   10  N+L=    59  ratio=0.273  (t=2s)
+[m3+p3           ] |U|= 6   6^3=   216  N=   51 L=    8  N+L=    59  ratio=0.273  (t=2s)
+[m4+p2           ] |U|= 6   6^3=   216  N=   49 L=   10  N+L=    59  ratio=0.273  (t=2s)
+[m5+p1           ] |U|= 6   6^3=   216  N=   70 L=   16  N+L=    86  ratio=0.398  (t=3s)
+[terminals6      ] |U|= 6   6^3=   216  N=   21 L=    6  N+L=    27  ratio=0.125  (t=3s)
+[m-prefix-6+E    ] |U|= 7   7^3=   343  N=  133 L=   45  N+L=   178  ratio=0.519  (t=5s)
+[m-prefix-7      ] |U|= 7   7^3=   343  N=  222 L=   51  N+L=   273  ratio=0.796  (t=6s)
+[m1+p6           ] |U|= 7   7^3=   343  N=  133 L=   45  N+L=   178  ratio=0.519  (t=8s)
+[m2+p2+s3        ] |U|= 7   7^3=   343  N=   50 L=   12  N+L=    62  ratio=0.181  (t=9s)
+[m2+p3+s2        ] |U|= 7   7^3=   343  N=   50 L=   12  N+L=    62  ratio=0.181  (t=10s)
+[m2+p5           ] |U|= 7   7^3=   343  N=   84 L=   35  N+L=   119  ratio=0.347  (t=12s)
+[m3+p2+s2        ] |U|= 7   7^3=   343  N=   50 L=   12  N+L=    62  ratio=0.181  (t=13s)
+[m3+p4           ] |U|= 7   7^3=   343  N=   77 L=   23  N+L=   100  ratio=0.292  (t=14s)
+[m4+p3           ] |U|= 7   7^3=   343  N=   77 L=   23  N+L=   100  ratio=0.292  (t=16s)
+[m5+p2           ] |U|= 7   7^3=   343  N=   84 L=   35  N+L=   119  ratio=0.347  (t=17s)
+[m6+p1           ] |U|= 7   7^3=   343  N=  133 L=   45  N+L=   178  ratio=0.519  (t=19s)
+[terminals6+1z   ] |U|= 7   7^3=   343  N=   28 L=    7  N+L=    35  ratio=0.102  (t=19s)
+[m-prefix-7+E    ] |U|= 8   8^3=   512  N=  240 L=   59  N+L=   299  ratio=0.584  (t=25s)
+[m-prefix-8      ] |U|= 8   8^3=   512  N=  368 L=   68  N+L=   436  ratio=0.852  (t=31s)
+[m1+p7           ] |U|= 8   8^3=   512  N=  240 L=   59  N+L=   299  ratio=0.584  (t=37s)
+[m2+p2+s4        ] |U|= 8   8^3=   512  N=   73 L=   27  N+L=   100  ratio=0.195  (t=41s)
+[m2+p3+s3        ] |U|= 8   8^3=   512  N=   78 L=   17  N+L=    95  ratio=0.186  (t=45s)
+[m2+p4+s2        ] |U|= 8   8^3=   512  N=   73 L=   27  N+L=   100  ratio=0.195  (t=49s)
+[m2+p6           ] |U|= 8   8^3=   512  N=  151 L=   53  N+L=   204  ratio=0.398  (t=55s)
+[m3+p2+s3        ] |U|= 8   8^3=   512  N=   78 L=   17  N+L=    95  ratio=0.186  (t=58s)
+[m3+p3+s2        ] |U|= 8   8^3=   512  N=   78 L=   17  N+L=    95  ratio=0.186  (t=62s)
+[m3+p5           ] |U|= 8   8^3=   512  N=  118 L=   43  N+L=   161  ratio=0.314  (t=68s)
+[m4+p2+s2        ] |U|= 8   8^3=   512  N=   73 L=   27  N+L=   100  ratio=0.195  (t=71s)
+[m4+p4           ] |U|= 8   8^3=   512  N=  106 L=   42  N+L=   148  ratio=0.289  (t=77s)
+[m5+p3           ] |U|= 8   8^3=   512  N=  118 L=   43  N+L=   161  ratio=0.314  (t=82s)
+[m6+p2           ] |U|= 8   8^3=   512  N=  151 L=   53  N+L=   204  ratio=0.398  (t=88s)
+[m7+p1           ] |U|= 8   8^3=   512  N=  240 L=   59  N+L=   299  ratio=0.584  (t=93s)
+[terminals6+2z   ] |U|= 8   8^3=   512  N=   39 L=    9  N+L=    48  ratio=0.094  (t=96s)
+[m-prefix-8+E    ] |U|= 9   9^3=   729  N=  390 L=   77  N+L=   467  ratio=0.641  (t=115s)
+[m-prefix-9      ] |U|= 9   9^3=   729  N=  387 L=   87  N+L=   474  ratio=0.650  (t=133s)
+[m2+p3+s4        ] |U|= 9   9^3=   729  N=  107 L=   33  N+L=   140  ratio=0.192  (t=146s)
+[m2+p4+s3        ] |U|= 9   9^3=   729  N=  107 L=   33  N+L=   140  ratio=0.192  (t=159s)
+[m2+p7           ] |U|= 9   9^3=   729  N=  262 L=   68  N+L=   330  ratio=0.453  (t=177s)
+[m3+p2+s4        ] |U|= 9   9^3=   729  N=  107 L=   33  N+L=   140  ratio=0.192  (t=190s)
+[m3+p3+s3        ] |U|= 9   9^3=   729  N=  114 L=   21  N+L=   135  ratio=0.185  (t=201s)
+[m3+p4+s2        ] |U|= 9   9^3=   729  N=  107 L=   33  N+L=   140  ratio=0.192  (t=212s)
+[m3+p6           ] |U|= 9   9^3=   729  N=  195 L=   63  N+L=   258  ratio=0.354  (t=229s)
+[m4+p2+s3        ] |U|= 9   9^3=   729  N=  107 L=   33  N+L=   140  ratio=0.192  (t=241s)
+[m4+p3+s2        ] |U|= 9   9^3=   729  N=  107 L=   33  N+L=   140  ratio=0.192  (t=252s)
+[m4+p5           ] |U|= 9   9^3=   729  N=  151 L=   63  N+L=   214  ratio=0.294  (t=268s)
+[m5+p4           ] |U|= 9   9^3=   729  N=  151 L=   63  N+L=   214  ratio=0.294  (t=284s)
+[m6+p3           ] |U|= 9   9^3=   729  N=  195 L=   63  N+L=   258  ratio=0.354  (t=300s)
+[m7+p2           ] |U|= 9   9^3=   729  N=  262 L=   68  N+L=   330  ratio=0.453  (t=317s)
+[terminals6+3z   ] |U|= 9   9^3=   729  N=   65 L=   13  N+L=    78  ratio=0.107  (t=325s)
+
+=== ��ֵǰ 10 ===
+  m-prefix-8       |U|= 8 budget=   512 N=  368 L=   68 N+L=   436 ratio=0.852 
+  m-prefix-7       |U|= 7 budget=   343 N=  222 L=   51 N+L=   273 ratio=0.796 
+  m-prefix-9       |U|= 9 budget=   729 N=  387 L=   87 N+L=   474 ratio=0.650 
+  m-prefix-6       |U|= 6 budget=   216 N=  119 L=   20 N+L=   139 ratio=0.644 
+  m-prefix-8+E     |U|= 9 budget=   729 N=  390 L=   77 N+L=   467 ratio=0.641 
+  m-prefix-7+E     |U|= 8 budget=   512 N=  240 L=   59 N+L=   299 ratio=0.584 
+  m1+p7            |U|= 8 budget=   512 N=  240 L=   59 N+L=   299 ratio=0.584 
+  m7+p1            |U|= 8 budget=   512 N=  240 L=   59 N+L=   299 ratio=0.584 
+  m-prefix-6+E     |U|= 7 budget=   343 N=  133 L=   45 N+L=   178 ratio=0.519 
+  m1+p6            |U|= 7 budget=   343 N=  133 L=   45 N+L=   178 ratio=0.519 
+
+��֤�� U ���� = 0
+����: ��������δ��֤ k=3

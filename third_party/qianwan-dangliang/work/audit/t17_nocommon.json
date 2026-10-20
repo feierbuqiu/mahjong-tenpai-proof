@@ -1,0 +1,22 @@
+{
+ "classes": 387,
+ "results": {
+  "k1": {
+   "no_common": 40,
+   "claim": 40
+  },
+  "k2": {
+   "no_common": 53,
+   "claim": 53
+  },
+  "k3": {
+   "no_common": 87,
+   "claim": 87
+  },
+  "k4": {
+   "no_common": 111,
+   "claim": 111
+  }
+ },
+ "elapsed": 109.0
+}

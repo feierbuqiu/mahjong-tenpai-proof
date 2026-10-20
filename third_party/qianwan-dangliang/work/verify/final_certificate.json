@@ -1,0 +1,103 @@
+{
+ "generated": "2026-09-17T19:38:00",
+ "answer": {
+  "k_min": 4,
+  "lower_bound": "k=3 infeasible: U={m2..m8}, N(U)=347, L(U)=52, 399 > 343=7^3 (work/lowerbound/k3_disproof_certificate.json, 独立重放 work/verify/verify_k3_disproof.py)",
+  "upper_bound": "explicit plan work/verify/plan_k4_FINAL.json"
+ },
+ "plan": {
+  "path": "work/verify/plan_k4_FINAL.json",
+  "sha256": "b95f5523bae86db71fabd62380fb6820b3d83c4e794eb92043b7ca8f4fa57163",
+  "k": 4,
+  "n_classes": 2846,
+  "n_codes": 17579,
+  "base": "work/verify/plan_k4_leadC_patched.json",
+  "removed_unusable": 3
+ },
+ "acceptance": {
+  "MODEL_cond1_S_C_subset_union_Mk(H)": {
+   "tool": "waste_exact.py",
+   "waste_codes": 0,
+   "total_codes": 17579,
+   "sample_audit": "0/200 误报"
+  },
+  "MODEL_cond2_per_class_hitting_set_blocks": {
+   "tool": "block_coverage_exact.py",
+   "I_bases_checked": 168817,
+   "II_bases_checked": 5402697,
+   "I_uncovered": 0,
+   "II_uncovered": 0,
+   "classes_with_uncovered": 0
+  },
+  "MODEL_cond2_per_class_sampling": {
+   "tool": "perclass_coverage.py",
+   "hands_per_class": [
+    30,
+    120
+   ],
+   "classes_tested": 2846,
+   "fully_uncovered": 0,
+   "partial": 0
+  },
+  "MODEL_cond3_pairwise_disjoint": {
+   "tool": "structural_k4.py / fastverify_k4.py",
+   "ordered_unique": true,
+   "codes": 17579
+  },
+  "class_set": {
+   "classes": 2846,
+   "equals_independent_census": true,
+   "empty_classes": 0
+  },
+  "typeI_blocks": {
+   "scanned": 166746,
+   "uncovered": 0
+  },
+  "chiitoi_descriptors": {
+   "descriptors": 97,
+   "fail": 0
+  },
+  "kokushi": {
+   "families_covered": true,
+   "fail": 0,
+   "note": "13 面类 1 手牌 + 13 个缺一张类各 12 手牌, 全部由 perclass_coverage 覆盖"
+  },
+  "single_suit_codes_complete": {
+   "checked": 4358,
+   "bad": 0
+  },
+  "single_suit_blocks": {
+   "uncovered_hands": 0
+  },
+  "simulation_1e6": [
+   {
+    "tool": "fastverify_k4.py",
+    "listening": 366941,
+    "fail": 0
+   },
+   {
+    "tool": "sim_fail_detail.py",
+    "listening": 366249,
+    "fail": 0
+   }
+  ],
+  "W_spot_check_independent": {
+   "hands": 1600,
+   "mismatch": 0
+  }
+ },
+ "reproduce_cmd": [
+  "python -u work/verify/block_coverage_exact.py work/verify/plan_k4_FINAL.json",
+  "python -u work/verify/waste_exact.py work/verify/plan_k4_FINAL.json waste_list_FINAL.json",
+  "python -u work/verify/perclass_coverage.py work/verify/plan_k4_FINAL.json 120",
+  "python -u work/verify/fastverify_k4.py work/verify/plan_k4_FINAL.json 1000000",
+  "python -u work/verify/structural_k4.py work/verify/plan_k4_FINAL.json",
+  "python -u work/verify/sim_fail_detail.py work/verify/plan_k4_FINAL.json 1000000"
+ ],
+ "provenance": {
+  "base_leadC_sha256_16": "4e36492e4e3d1634",
+  "patched_sha256_16": "f600756e959d76b7",
+  "patch": "55 条 |A|=4 未覆盖基式各补 1 条 A 的排列 (work/verify/patch_leadC2.py)",
+  "removed": "3 条不合法码: {7m}:EEEE, {3p}:HakuHakuHakuHaku, {1p}:1p1p1p5p (4 张同牌无法在 4 面子+1 对中拆解, 任何类的手牌都不可能包含)"
+ }
+}

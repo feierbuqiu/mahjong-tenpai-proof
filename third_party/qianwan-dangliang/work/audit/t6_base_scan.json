@@ -1,0 +1,31 @@
+{
+ "plan_classes": 2846,
+ "standard_classes": 2845,
+ "I_bases": 167590,
+ "I_easy": 167421,
+ "II_bases": 5105013,
+ "II_easy": 5104897,
+ "hard_bases": 285,
+ "missing_class_events": 0,
+ "n_standard_classes_not_in_plan": 0,
+ "sample_missing": [],
+ "plan_classes_not_standard_root": [
+  [
+   "1m",
+   "9m",
+   "1p",
+   "9p",
+   "1s",
+   "9s",
+   "E",
+   "S",
+   "W",
+   "N",
+   "Haku",
+   "Hatsu",
+   "Chun"
+  ]
+ ],
+ "n_plan_classes_not_standard_root": 1,
+ "elapsed": 322.9
+}

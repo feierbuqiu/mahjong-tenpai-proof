@@ -1,0 +1,9 @@
+{
+ "plan": "work/verify/plan_k4_FINAL.json",
+ "hands_per_class": 120,
+ "classes_tested": 2846,
+ "fully_uncovered_classes": 0,
+ "partially_uncovered_classes": 0,
+ "fully_uncovered": [],
+ "partial": []
+}

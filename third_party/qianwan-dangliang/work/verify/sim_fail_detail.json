@@ -1,0 +1,7 @@
+{
+ "plan": "work/verify/plan_k4_FINAL.json",
+ "samples": 1000000,
+ "listening": 366249,
+ "fails": 0,
+ "fail_examples": []
+}

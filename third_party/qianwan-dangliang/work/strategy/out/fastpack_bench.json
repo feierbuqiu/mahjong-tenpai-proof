@@ -1,0 +1,11 @@
+{
+ "table_cached_s": 0.5020134449005127,
+ "nclass": 300,
+ "table_mode": "cached",
+ "serial_s": 104.26044940948486,
+ "parallel_s": 72.82551503181458,
+ "speedup": 1.431647264889752,
+ "identical": true,
+ "sum_codes_serial": 1296,
+ "sum_codes_parallel": 1296
+}

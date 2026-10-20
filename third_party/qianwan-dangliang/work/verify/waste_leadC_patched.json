@@ -1,0 +1,52 @@
+{
+ "plan": "work/verify/plan_k4_leadC_patched.json",
+ "total_codes": 17582,
+ "usable": 17579,
+ "waste_count": 3,
+ "waste_by_class": [
+  {
+   "W": [
+    "7m"
+   ],
+   "codes": [
+    [
+     "E",
+     "E",
+     "E",
+     "E"
+    ]
+   ]
+  },
+  {
+   "W": [
+    "1p"
+   ],
+   "codes": [
+    [
+     "1p",
+     "1p",
+     "1p",
+     "5p"
+    ]
+   ]
+  },
+  {
+   "W": [
+    "3p"
+   ],
+   "codes": [
+    [
+     "Haku",
+     "Haku",
+     "Haku",
+     "Haku"
+    ]
+   ]
+  }
+ ],
+ "audit": {
+  "sampled": 3,
+  "false_positives": 0,
+  "examples": []
+ }
+}

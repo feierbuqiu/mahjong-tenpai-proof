@@ -1,0 +1,13 @@
+import Std
+#check List.bind
+#check List.flatMap
+#check List.join
+#check List.count
+#check List.eraseDups
+#check List.finRange
+#check List.range
+#check List.filter
+#check Function.update
+#check List.sublists
+#check List.Sublist
+#check List.subperm

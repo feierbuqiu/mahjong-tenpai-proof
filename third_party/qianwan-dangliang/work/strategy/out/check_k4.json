@@ -1,0 +1,44 @@
+{
+ "plan_file": "work/verify/plan_k4_leadC_patched.json",
+ "k": 4,
+ "n_classes": 2846,
+ "n_codes": 17582,
+ "budget": 1336336,
+ "plan_fails": [],
+ "distinct_codes": 17582,
+ "code_collisions": 0,
+ "sum_S_C": 17582,
+ "classes_planned": 2846,
+ "classes_missing": 0,
+ "elements_checked": 1075236,
+ "structural_failures": 1717,
+ "hand_sim": {
+  "flush": 40196,
+  "flush_fail": 0,
+  "std": 600000,
+  "std_fail": 0,
+  "chiitoi": 400000,
+  "chiitoi_fail": 0,
+  "kokushi": 14,
+  "kokushi_fail": 0,
+  "no_class": 0
+ },
+ "hand_sim_total": 1040210,
+ "sub_universe": {
+  "m": {
+   "sum_tau_U": 691,
+   "budget": 6561,
+   "ok": true,
+   "classes": 387,
+   "uncovered": 0
+  },
+  "z": {
+   "sum_tau_U": 42,
+   "budget": 2401,
+   "ok": true,
+   "classes": 28,
+   "uncovered": 0
+  }
+ },
+ "ok": false
+}

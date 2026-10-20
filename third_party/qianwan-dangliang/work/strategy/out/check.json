@@ -1,0 +1,43 @@
+{
+ "k": 3,
+ "n_classes": 2846,
+ "n_codes": 5490,
+ "budget": 39304,
+ "plan_fails": [],
+ "distinct_codes": 5490,
+ "code_collisions": 0,
+ "sum_S_C": 5490,
+ "classes_planned": 2846,
+ "classes_missing": 0,
+ "elements_checked": 1075236,
+ "structural_failures": 2213,
+ "hand_sim": {
+  "flush": 40196,
+  "flush_fail": 31742,
+  "std": 600000,
+  "std_fail": 146038,
+  "chiitoi": 400000,
+  "chiitoi_fail": 10,
+  "kokushi": 14,
+  "kokushi_fail": 0,
+  "no_class": 0
+ },
+ "hand_sim_total": 1040210,
+ "sub_universe": {
+  "m": {
+   "sum_tau_U": 310,
+   "budget": 729,
+   "ok": true,
+   "classes": 387,
+   "uncovered": 31742
+  },
+  "z": {
+   "sum_tau_U": 21,
+   "budget": 343,
+   "ok": true,
+   "classes": 28,
+   "uncovered": 112
+  }
+ },
+ "ok": false
+}

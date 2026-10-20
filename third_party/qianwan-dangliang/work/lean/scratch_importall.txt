@@ -1,0 +1,3 @@
+l6_batch00_eq : batchAt 0 = (20000, 0, 486754, 0)
+l6_batch15_eq : batchAt 15 = (9144, 0, 87780, 0)
+exit=0 elapsed=13s

@@ -1,0 +1,13 @@
+{
+ "winning_vectors": 11860365,
+ "standard_canonical": 57777477,
+ "standard_naive": 47311791,
+ "excess": -10465686,
+ "ov_std_chiitoi": 0,
+ "ov_std_kokushi": 0,
+ "chiitoi": 37657312,
+ "kokushi": 157,
+ "total_canonical": 95434946,
+ "total_naive": 84969260,
+ "sec": 303.6
+}

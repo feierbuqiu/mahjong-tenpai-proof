@@ -1,0 +1,508 @@
+{
+ "gap_hands_checked": 24756738,
+ "covered": 21129763,
+ "uncovered": 3626975,
+ "counterexamples": [
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "4m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "5m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "7m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "6s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "6m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "9m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "8m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  },
+  {
+   "err": "UNCOVERED gap hand",
+   "z": "3m",
+   "tag": "I-c0-s7",
+   "F_kinds": [
+    "1p",
+    "7p",
+    "5s"
+   ]
+  }
+ ],
+ "elapsed": 163.5
+}

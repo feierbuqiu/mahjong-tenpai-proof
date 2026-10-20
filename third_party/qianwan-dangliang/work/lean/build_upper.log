@@ -1,0 +1,11 @@
+✔ [3/4] Built Mj.Data (172s)
+ℹ [4/4] Built Mj.Upper (210s)
+info: Mj/Upper.lean:209:0: 'Mj.checkPlan_true' depends on axioms: [propext,
+ iiUnitsComplete,
+ iiUnitsComplete_proof,
+ failuresAreReal_true._native.native_decide.ax_1_1,
+ iBlocksAllCovered_true._native.native_decide.ax_1_1,
+ structOk_true._native.native_decide.ax_1_1]
+info: Mj/Upper.lean:210:0: 'Mj.iBlocksAllCovered_true' depends on axioms: [propext, iBlocksAllCovered_true._native.native_decide.ax_1_1]
+info: Mj/Upper.lean:211:0: 'Mj.structOk_true' depends on axioms: [structOk_true._native.native_decide.ax_1_1]
+Build completed successfully (4 jobs).

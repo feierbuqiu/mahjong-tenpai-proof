@@ -1,0 +1,10 @@
+{
+ "baseline": "work/verify/plan_k4_final.json",
+ "n_mu": 1822,
+ "n_typeI_hard_blocks": 217,
+ "n_chiitoi_saturated_pairs": 3926,
+ "n_user_entries": 21145,
+ "n_users_replaceable": 672,
+ "replaceable_ratio": 0.03178056278079924,
+ "n_users_blocked": 20473
+}

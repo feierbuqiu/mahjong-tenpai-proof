@@ -1,0 +1,19 @@
+{
+ "n_classes": 387,
+ "sum_tau1": 427,
+ "tau1_hist": {
+  "1": 347,
+  "2": 40
+ },
+ "sum_tau2_lb_clique": 435,
+ "sum_tau2_ub_greedy": 483,
+ "budget_k1": 9,
+ "budget_k2": 81,
+ "budget_k3": 729,
+ "budget_k4": 6561,
+ "cert_claims": {
+  "k1": 427,
+  "k2_lb": 447,
+  "k2_ub": 457
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "plan": "work/verify/plan_k4_FINAL.json",
+ "I_base_checked": 168817,
+ "II_base_checked": 5402697,
+ "I_uncovered": 0,
+ "II_uncovered": 0,
+ "total_uncovered": 0,
+ "uncovered_I": [],
+ "uncovered_II": [],
+ "classes_with_uncovered": 0
+}

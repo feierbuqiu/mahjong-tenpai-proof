@@ -1,0 +1,61 @@
+底版: 类 2846 码 17527
+补码 55 条 ; 失败 0 ; 总码 17582
+补码后仍不覆盖的基式: 0
+已写 D:\DSH\MJ2\work\verify\plan_k4_leadC_patched.json ; 类 2846 码 17582
+基式检查: I=168817 II=5402697 ; 未覆盖: I=0 II=0 ; 涉及类=0
+已写 work/verify/block_coverage_exact.json
+表载入: cls 2846 PROFI_D 9580 PROFII_D 2469
+精确判定: 总码 17582 可用 17579 **可安全删除的浪费码** 3 涉及类 3 (2s)
+200 条独立复核: 误报 0 / 3
+已写 waste_leadC_patched.json
+类数(实测手牌)=2846  完全无同类覆盖=0  部分=0
+完全无覆盖类的块类型: Counter()
+写出 work/verify/perclass_coverage.json
+{
+ "plan": "work/verify/plan_k4_leadC_patched.json",
+ "struct": {
+  "classes": 2846,
+  "class_set_ok": true,
+  "empty_classes": 0,
+  "codes": 17582,
+  "ordered_unique": true,
+  "code_len": [
+   4
+  ]
+ },
+ "typeI": {
+  "blocks": 166746,
+  "uncovered": 0,
+  "examples": []
+ },
+ "chiitoi": {
+  "descriptors": 97,
+  "fail": 0,
+  "examples": []
+ },
+ "sim": {
+  "samples": 1000000,
+  "listening": 366941,
+  "classes_hit": 733,
+  "fail": 0
+ },
+ "single_suit_uncovered": {
+  "classes": 0,
+  "hands": 0,
+  "examples": []
+ },
+ "timing": {
+  "typeI_s": 12.3,
+  "chiitoi_s": 14.4,
+  "sim_s": 9.2,
+  "su_s": 0.1,
+  "total_s": 36.3,
+  "nproc": 12
+ }
+}
+classes: 2846 duplicate W rows: 0 | class set == census: True | missing: 0 extra: 0
+codes: 17582 distinct ordered: 17582 => ordered-unique: True
+empty classes: 0
+code lengths seen: {4}
+4) code ⊆ some hand (single-suit, complete): checked 4359 bad 1 skipped(跨门码, 另按来源抽样)
+5) W 独立抽查: 1600 hands, 失配 0

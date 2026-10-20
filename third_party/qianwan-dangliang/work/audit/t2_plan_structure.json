@@ -1,0 +1,139 @@
+{
+ "n_classes_declared": 2846,
+ "n_codes_declared": 17579,
+ "n_classes_actual": 2846,
+ "n_codes_actual": 17579,
+ "unique_class_keys": true,
+ "class_keys_dupes": 0,
+ "errors": [],
+ "num_errors": 0,
+ "ordered_codes_distinct": 17579,
+ "ordered_dup_count": 0,
+ "multiset_codes_distinct": 7868,
+ "multiset_dup_count": 9711,
+ "sorted_always": false,
+ "ordered_dup_examples": [],
+ "multiset_dup_examples": [
+  [
+   "1m",
+   "2m",
+   "2m",
+   "3m"
+  ],
+  [
+   "1m",
+   "2m",
+   "2m",
+   "4m"
+  ],
+  [
+   "1m",
+   "2m",
+   "2m",
+   "5m"
+  ],
+  [
+   "1m",
+   "2m",
+   "2m",
+   "6m"
+  ],
+  [
+   "1m",
+   "2m",
+   "2m",
+   "7m"
+  ],
+  [
+   "1m",
+   "2m",
+   "2m",
+   "8m"
+  ],
+  [
+   "1m",
+   "3m",
+   "3m",
+   "4m"
+  ],
+  [
+   "1m",
+   "3m",
+   "3m",
+   "5m"
+  ],
+  [
+   "1m",
+   "3m",
+   "3m",
+   "6m"
+  ],
+  [
+   "1m",
+   "3m",
+   "3m",
+   "7m"
+  ]
+ ],
+ "codes_per_class_min": 1,
+ "codes_per_class_max": 281,
+ "codes_per_class_sum": 17579,
+ "classes_with_zero_codes": 0,
+ "removed": [
+  {
+   "W": [
+    "7m"
+   ],
+   "code": [
+    "E",
+    "E",
+    "E",
+    "E"
+   ],
+   "also_used_by": 0,
+   "class_present": true,
+   "class_code_count": 254
+  },
+  {
+   "W": [
+    "1p"
+   ],
+   "code": [
+    "1p",
+    "1p",
+    "1p",
+    "5p"
+   ],
+   "also_used_by": 0,
+   "class_present": true,
+   "class_code_count": 158
+  },
+  {
+   "W": [
+    "3p"
+   ],
+   "code": [
+    "Haku",
+    "Haku",
+    "Haku",
+    "Haku"
+   ],
+   "also_used_by": 0,
+   "class_present": true,
+   "class_code_count": 268
+  }
+ ],
+ "W_size_hist": {
+  "1": 34,
+  "2": 561,
+  "3": 894,
+  "4": 738,
+  "5": 372,
+  "6": 156,
+  "7": 69,
+  "8": 18,
+  "9": 3,
+  "13": 1
+ },
+ "n_classes_with_W_size13": 1
+}

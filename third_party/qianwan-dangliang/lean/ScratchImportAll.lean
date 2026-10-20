@@ -1,0 +1,21 @@
+import Mj.L6B00
+import Mj.L6B01
+import Mj.L6B02
+import Mj.L6B03
+import Mj.L6B04
+import Mj.L6B05
+import Mj.L6B06
+import Mj.L6B07
+import Mj.L6B08
+import Mj.L6B09
+import Mj.L6B10
+import Mj.L6B11
+import Mj.L6B12
+import Mj.L6B13
+import Mj.L6B14
+import Mj.L6B15
+
+namespace Mj
+#check @l6_batch00_eq
+#check @l6_batch15_eq
+end Mj

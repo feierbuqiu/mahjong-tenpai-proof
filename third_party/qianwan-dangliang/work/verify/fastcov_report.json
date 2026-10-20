@@ -1,0 +1,35 @@
+{
+ "plan": "work/strategy/out/plan_k4_v2.json",
+ "zero_code_classes": 0,
+ "suits": {
+  "m": {
+   "uncovered_in_zero_code_classes": 0,
+   "uncovered_in_coded_classes": 0,
+   "classes_with_failures": 0,
+   "top": [],
+   "all_failures": []
+  },
+  "p": {
+   "uncovered_in_zero_code_classes": 0,
+   "uncovered_in_coded_classes": 0,
+   "classes_with_failures": 0,
+   "top": [],
+   "all_failures": []
+  },
+  "s": {
+   "uncovered_in_zero_code_classes": 0,
+   "uncovered_in_coded_classes": 0,
+   "classes_with_failures": 0,
+   "top": [],
+   "all_failures": []
+  },
+  "z": {
+   "uncovered_in_zero_code_classes": 0,
+   "uncovered_in_coded_classes": 0,
+   "classes_with_failures": 0,
+   "top": [],
+   "all_failures": []
+  }
+ },
+ "secs": 0.6
+}

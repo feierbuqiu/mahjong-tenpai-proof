@@ -1,0 +1,2420 @@
+{
+ "plan": "D:\\DSH\\MJ2\\work\\verify\\plan_k4_final.json",
+ "criterion": "MODEL.md line 29-31: S_C ⊆ ∪_{H∈C}M_k(H); S_C 必命中类内每一手牌; 各类码集两两不交",
+ "source": "work/verify/perclass_coverage.json:fully_uncovered",
+ "classes": [
+  {
+   "W": [
+    "1m",
+    "4m",
+    "1p",
+    "4p",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 166,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 144008,
+   "example_uncovered_hand": "2m3m4m4m4m1p1p1p2p3p4p5p6p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 160,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143620,
+   "example_uncovered_hand": "2m3m4m4m4m2s3s4s5s6s7s7s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "2p",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 163,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145592,
+   "example_uncovered_hand": "2m3m4m4m4m2p2p2p3p4p5p6p7p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 160,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145192,
+   "example_uncovered_hand": "2m3m4m4m4m3s4s5s6s7s8s8s8s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "3p",
+    "6p",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 113,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143920,
+   "example_uncovered_hand": "2m3m4m4m4m3p3p3p4p5p6p7p8p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 112,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 142776,
+   "example_uncovered_hand": "2m3m4m4m4m4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "1p",
+    "4p",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143784,
+   "example_uncovered_hand": "2m2m2m3m4m2p3p4p5p6p7p7p7p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 96,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143032,
+   "example_uncovered_hand": "3m4m5m5m5m2s3s4s5s6s7s7s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "2p",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 87,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145472,
+   "example_uncovered_hand": "2m2m2m3m4m2p2p2p3p4p5p6p7p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145112,
+   "example_uncovered_hand": "2m2m2m3m4m2s2s2s3s4s5s6s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "3p",
+    "6p",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 55,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143540,
+   "example_uncovered_hand": "3m4m5m5m5m4p5p6p7p8p9p9p9p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 48,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 142684,
+   "example_uncovered_hand": "3m4m5m5m5m3s3s3s4s5s6s7s8s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 102,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 142948,
+   "example_uncovered_hand": "4m5m6m6m6m2s3s4s5s6s7s7s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 86,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145112,
+   "example_uncovered_hand": "4m5m6m6m6m2s2s2s3s4s5s6s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 54,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143512,
+   "example_uncovered_hand": "4m5m6m6m6m4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "1p",
+    "4p",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143896,
+   "example_uncovered_hand": "6m7m8m8m8m2p3p4p5p6p7p7p7p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143200,
+   "example_uncovered_hand": "6m7m8m8m8m2s3s4s5s6s7s7s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "2p",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 87,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145472,
+   "example_uncovered_hand": "6m7m8m8m8m2p2p2p3p4p5p6p7p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 87,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145000,
+   "example_uncovered_hand": "5m5m5m6m7m2s2s2s3s4s5s6s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "3p",
+    "6p",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 55,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143540,
+   "example_uncovered_hand": "5m5m5m6m7m3p3p3p4p5p6p7p8p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 55,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143328,
+   "example_uncovered_hand": "6m7m8m8m8m3s3s3s4s5s6s7s8s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5p",
+    "8p",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 96,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143032,
+   "example_uncovered_hand": "6p7p8p8p8p1s1s1s2s3s4s5s6s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5p",
+    "8p",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145032,
+   "example_uncovered_hand": "5p5p5p6p7p2s2s2s3s4s5s6s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "5p",
+    "8p",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 48,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 142592,
+   "example_uncovered_hand": "6p7p8p8p8p4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "1p",
+    "4p",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143798,
+   "example_uncovered_hand": "6m6m6m7m8m1p1p1p2p3p4p5p6p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143242,
+   "example_uncovered_hand": "7m8m9m9m9m2s3s4s5s6s7s7s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "2p",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 87,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145570,
+   "example_uncovered_hand": "7m8m9m9m9m3p4p5p6p7p8p8p8p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 87,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 145076,
+   "example_uncovered_hand": "6m6m6m7m8m2s2s2s3s4s5s6s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "3p",
+    "6p",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143407,
+   "example_uncovered_hand": "7m8m9m9m9m3p3p3p4p5p6p7p8p",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 1
+   },
+   "n_blocks": 1,
+   "baseline_codes": 103,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 143008,
+   "example_uncovered_hand": "6m6m6m7m8m3s3s3s4s5s6s7s8s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "2m",
+    "8m",
+    "Chun"
+   ],
+   "blocks_kinds": {
+    "II": 9
+   },
+   "n_blocks": 9,
+   "baseline_codes": 90,
+   "hands_verified": 40,
+   "same_class_hits": 10,
+   "global_hits": 33830,
+   "example_uncovered_hand": "3m4m5m5m5m5m6m7mHakuHakuHakuChunChun",
+   "example_source_block_index": 5
+  },
+  {
+   "W": [
+    "2m",
+    "8m",
+    "E"
+   ],
+   "blocks_kinds": {
+    "II": 9
+   },
+   "n_blocks": 9,
+   "baseline_codes": 90,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 29513,
+   "example_uncovered_hand": "3m4m5m5m5m5m6m7m9m9m9mEE",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "1p",
+    "4p"
+   ],
+   "blocks_kinds": {
+    "II": 9
+   },
+   "n_blocks": 9,
+   "baseline_codes": 64,
+   "hands_verified": 40,
+   "same_class_hits": 28,
+   "global_hits": 71923,
+   "example_uncovered_hand": "4m4m4m4m5m6m6m6m1p1p1p2p3p",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "3p",
+    "6p",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 9
+   },
+   "n_blocks": 9,
+   "baseline_codes": 64,
+   "hands_verified": 40,
+   "same_class_hits": 16,
+   "global_hits": 71817,
+   "example_uncovered_hand": "3p3p3p4p4p4p4p5p5s6s7s7s7s",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "3p",
+    "6p"
+   ],
+   "blocks_kinds": {
+    "II": 9
+   },
+   "n_blocks": 9,
+   "baseline_codes": 70,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 78859,
+   "example_uncovered_hand": "6m6m6m7m8m8m8m8m3p3p3p4p5p",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "6p",
+    "9p",
+    "2s",
+    "5s"
+   ],
+   "blocks_kinds": {
+    "II": 9
+   },
+   "n_blocks": 9,
+   "baseline_codes": 64,
+   "hands_verified": 40,
+   "same_class_hits": 20,
+   "global_hits": 77797,
+   "example_uncovered_hand": "7p8p9p9p9p2s2s3s3s4s4s5s5s",
+   "example_source_block_index": 4
+  },
+  {
+   "W": [
+    "3s",
+    "6s",
+    "9s",
+    "N"
+   ],
+   "blocks_kinds": {
+    "II": 11
+   },
+   "n_blocks": 11,
+   "baseline_codes": 90,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 83037,
+   "example_uncovered_hand": "4s5s6s6s6s7s7s8s8s9s9sNN",
+   "example_source_block_index": 10
+  },
+  {
+   "W": [
+    "5m",
+    "2s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 12
+   },
+   "n_blocks": 12,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 54947,
+   "example_uncovered_hand": "5m5m7m7m7m3s4s5s5s5s5s6s7s",
+   "example_source_block_index": 9
+  },
+  {
+   "W": [
+    "5p",
+    "2s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 12
+   },
+   "n_blocks": 12,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 65312,
+   "example_uncovered_hand": "5p5p7p7p7p3s4s5s5s5s5s6s7s",
+   "example_source_block_index": 9
+  },
+  {
+   "W": [
+    "1m",
+    "3s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 65007,
+   "example_uncovered_hand": "1m1m9m9m9m4s5s6s6s6s6s7s8s",
+   "example_source_block_index": 12
+  },
+  {
+   "W": [
+    "3m",
+    "3s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 20,
+   "global_hits": 57875,
+   "example_uncovered_hand": "1m1m1m3m3m4s5s6s6s6s6s7s8s",
+   "example_source_block_index": 4
+  },
+  {
+   "W": [
+    "3m",
+    "9m",
+    "2s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 32,
+   "hands_verified": 40,
+   "same_class_hits": 6,
+   "global_hits": 65830,
+   "example_uncovered_hand": "4m5m6m6m6m6m7m8m2s2s3s3s3s",
+   "example_source_block_index": 3
+  },
+  {
+   "W": [
+    "3m",
+    "9m",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 68014,
+   "example_uncovered_hand": "1m2m3m4m5m6m6m6m6m7m8m9s9s",
+   "example_source_block_index": 11
+  },
+  {
+   "W": [
+    "3p",
+    "3s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 65637,
+   "example_uncovered_hand": "3p3p1s2s3s4s5s6s6s6s6s7s8s",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "6m",
+    "3s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 30,
+   "global_hits": 58474,
+   "example_uncovered_hand": "4m4m4m6m6m4s5s6s6s6s6s7s8s",
+   "example_source_block_index": 8
+  },
+  {
+   "W": [
+    "6p",
+    "1s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 5,
+   "global_hits": 69927,
+   "example_uncovered_hand": "6p6p2s3s4s4s4s4s5s6s7s7s7s",
+   "example_source_block_index": 1
+  },
+  {
+   "W": [
+    "7m",
+    "2p",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 101429,
+   "example_uncovered_hand": "1m1m1m7m7m3p4p5p6p7p8p8p8p",
+   "example_source_block_index": 4
+  },
+  {
+   "W": [
+    "7m",
+    "3s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 5,
+   "global_hits": 70277,
+   "example_uncovered_hand": "7m7m9m9m9m4s5s6s6s6s6s7s8s",
+   "example_source_block_index": 12
+  },
+  {
+   "W": [
+    "8p",
+    "2s",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 13
+   },
+   "n_blocks": 13,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 10,
+   "global_hits": 99385,
+   "example_uncovered_hand": "2p2p2p8p8p3s4s5s6s7s8s8s8s",
+   "example_source_block_index": 6
+  },
+  {
+   "W": [
+    "1m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 20,
+   "global_hits": 100264,
+   "example_uncovered_hand": "1m1m1s1s1s4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 1
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7m",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 16,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 93318,
+   "example_uncovered_hand": "2m3m4m5m6m7m7m7m1p1p1p7p7p",
+   "example_source_block_index": 1
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7m",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 5,
+   "global_hits": 103293,
+   "example_uncovered_hand": "1m1m1m2m3m4m5m6m7m8m9m8p8p",
+   "example_source_block_index": 13
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7m",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 6,
+   "global_hits": 98817,
+   "example_uncovered_hand": "1m1m1m2m3m4m5m6m1s1s1s8s8s",
+   "example_source_block_index": 1
+  },
+  {
+   "W": [
+    "1p",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 97439,
+   "example_uncovered_hand": "1p1p3p3p3p3s3s3s4s5s6s7s8s",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "1p",
+    "4p",
+    "7p",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 87,
+   "hands_verified": 40,
+   "same_class_hits": 5,
+   "global_hits": 106112,
+   "example_uncovered_hand": "2p3p4p5p6p7p7p7p8p8p8p9s9s",
+   "example_source_block_index": 12
+  },
+  {
+   "W": [
+    "2m",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 95393,
+   "example_uncovered_hand": "2m2m7m7m7m4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 11
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "9m",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 106606,
+   "example_uncovered_hand": "3m3m3m4m5m6m7m8m6s6s6s8s8s",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "4p",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 15,
+   "global_hits": 93139,
+   "example_uncovered_hand": "4p4p6p6p6p3s3s3s4s5s6s7s8s",
+   "example_source_block_index": 10
+  },
+  {
+   "W": [
+    "5p",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 10,
+   "global_hits": 105601,
+   "example_uncovered_hand": "5p5p1s2s3s4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "6p",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 10,
+   "global_hits": 106366,
+   "example_uncovered_hand": "6p6p1s1s1s2s3s4s5s6s7s8s9s",
+   "example_source_block_index": 4
+  },
+  {
+   "W": [
+    "7p",
+    "1s",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 25,
+   "global_hits": 92641,
+   "example_uncovered_hand": "3p3p3p7p7p2s3s4s5s6s7s7s7s",
+   "example_source_block_index": 8
+  },
+  {
+   "W": [
+    "8p",
+    "3s",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 14
+   },
+   "n_blocks": 14,
+   "baseline_codes": 80,
+   "hands_verified": 40,
+   "same_class_hits": 25,
+   "global_hits": 100568,
+   "example_uncovered_hand": "8p8p1s2s3s4s5s6s7s8s9s9s9s",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "1p",
+    "4p",
+    "Haku"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 38672,
+   "example_uncovered_hand": "2p3p4p4p4p6s7s8sSSSHakuHaku",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "1s",
+    "4s",
+    "W"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 41615,
+   "example_uncovered_hand": "4p5p6p1s1s1s2s3sSSSWW",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "6p",
+    "9p",
+    "Hatsu"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 42434,
+   "example_uncovered_hand": "4p4p4p6p6p7p7p8p8p9p9pHatsuHatsu",
+   "example_source_block_index": 42
+  },
+  {
+   "W": [
+    "6p",
+    "9p",
+    "S"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 44988,
+   "example_uncovered_hand": "2p2p2p6p6p7p7p8p8p9p9pSS",
+   "example_source_block_index": 40
+  },
+  {
+   "W": [
+    "6p",
+    "9p",
+    "W"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 44159,
+   "example_uncovered_hand": "1p2p3p7p8p9p9p9p5s6s7sWW",
+   "example_source_block_index": 9
+  },
+  {
+   "W": [
+    "6s",
+    "9s",
+    "E"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 42918,
+   "example_uncovered_hand": "6s6s7s7s8s8s9s9sEENNN",
+   "example_source_block_index": 32
+  },
+  {
+   "W": [
+    "6s",
+    "9s",
+    "N"
+   ],
+   "blocks_kinds": {
+    "II": 46
+   },
+   "n_blocks": 46,
+   "baseline_codes": 36,
+   "hands_verified": 40,
+   "same_class_hits": 8,
+   "global_hits": 33925,
+   "example_uncovered_hand": "4s4s4s6s6s7s7s8s8s9s9sNN",
+   "example_source_block_index": 42
+  },
+  {
+   "W": [
+    "3s",
+    "6s",
+    "Chun"
+   ],
+   "blocks_kinds": {
+    "II": 47
+   },
+   "n_blocks": 47,
+   "baseline_codes": 36,
+   "hands_verified": 40,
+   "same_class_hits": 10,
+   "global_hits": 48977,
+   "example_uncovered_hand": "3s3s3s4s4s5s5s6s7s8s9sChunChun",
+   "example_source_block_index": 36
+  },
+  {
+   "W": [
+    "4m",
+    "7m",
+    "S"
+   ],
+   "blocks_kinds": {
+    "II": 47
+   },
+   "n_blocks": 47,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 24825,
+   "example_uncovered_hand": "4m4m5m5m6m6m7m7m8m8m8mSS",
+   "example_source_block_index": 45
+  },
+  {
+   "W": [
+    "4s",
+    "7s",
+    "Haku"
+   ],
+   "blocks_kinds": {
+    "II": 47
+   },
+   "n_blocks": 47,
+   "baseline_codes": 36,
+   "hands_verified": 40,
+   "same_class_hits": 16,
+   "global_hits": 41060,
+   "example_uncovered_hand": "4s4s4s5s6s7s7s8s8s9s9sHakuHaku",
+   "example_source_block_index": 36
+  },
+  {
+   "W": [
+    "4s",
+    "7s",
+    "Hatsu"
+   ],
+   "blocks_kinds": {
+    "II": 47
+   },
+   "n_blocks": 47,
+   "baseline_codes": 36,
+   "hands_verified": 40,
+   "same_class_hits": 18,
+   "global_hits": 53302,
+   "example_uncovered_hand": "4s4s5s5s6s6s7s7sHakuHakuHakuHatsuHatsu",
+   "example_source_block_index": 34
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "3p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 52412,
+   "example_uncovered_hand": "1m1m1m2m3m3p3p5s6s7s7s7s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 46173,
+   "example_uncovered_hand": "1m2m2m3m3m4m4m4m6s6s7s7s7s",
+   "example_source_block_index": 25
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 41906,
+   "example_uncovered_hand": "2m3m4m4m4m5p5p5p7p7pEEE",
+   "example_source_block_index": 6
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 59059,
+   "example_uncovered_hand": "1m1m1m2m3m6p6p6p9p9p3s4s5s",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "1m",
+    "6p",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 5,
+   "global_hits": 45036,
+   "example_uncovered_hand": "1m1m8m8m8m7p7p7p7p8p9p9p9p",
+   "example_source_block_index": 54
+  },
+  {
+   "W": [
+    "1p",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 59142,
+   "example_uncovered_hand": "1p1p9p9p9p2s3s4s4s4sSSS",
+   "example_source_block_index": 23
+  },
+  {
+   "W": [
+    "2m",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 5,
+   "global_hits": 50785,
+   "example_uncovered_hand": "2m2m6m6m6m1s1s1s2s3sChunChunChun",
+   "example_source_block_index": 20
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "2p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 44089,
+   "example_uncovered_hand": "2m2m2m3m4m2p2p5p5p5pNNN",
+   "example_source_block_index": 5
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "3s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 56648,
+   "example_uncovered_hand": "3m4m5m5m5m4s4s5s5s6s6s6s6s",
+   "example_source_block_index": 14
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 55512,
+   "example_uncovered_hand": "3m4m5m5m5m3s4s5s8s8sWWW",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "2m",
+    "5m",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 56643,
+   "example_uncovered_hand": "2m3m3m4m4m5m5m5m1p1p1p9p9p",
+   "example_source_block_index": 28
+  },
+  {
+   "W": [
+    "2m",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 53261,
+   "example_uncovered_hand": "1m1m1m2m2m6s7s8s8s8sWWW",
+   "example_source_block_index": 15
+  },
+  {
+   "W": [
+    "2p",
+    "5p",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 50330,
+   "example_uncovered_hand": "1p1p1p2p2p3p3p4p4p5p5p4s4s",
+   "example_source_block_index": 58
+  },
+  {
+   "W": [
+    "2p",
+    "5p",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 52226,
+   "example_uncovered_hand": "4m4m4m3p4p5p5p5p5s5s5s7s7s",
+   "example_source_block_index": 6
+  },
+  {
+   "W": [
+    "2p",
+    "5p",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 52741,
+   "example_uncovered_hand": "1p1p1p2p2p3p3p4p4p5p5p8s8s",
+   "example_source_block_index": 58
+  },
+  {
+   "W": [
+    "3p",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 7,
+   "global_hits": 48899,
+   "example_uncovered_hand": "3p3p6p6p7p7p8p8p1s1s1s2s3s",
+   "example_source_block_index": 63
+  },
+  {
+   "W": [
+    "3p",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 55141,
+   "example_uncovered_hand": "1m2m3m3p3p5p5p5p5s5s5s6s7s",
+   "example_source_block_index": 19
+  },
+  {
+   "W": [
+    "4m",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 58778,
+   "example_uncovered_hand": "1m1m1m1m2m2m3m3m1s1s1s2s3s",
+   "example_source_block_index": 60
+  },
+  {
+   "W": [
+    "4m",
+    "2p",
+    "5p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 60771,
+   "example_uncovered_hand": "4m4m8m8m8m2p2p3p3p4p4p5p5p",
+   "example_source_block_index": 55
+  },
+  {
+   "W": [
+    "4m",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 51199,
+   "example_uncovered_hand": "4m4m6m6m6m5p5p5p6p7pEEE",
+   "example_source_block_index": 20
+  },
+  {
+   "W": [
+    "4m",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 51974,
+   "example_uncovered_hand": "4m4m8m8m8m1s2s3s6s7s8s8s8s",
+   "example_source_block_index": 53
+  },
+  {
+   "W": [
+    "4m",
+    "6p",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 57839,
+   "example_uncovered_hand": "1m1m1m4m4m6p6p7p7p8p8p9p9p",
+   "example_source_block_index": 27
+  },
+  {
+   "W": [
+    "4p",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 55513,
+   "example_uncovered_hand": "4p4p8p8p8p1s1s1s2s3s6s7s8s",
+   "example_source_block_index": 54
+  },
+  {
+   "W": [
+    "4p",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 50404,
+   "example_uncovered_hand": "4p4p1s1s1s6s7s8s8s8sChunChunChun",
+   "example_source_block_index": 1
+  },
+  {
+   "W": [
+    "4p",
+    "6s",
+    "9s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 54691,
+   "example_uncovered_hand": "3p3p3p4p4p6s6s7s7s8s8s9s9s",
+   "example_source_block_index": 39
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "2p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 59807,
+   "example_uncovered_hand": "1m2m3m6m7m8m8m8m2p2p4p4p4p",
+   "example_source_block_index": 31
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 47204,
+   "example_uncovered_hand": "5m5m5m6m7m7m7m7m4s4s6s6s6s",
+   "example_source_block_index": 42
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 47929,
+   "example_uncovered_hand": "1m2m3m6m7m8m8m8m5s5s5s7s7s",
+   "example_source_block_index": 33
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 68221,
+   "example_uncovered_hand": "5m6m6m7m7m8m8m8m3p3p3p8p8p",
+   "example_source_block_index": 40
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 48442,
+   "example_uncovered_hand": "5m5m5m6m7m3s4s5s8s8sHakuHakuHaku",
+   "example_source_block_index": 2
+  },
+  {
+   "W": [
+    "5m",
+    "8m",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 53340,
+   "example_uncovered_hand": "1m2m3m4m4m4m6m7m8m8m8m9p9p",
+   "example_source_block_index": 56
+  },
+  {
+   "W": [
+    "5p",
+    "8p",
+    "3s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 46648,
+   "example_uncovered_hand": "3p3p3p6p7p7p7p7p8p8p8p3s3s",
+   "example_source_block_index": 57
+  },
+  {
+   "W": [
+    "5p",
+    "8p",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 55202,
+   "example_uncovered_hand": "2p3p3p3p3p4p5p5p5p6p7p6s6s",
+   "example_source_block_index": 55
+  },
+  {
+   "W": [
+    "6m",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 6,
+   "global_hits": 52066,
+   "example_uncovered_hand": "4m4m4m6m6m2s3s4s4s4s6s7s8s",
+   "example_source_block_index": 42
+  },
+  {
+   "W": [
+    "6m",
+    "2p",
+    "5p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 58841,
+   "example_uncovered_hand": "6m6m2p2p3p3p4p4p5p5pSSS",
+   "example_source_block_index": 4
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 45167,
+   "example_uncovered_hand": "6m6m6m7m8m9m9m9m6p6p6p7p7p",
+   "example_source_block_index": 25
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 54501,
+   "example_uncovered_hand": "2m3m4m7m8m9m9m9m2s2s2s7s7s",
+   "example_source_block_index": 30
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 56283,
+   "example_uncovered_hand": "5m6m7m7m8m9m9m9m8p8pEEE",
+   "example_source_block_index": 15
+  },
+  {
+   "W": [
+    "6m",
+    "9m",
+    "9p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 51543,
+   "example_uncovered_hand": "6m6m6m7m7m8m8m9m5p5p5p9p9p",
+   "example_source_block_index": 42
+  },
+  {
+   "W": [
+    "6p",
+    "2s",
+    "5s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 62167,
+   "example_uncovered_hand": "3m3m3m5p5p5p6p6p2s2s2s3s4s",
+   "example_source_block_index": 20
+  },
+  {
+   "W": [
+    "6p",
+    "9p",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 60978,
+   "example_uncovered_hand": "6p6p7p7p7p8p8p8p1s1s1s4s4s",
+   "example_source_block_index": 37
+  },
+  {
+   "W": [
+    "6p",
+    "9p",
+    "5s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 48202,
+   "example_uncovered_hand": "1m1m1m7p8p9p9p9p1s1s1s5s5s",
+   "example_source_block_index": 1
+  },
+  {
+   "W": [
+    "7p",
+    "2s",
+    "5s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 48503,
+   "example_uncovered_hand": "1p1p1p7p7p2s2s3s3s4s4s5s5s",
+   "example_source_block_index": 27
+  },
+  {
+   "W": [
+    "7p",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 56227,
+   "example_uncovered_hand": "4m4m4m7p7p9p9p9p6s7s8s8s8s",
+   "example_source_block_index": 23
+  },
+  {
+   "W": [
+    "8m",
+    "2p",
+    "5p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 55693,
+   "example_uncovered_hand": "2m2m2m8m8m3p4p4p4p4p5p5p5p",
+   "example_source_block_index": 33
+  },
+  {
+   "W": [
+    "8m",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 53285,
+   "example_uncovered_hand": "7m7m7m8m8m5s5s6s6s7s7s8s8s",
+   "example_source_block_index": 55
+  },
+  {
+   "W": [
+    "9m",
+    "5p",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 52057,
+   "example_uncovered_hand": "6m6m6m9m9m3p3p3p6p7p8p8p8p",
+   "example_source_block_index": 48
+  },
+  {
+   "W": [
+    "9p",
+    "1s",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 58824,
+   "example_uncovered_hand": "4p4p4p9p9p1s1s1s2s3s6s7s8s",
+   "example_source_block_index": 42
+  },
+  {
+   "W": [
+    "9p",
+    "2s",
+    "5s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 61134,
+   "example_uncovered_hand": "8p8p8p9p9p2s2s2s3s4s8s8s8s",
+   "example_source_block_index": 56
+  },
+  {
+   "W": [
+    "9p",
+    "5s",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 65
+   },
+   "n_blocks": 65,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 62683,
+   "example_uncovered_hand": "7m8m9m2p2p2p9p9p6s7s8s8s8s",
+   "example_source_block_index": 17
+  },
+  {
+   "W": [
+    "3m",
+    "3s",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 43984,
+   "example_uncovered_hand": "3m3m3s3s4s4s5s5s6s6s7s7s7s",
+   "example_source_block_index": 13
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "6p"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 54015,
+   "example_uncovered_hand": "3m3m3m4m4m5m5m6m4p4p4p6p6p",
+   "example_source_block_index": 41
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "7p"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 61685,
+   "example_uncovered_hand": "3m3m3m4m5m7p7p1s2s3s5s6s7s",
+   "example_source_block_index": 0
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "8p"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 2,
+   "global_hits": 56049,
+   "example_uncovered_hand": "3m3m3m4m5m8p8p9p9p9p6s6s6s",
+   "example_source_block_index": 9
+  },
+  {
+   "W": [
+    "3m",
+    "6m",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 53172,
+   "example_uncovered_hand": "4m5m6m6m6m1s1s2s2s3s3s8s8s",
+   "example_source_block_index": 12
+  },
+  {
+   "W": [
+    "3p",
+    "6p",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 43863,
+   "example_uncovered_hand": "3p3p3p4p5p5p5p5p1s2s3s6s6s",
+   "example_source_block_index": 38
+  },
+  {
+   "W": [
+    "3p",
+    "6p",
+    "8s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 54416,
+   "example_uncovered_hand": "4p5p6p6p6p8p8p8p7s7s7s8s8s",
+   "example_source_block_index": 26
+  },
+  {
+   "W": [
+    "4m",
+    "3s",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 58421,
+   "example_uncovered_hand": "4m4m9m9m9m1s2s3s4s5s6s6s6s",
+   "example_source_block_index": 58
+  },
+  {
+   "W": [
+    "4m",
+    "7m",
+    "3p"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 54822,
+   "example_uncovered_hand": "4m5m5m6m6m7m7m7m3p3p7p7p7p",
+   "example_source_block_index": 43
+  },
+  {
+   "W": [
+    "4m",
+    "7m",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 6,
+   "global_hits": 63707,
+   "example_uncovered_hand": "4m4m4m5m6m1p2p3p4s4s7s7s7s",
+   "example_source_block_index": 7
+  },
+  {
+   "W": [
+    "4p",
+    "4s",
+    "7s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 0,
+   "global_hits": 55223,
+   "example_uncovered_hand": "4p4p4s4s5s5s6s6s7s7s8s8s8s",
+   "example_source_block_index": 14
+  },
+  {
+   "W": [
+    "4p",
+    "7p",
+    "4s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 1,
+   "global_hits": 52947,
+   "example_uncovered_hand": "5p5p5p5p6p7p7p7p4s4sNNN",
+   "example_source_block_index": 17
+  },
+  {
+   "W": [
+    "7m",
+    "3s",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 2,
+   "hands_verified": 40,
+   "same_class_hits": 3,
+   "global_hits": 54044,
+   "example_uncovered_hand": "7m7m8m8m8m4p5p6p4s5s6s6s6s",
+   "example_source_block_index": 23
+  },
+  {
+   "W": [
+    "8p",
+    "3s",
+    "6s"
+   ],
+   "blocks_kinds": {
+    "II": 66
+   },
+   "n_blocks": 66,
+   "baseline_codes": 1,
+   "hands_verified": 40,
+   "same_class_hits": 4,
+   "global_hits": 65404,
+   "example_uncovered_hand": "8p8p9p9p9p3s3s3s4s5s5s5s5s",
+   "example_source_block_index": 59
+  }
+ ],
+ "n_uncovered": 137,
+ "hands_total": 5480,
+ "same_class_hits_total": 596,
+ "global_hits_total": 10822690
+}

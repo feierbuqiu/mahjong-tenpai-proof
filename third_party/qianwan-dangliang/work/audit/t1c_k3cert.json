@@ -1,0 +1,41 @@
+{
+ "file": "k3_disproof_certificate.json",
+ "keys": [
+  "theorem",
+  "U",
+  "tile_indices",
+  "|U|",
+  "budget",
+  "N",
+  "L",
+  "N_plus_L",
+  "disproved",
+  "n_hands",
+  "n_vectors",
+  "class_list_digest_sha256",
+  "all_class_W",
+  "L_classes"
+ ],
+ "my_N": 347,
+ "my_L": 52,
+ "cert_N": 347,
+ "cert_L": 52,
+ "cert_N_plus_L": 399,
+ "arithmetic_ok": true,
+ "cert_all_class_W_len": 347,
+ "class_set_equal": true,
+ "missing_from_cert": [],
+ "extra_in_cert": [],
+ "digest_target": "270a2d0cb79f0f66f38e41d867fd990040254dd7e8358cf17ebd9f3cd975b255",
+ "digest_attempts": {
+  "json_sorted_str": "89364ba2c605a8ba348a6b2d5dab0800a5085eebe8e5f42a8589fbbb8abd28a4",
+  "json_sorted_ascii": "89364ba2c605a8ba348a6b2d5dab0800a5085eebe8e5f42a8589fbbb8abd28a4",
+  "lines": "6499698f9478deb3b67e20902c9723804e1e4287de15f5308fa39b472959228b",
+  "lines_mine": "5101e0c891e4c4c7aa51e4448f37ff276ed648632b642a155a1c2d813cb844d2"
+ },
+ "digest_matched": [],
+ "L_class_checks": 52,
+ "L_class_bad": [],
+ "L_class_bad_count": 0,
+ "myL_equals_certL_set": true
+}

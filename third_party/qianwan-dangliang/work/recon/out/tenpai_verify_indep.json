@@ -1,0 +1,303 @@
+{
+ "witness": {
+  "hand": "111222333444s+E",
+  "waits": [
+   27
+  ],
+  "decomp_count_s": 3,
+  "naive_count": 3,
+  "solutions": [
+   [
+    [
+     [
+      "s1",
+      1
+     ],
+     [
+      "s2",
+      1
+     ],
+     [
+      "s3",
+      1
+     ]
+    ],
+    [
+     [
+      "s1",
+      1
+     ],
+     [
+      "s2",
+      1
+     ],
+     [
+      "s3",
+      1
+     ]
+    ],
+    [
+     [
+      "s1",
+      1
+     ],
+     [
+      "s2",
+      1
+     ],
+     [
+      "s3",
+      1
+     ]
+    ],
+    [
+     [
+      "s4",
+      3
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      "s2",
+      1
+     ],
+     [
+      "s3",
+      1
+     ],
+     [
+      "s4",
+      1
+     ]
+    ],
+    [
+     [
+      "s2",
+      1
+     ],
+     [
+      "s3",
+      1
+     ],
+     [
+      "s4",
+      1
+     ]
+    ],
+    [
+     [
+      "s2",
+      1
+     ],
+     [
+      "s3",
+      1
+     ],
+     [
+      "s4",
+      1
+     ]
+    ],
+    [
+     [
+      "s1",
+      3
+     ]
+    ]
+   ],
+   [
+    [
+     [
+      "s1",
+      3
+     ]
+    ],
+    [
+     [
+      "s2",
+      3
+     ]
+    ],
+    [
+     [
+      "s3",
+      3
+     ]
+    ],
+    [
+     [
+      "s4",
+      3
+     ]
+    ]
+   ]
+  ]
+ },
+ "small": [
+  {
+   "universe": "1m2m3m1p2p3p",
+   "types": [
+    0,
+    1,
+    2,
+    9,
+    10,
+    11
+   ],
+   "hands": 1686,
+   "canonical": 924,
+   "naive": 1044,
+   "excess": 120,
+   "wait_pairs": 1452,
+   "ov_chiitoi": 0,
+   "ov_kokushi": 0,
+   "sec": 50.1
+  },
+  {
+   "universe": "1m2m3m4m5m1p",
+   "types": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    9
+   ],
+   "hands": 1686,
+   "canonical": 912,
+   "naive": 956,
+   "excess": 44,
+   "wait_pairs": 1945,
+   "ov_chiitoi": 0,
+   "ov_kokushi": 0,
+   "sec": 47.9
+  },
+  {
+   "universe": "1m9m1p9p1s9s东中",
+   "types": [
+    0,
+    8,
+    9,
+    17,
+    18,
+    26,
+    27,
+    31
+   ],
+   "hands": 29400,
+   "canonical": 840,
+   "naive": 840,
+   "excess": 0,
+   "wait_pairs": 1400,
+   "ov_chiitoi": 0,
+   "ov_kokushi": 0,
+   "sec": 41.4
+  },
+  {
+   "universe": "清一色 m1..m9",
+   "types": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "hands": 93600,
+   "canonical": 40070,
+   "naive": 40070,
+   "excess": 0,
+   "wait_pairs": 84779,
+   "ov_chiitoi": 126,
+   "ov_kokushi": 0,
+   "sec": 56.8
+  },
+  {
+   "universe": "1m2m3m4m1p2p3p4p",
+   "types": [
+    0,
+    1,
+    2,
+    3,
+    9,
+    10,
+    11,
+    12
+   ],
+   "hands": 29400,
+   "canonical": 10400,
+   "naive": 11330,
+   "excess": 930,
+   "wait_pairs": 18068,
+   "ov_chiitoi": 28,
+   "ov_kokushi": 0,
+   "sec": 52.0
+  },
+  {
+   "universe": "2m3m4m东",
+   "types": [
+    1,
+    2,
+    3,
+    27
+   ],
+   "hands": 20,
+   "canonical": 10,
+   "naive": 12,
+   "excess": 2,
+   "wait_pairs": 16,
+   "ov_chiitoi": 0,
+   "ov_kokushi": 0,
+   "sec": 55.7
+  },
+  {
+   "universe": "2m3m4m1p2p3p",
+   "types": [
+    1,
+    2,
+    3,
+    9,
+    10,
+    11
+   ],
+   "hands": 1686,
+   "canonical": 924,
+   "naive": 1044,
+   "excess": 120,
+   "wait_pairs": 1452,
+   "ov_chiitoi": 0,
+   "ov_kokushi": 0,
+   "sec": 34.5
+  },
+  {
+   "universe": "m1-6 + p1-6 (12 张牌)",
+   "types": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "hands": 1613184,
+   "canonical": 201020,
+   "naive": 211628,
+   "excess": 10608,
+   "wait_pairs": 353784,
+   "ov_chiitoi": 588,
+   "ov_kokushi": 0,
+   "sec": 41.3
+  }
+ ]
+}

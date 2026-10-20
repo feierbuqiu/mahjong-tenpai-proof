@@ -1,0 +1,29 @@
+{
+ "flush": {
+  "W_std": {
+   "classes": 387,
+   "classes_without_common_code": {
+    "1": 40,
+    "2": 53,
+    "3": 87,
+    "4": 111
+   }
+  },
+  "W_full": {
+   "classes": 387,
+   "classes_without_common_code": {
+    "1": 40,
+    "2": 53,
+    "3": 87,
+    "4": 111
+   }
+  }
+ },
+ "hand_counts": {
+  "winning14": 13259,
+  "tenpai13_std": 40070,
+  "classes_Wstd": 387,
+  "classes_Wfull": 387,
+  "hands_with_chiitoi_extra": 0
+ }
+}

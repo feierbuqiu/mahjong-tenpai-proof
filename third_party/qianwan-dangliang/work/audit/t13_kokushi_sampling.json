@@ -1,0 +1,19 @@
+{
+ "kokushi": {
+  "hand_count": 157,
+  "listening": 157,
+  "bad": []
+ },
+ "sim_hands": 1800000,
+ "sim_listening": 666473,
+ "sim_bad": 0,
+ "sim_bad_examples": [],
+ "by_family": {
+  "chi": 323505,
+  "I": 181356,
+  "kok": 143901,
+  "II": 17672,
+  "uni": 39
+ },
+ "elapsed": 534.9
+}
