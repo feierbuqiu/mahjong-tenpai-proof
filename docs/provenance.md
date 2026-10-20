@@ -15,7 +15,7 @@ The puzzle was first posed on Bilibili: <https://www.bilibili.com/opus/124685344
 
 The original fixes the definitions, defines the two viewing models (adaptive and pre-fixed positions) and proves them equivalent. As written, it does not claim the value of *k*\*.
 
-**Formula syntax.** The original wrote its formulas with the delimiters `\(…\)` and `\[…\]`, which GitHub does not display as mathematics. For publication here they were converted to GitHub's math syntax. The text and the formulas themselves are unchanged.
+**Formula syntax.** The original wrote its formulas with the delimiters `\(…\)` and `\[…\]`, which GitHub does not display as mathematics. For publication here they were converted to GitHub's math syntax, and `\operatorname{Perm}`, which GitHub's math renderer does not allow, was written as `\mathrm{Perm}`. The text is otherwise unchanged.
 
 ## The computation and the construction: Qianwan Dangliang (千万当量)
 

@@ -107,10 +107,10 @@ Success must be guaranteed for every $`H \in \mathcal H`$. That hands are "dealt
 
 ## 3. The common encoding stage
 
-Let $`\operatorname{Perm}(H)`$ be the set of all distinct ordered arrangements of length 13 of the multiset $`H`$. Dai and Bing may agree in advance on a **deterministic encoding function**
+Let $`\mathrm{Perm}(H)`$ be the set of all distinct ordered arrangements of length 13 of the multiset $`H`$. Dai and Bing may agree in advance on a **deterministic encoding function**
 
 ```math
-E : \mathcal H \longrightarrow T^{13}, \qquad E(H) \in \operatorname{Perm}(H) \quad (\forall H \in \mathcal H).
+E : \mathcal H \longrightarrow T^{13}, \qquad E(H) \in \mathrm{Perm}(H) \quad (\forall H \in \mathcal H).
 ```
 
 For input $`H`$, Dai places $`E(H)_i`$ at position $`i`$, all face down. The function may not covertly introduce channels outside the tiles, nor change multiplicities. Dai then leaves.
@@ -198,7 +198,7 @@ This convention means "look at the first $`k`$ tiles". It does not assume that D
 2. **A ⇒ B.** Take any model A protocol that guarantees success, with encoding function $`E_A`$, query rule $`q_1, \ldots, q_k`$ and decoding rule $`D_A`$.
    - **The observed sequence.** For each hand $`H`$, running the protocol yields a definite **ordered observation sequence** $`v(H) = (v_1(H), \ldots, v_k(H))`$.
    - **It is admissible.** Since model A only queries distinct positions, no tile type occurs in $`v(H)`$ more often than in $`H`$.
-   - **A new encoding.** Dai can therefore switch to a new encoding $`E_B`$: place $`v_1(H), \ldots, v_k(H)`$ in order at the **fixed first $`k`$ positions**, and arrange the remaining $`13 - k`$ tiles arbitrarily after them. Then $`E_B(H) \in \operatorname{Perm}(H)`$, fully within the encoding constraints.
+   - **A new encoding.** Dai can therefore switch to a new encoding $`E_B`$: place $`v_1(H), \ldots, v_k(H)`$ in order at the **fixed first $`k`$ positions**, and arrange the remaining $`13 - k`$ tiles arbitrarily after them. Then $`E_B(H) \in \mathrm{Perm}(H)`$, fully within the encoding constraints.
    - **Decoding.** Bing reads the first $`k`$ positions and obtains exactly the observation sequence $`v(H)`$ of model A. Applying $`D_A`$ directly outputs $`W(H)`$. Hence $`k_B \le k_A`$.
 3. Combining both directions gives $`k_A = k_B`$. $`\square`$
 
