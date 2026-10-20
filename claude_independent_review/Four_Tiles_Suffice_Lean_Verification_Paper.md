@@ -404,7 +404,7 @@ Everything else lies outside the trusted base. The plan, the tables and the 1,07
 
 **Threats to validity and their mitigations:**
 1. **Kernel soundness.** The kernel is small and widely used. An independent re-check with a second kernel implementation remains possible; see Section 7.4.
-2. **Specification fidelity.** This is the main human-judged step. It was addressed by line-by-line comparison with the statement, by our own review and by the independent review (Section 5.5), and the specification is short enough to be read in full (Appendix A).
+2. **Specification fidelity.** This is the main human-judged step. It was addressed by line-by-line comparison with the problem's definitions, by our own review and by the two independent reviews (Section 5.5), and the specification is short enough to be read in full (Appendix A).
 3. **Toolchain integrity.** The toolchain is the official release, pinned in `lean-toolchain`.
 4. **Environment.** Kernel checking does not depend on timing or scheduling. Three complete builds produced the same result: two on Windows and one on Linux in continuous integration (Section 5.2).
 5. **Scope.** See Section 7.3.
@@ -460,7 +460,7 @@ The output is byte-identical to the distributed files on every platform (102 fil
 
 Three complementary routes support re-execution by others:
 1. **Continuous integration.**
-   - The workflow [`.github/workflows/lean-kernel-build.yml`](../.github/workflows/lean-kernel-build.yml), adapted from the template [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml), runs on GitHub Actions whenever the Lean sources change. It checks the source digest, installs the pinned toolchain, runs `lake build` from scratch, so that the acceptance gate of Section 5.3 decides the outcome, and keeps the log, timing and memory samples.
+   - The workflow [`.github/workflows/lean-kernel-build.yml`](../.github/workflows/lean-kernel-build.yml), adapted from the template [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml), runs on GitHub Actions whenever the Lean sources change. It checks the source and configuration digests, installs the pinned toolchain, runs `lake build` from scratch, so that the acceptance gate of Section 5.3 decides the outcome, and keeps the log, timing and memory samples.
    - It uses GitHub's standard Linux runner for public repositories, which provides 4 CPUs and 16 GB of RAM (GitHub, n.d.). The [run](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/runs/39360643654) of 20 October 2026 completed the build in 31 minutes 37 seconds with a combined memory peak of 9.5 GB, which confirms that the six-chain configuration fits this runner. Its log is kept in [`logs/ci_build/`](lean_formal/logs/ci_build/).
    - Further workflows run on every relevant change. [`integrity.yml`](../.github/workflows/integrity.yml) checks that the third-party mirror is byte-for-byte unchanged, that the Lean sources and the build configuration match their recorded digests, and that every generated file regenerates byte for byte. [`cross-check.yml`](../.github/workflows/cross-check.yml) rebuilds the cross-check programs of Section 4.6 on Windows and re-runs them against their recorded outputs, including negative tests. [`codeql.yml`](../.github/workflows/codeql.yml) runs CodeQL code scanning on the workflows, the Python tools and the C programs.
    - GitHub's runner for private repositories provides only 2 CPUs and 8 GB. There the checks would have to be regenerated with fewer chains, which changes the source digest.
