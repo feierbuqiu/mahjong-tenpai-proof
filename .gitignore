@@ -1,0 +1,23 @@
+# Lean / Lake build output
+.lake/
+*.olean
+*.ilean
+*.trace
+
+# Compiled binaries (the C tools are distributed as source)
+*.exe
+*.o
+*.obj
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Local scratch output
+manifest.json
+out.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
