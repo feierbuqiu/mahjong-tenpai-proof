@@ -1,0 +1,46 @@
+# Automatic code scanning (CodeQL) of the repository's own code: the workflows, the Python tools and
+# the C programs.  Results appear in the Security tab and on pull requests.  The verbatim third-party
+# mirror is excluded: it is archived as published and is not maintained here.
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '23 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyse:
+    name: Analyse (${{ matrix.language }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [actions, python, c-cpp]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee  # v4.39.0
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+          config: |
+            paths-ignore:
+              - third_party
+
+      - uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee  # v4.39.0
+        with:
+          category: /language:${{ matrix.language }}

@@ -1,0 +1,62 @@
+# Rebuilds the independent cross-check programs (C, Windows) and re-runs them with src/recheck.sh:
+# every program must reproduce its recorded output in out/, and invalid input (bad thread counts,
+# a plan with a missing class or an out-of-range tile) must be rejected with a non-zero exit code.
+name: Cross-check programs
+
+on:
+  push:
+    paths:
+      - 'claude_independent_review/src/**'
+      - 'claude_independent_review/out/**'
+      - '.github/workflows/cross-check.yml'
+  pull_request:
+    paths:
+      - 'claude_independent_review/src/**'
+      - 'claude_independent_review/out/**'
+      - '.github/workflows/cross-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  recheck:
+    # Pull requests from branches of this repository are already checked by their push run.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: windows-2025
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install the Lean toolchain (its clang builds the programs, as in docs/reproducing.md)
+        shell: pwsh
+        run: |
+          curl.exe -sSfL https://raw.githubusercontent.com/leanprover/elan/227caca133724d5516bee25c2aeb3e609478f2d8/elan-init.ps1 -o elan-init.ps1  # elan v4.2.4
+          ./elan-init.ps1 -NoPrompt $true -NoModifyPath $true -DefaultToolchain none
+          "$env:USERPROFILE\.elan\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Build the programs
+        run: |
+          elan toolchain install leanprover/lean4:v4.35.0
+          TC="$(cygpath -u "$USERPROFILE")/.elan/toolchains/leanprover--lean4---v4.35.0"
+          cd claude_independent_review/src
+          for p in census completeness g_sources build; do
+            "$TC/bin/clang.exe" -O2 -march=native -ffreestanding -isystem "$TC/include/clang" -Wall -Wno-unused-function "$p.c" -o "../$p.exe"
+          done
+
+      - name: Re-run and compare with the recorded outputs
+        working-directory: claude_independent_review
+        run: bash src/recheck.sh | tee recheck.log
+
+      - name: Keep the log
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
+        with:
+          name: cross-check-log
+          path: claude_independent_review/recheck.log
+          if-no-files-found: warn
