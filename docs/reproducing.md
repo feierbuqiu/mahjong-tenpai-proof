@@ -82,19 +82,20 @@ cd claude_independent_review/src
 $TC/bin/clang -O2 -march=native -ffreestanding -isystem $TC/include/clang census.c -o ../census.exe
 ```
 
-## 5. Online re-execution
+## 5. Online re-execution (continuous integration)
 
-[`claude_independent_review/lean_formal/ci/lean-kernel-build.yml`](../claude_independent_review/lean_formal/ci/lean-kernel-build.yml) is a GitHub Actions workflow template. It has not yet been run online.
+The checks also run on GitHub Actions, on GitHub's standard Linux runner for public repositories (4 CPUs, 16 GB of RAM):
 
-**What it does:**
-1. installs elan;
-2. checks the source digest;
-3. runs `lake build`;
-4. keeps the log.
+| Workflow | When it runs | What it does |
+|---|---|---|
+| [`lean-kernel-build.yml`](../.github/workflows/lean-kernel-build.yml) | whenever the Lean sources change, and on demand from the *Actions* tab | checks the source digest, installs the pinned toolchain, runs `lake build` from scratch (the acceptance gate decides the outcome) and keeps the log, timing and memory samples as a run artefact |
+| [`integrity.yml`](../.github/workflows/integrity.yml) | on every push and pull request | checks that the third-party mirror is byte-for-byte unchanged, with no file added or removed, and that the Lean sources match the recorded digest |
 
-**Using it.** The template expects `lean_project/` and `tools/` at the root of the repository it runs in. To use it here, copy it to `.github/workflows/` and prefix its paths with `claude_independent_review/lean_formal/`.
+**Recorded run.** The [run of 20 October 2026](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/runs/39360643654) completed the build in 31 minutes 37 seconds, with a combined memory peak of 9.5 GB (5.0 GB for one process). Its log, timing, memory samples and runner details are kept in [`logs/ci_build/`](../claude_independent_review/lean_formal/logs/ci_build/).
 
-**Runner size.** GitHub's standard Linux runner for public repositories has 4 CPUs and 16 GB of RAM, which should fit the measured peak of about 12 GB.
+**Running it yourself.** Fork the repository and start the workflow from the fork's *Actions* tab. It needs no secrets.
+
+**Template.** The workflow was adapted from [`claude_independent_review/lean_formal/ci/lean-kernel-build.yml`](../claude_independent_review/lean_formal/ci/lean-kernel-build.yml), which expects `lean_project/` and `tools/` at the root of the repository it runs in.
 
 ## 6. Re-check with another kernel (optional)
 

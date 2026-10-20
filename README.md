@@ -58,6 +58,7 @@ lake build
 
 - **Success is the acceptance check.** The project ends with an acceptance gate (`#guard_msgs` on `#print axioms`), so the build fails unless the final theorem depends on exactly Lean's three standard axioms. Any `sorry` or extra axiom therefore makes it fail.
 - **Expected cost.** About 22 minutes on a 16-thread, 32 GB machine, with peak memory of about 12 GB in total.
+- **Online.** The same check runs on GitHub Actions whenever the Lean sources change (badge above); the recorded run took 31 minutes 37 seconds on a standard 4-CPU, 16 GB runner.
 - **More.** See [`docs/reproducing.md`](docs/reproducing.md) for source-identity checks, regenerating every generated file and online re-execution.
 
 ## Documentation

@@ -1,0 +1,7 @@
+date_utc: 2026-10-20T02:45:37Z
+commit: 11c25fa625fef457642571b639c6aeff30691c92
+os: Ubuntu 24.04.5 LTS, kernel 6.17.0-1022-azure
+cpu: 4 x AMD EPYC 7763 64-Core Processor
+memory_mb: 15989, swap_mb: 3071
+Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)

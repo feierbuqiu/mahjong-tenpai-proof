@@ -38,6 +38,8 @@ These are in [`claude_independent_review/`](../claude_independent_review/).
 | Independent cross-check | [`src/`](../claude_independent_review/src/) (programs), [`out/`](../claude_independent_review/out/) (outputs) | Written from the problem statement, sharing no code with the original study. They re-derive the census (all 92,371,838 tenpai hands, 2,846 wait classes) and the lower-bound counts (7,875 / 5,628 / 347), and check both an independent plan (11,123 codes) and the original plan against every hand. |
 | The paper | [`Four_Tiles_Suffice_Lean_Verification_Paper.md`](../claude_independent_review/Four_Tiles_Suffice_Lean_Verification_Paper.md) | |
 
+**Continuous integration.** The workflows in [`.github/workflows/`](../.github/workflows/) re-run the kernel check and the integrity checks on GitHub Actions; see [`reproducing.md`](reproducing.md).
+
 **AI assistance.** This work was carried out with Anthropic's Claude Code running the Claude Opus 5.5 model. All proofs are checked by the Lean kernel.
 
 **Independent review.** A separately operated AI agent reviewed the Lean sources statically. The paper (§5.5) lists its three findings, all of which were adopted.

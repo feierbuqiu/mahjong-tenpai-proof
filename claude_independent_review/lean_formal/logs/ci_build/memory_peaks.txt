@@ -1,0 +1,4 @@
+peak_used_mb: 8838
+peak_lean_total_mb: 9527
+peak_lean_single_mb: 5004
+max_lean_procs: 4

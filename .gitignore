@@ -13,9 +13,9 @@
 __pycache__/
 *.pyc
 
-# Local scratch output
-manifest.json
-out.json
+# Scratch output of the source-identity check (docs/reproducing.md, paper Appendix B)
+/out.json
+/claude_independent_review/out.json
 
 # OS files
 .DS_Store
