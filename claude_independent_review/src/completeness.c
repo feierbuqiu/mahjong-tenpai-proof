@@ -67,7 +67,7 @@ static void on_hand(void *vctx, uint8_t *c, uint64_t W) {
 /* ---- (b) brute force side ---- */
 typedef struct { int u, first; Stat st; } BJob;
 static int UT[NU_T][NT], UN[NU_T];
-static BJob *JOBS; static int NJOBS; static volatile int64_t JNEXT;
+static BJob *JOBS; static int NJOBS; static volatile int64_t JNEXT, JDONE;
 
 static void bf_rec(BJob *j, uint8_t *c, int pos, int left) {
     int u = j->u;
@@ -98,6 +98,7 @@ static DWORD __stdcall bf_worker(void *arg) {
         int a = j->first / 5, b = j->first % 5;
         c[UT[j->u][0]] = (uint8_t)a; c[UT[j->u][1]] = (uint8_t)b;
         if (a + b <= 13) bf_rec(j, c, 2, 13 - a - b);
+        __atomic_fetch_add(&JDONE, 1, __ATOMIC_RELAXED);
     }
     return 0;
 }
@@ -115,9 +116,11 @@ int main(void) {
     enum_prepare();
     EnumThread *ets = calloc(nth, sizeof(EnumThread));
     GCtx *gc = calloc(nth, sizeof(GCtx));
+    if (!ets || !gc) { printf("out of memory\n"); return 1; }
     for (int i = 0; i < nth; i++) { ets[i].ctx = &gc[i]; ets[i].fn = on_hand; }
-    enum_run(ets, nth);
+    int ran_ok = enum_run(ets, nth);   /* 0 if any thread or work item failed */
     Stat *A = calloc(NU_T, sizeof(Stat));
+    if (!A) { printf("out of memory\n"); return 1; }
     for (int u = 0; u < NU_T; u++)
         for (int i = 0; i < nth; i++) {
             Stat *s = &gc[i].st[u];
@@ -128,11 +131,12 @@ int main(void) {
     /* (b) */
     NJOBS = NU_T * 25;
     JOBS = calloc(NJOBS, sizeof(BJob));
+    if (!JOBS) { printf("out of memory\n"); return 1; }
     for (int u = 0; u < NU_T; u++) for (int f = 0; f < 25; f++) { JOBS[u * 25 + f].u = u; JOBS[u * 25 + f].first = f; }
     JNEXT = 0;
-    HANDLE h[64];
-    for (int i = 0; i < nth; i++) h[i] = CreateThread(0, 0, bf_worker, 0, 0, 0);
-    for (int i = 0; i < nth; i++) { WaitForSingleObject(h[i], INFINITE); CloseHandle(h[i]); }
+    JDONE = 0;
+    if (!run_threads(bf_worker, 0, nth)) ran_ok = 0;
+    if (JDONE != NJOBS) { printf("BRUTE FORCE INCOMPLETE: %lld of %d jobs processed\n", (long long)JDONE, NJOBS); ran_ok = 0; }
     printf("(b) brute-force pass done [%.1f s]\n", (GetTickCount64() - t0) / 1000.0);
     int allok = 1;
     for (int u = 0; u < NU_T; u++) {
@@ -149,5 +153,6 @@ int main(void) {
     }
     printf("VERDICT: %s\n", allok ? "generator reproduces brute force exactly on every test universe" : "MISMATCH");
     printf("elapsed %.1f s\n", (GetTickCount64() - t0) / 1000.0);
-    return 0;
+    printf("RESULT: %s\n", (allok && ran_ok) ? "OK" : "FAILED");
+    return (allok && ran_ok) ? 0 : 1;
 }

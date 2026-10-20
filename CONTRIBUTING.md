@@ -25,13 +25,13 @@ Thank you for your interest. Corrections, questions, independent re-checks and i
 
 The project lives in [`claude_independent_review/lean_formal/lean_project/`](claude_independent_review/lean_formal/lean_project/).
 
-1. Keep the trusted specification [`Tenpai/Spec.lean`](claude_independent_review/lean_formal/lean_project/Tenpai/Spec.lean) minimal and faithful to [`docs/problem-statement.md`](docs/problem-statement.md). Any change to it needs a clear justification in the pull request.
+1. Keep the trusted specification [`Tenpai/Spec.lean`](claude_independent_review/lean_formal/lean_project/Tenpai/Spec.lean) minimal and faithful to the problem as defined in the [paper](claude_independent_review/Four_Tiles_Suffice_Lean_Verification_Paper.md) (Section 1.1). Any change to it needs a clear justification in the pull request.
 2. Do not edit generated files by hand. The generated files are:
    - [`Tenpai/Data/*.lean`](claude_independent_review/lean_formal/lean_project/Tenpai/Data/);
    - [`Tenpai/Run/*.lean`](claude_independent_review/lean_formal/lean_project/Tenpai/Run/);
    - [`Tenpai/Main.lean`](claude_independent_review/lean_formal/lean_project/Tenpai/Main.lean).
 
-   Regenerate them with the tools in [`claude_independent_review/lean_formal/tools/`](claude_independent_review/lean_formal/tools/) (see [`docs/reproducing.md`](docs/reproducing.md)).
+   Regenerate them with the tools in [`claude_independent_review/lean_formal/tools/`](claude_independent_review/lean_formal/tools/) (see [`docs/reproducing.md`](docs/reproducing.md)). Continuous integration regenerates them on every change and fails if any file differs.
 3. Run `lake build`. It must succeed, which includes the acceptance gate at the end of `Main.lean`. Continuous integration repeats this check on GitHub Actions for every change to the Lean sources.
 4. If the sources change, record the new source manifest with [`tools/manifest.py`](claude_independent_review/lean_formal/tools/manifest.py). Update the digest wherever it is quoted ([`docs/reproducing.md`](docs/reproducing.md), the paper and the workflow template), and add the new build log under [`claude_independent_review/lean_formal/logs/`](claude_independent_review/lean_formal/logs/).
 

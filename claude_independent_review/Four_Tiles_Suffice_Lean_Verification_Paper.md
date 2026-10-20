@@ -14,14 +14,14 @@ We present an end-to-end formal verification, in the Lean 4 proof assistant, of 
 
 **Background.** An earlier computational study established, by exhaustive computation and an explicit construction, that this least value is *k*\* = 4. Its accompanying formal proof attempt, however, did not establish the result.
 
-**Our approach.** We transcribe the problem statement into a 91-line Lean specification and prove the theorem `kStar_eq_four : IsKStar 4`.
+**Our approach.** We transcribe the problem into a 91-line Lean specification and prove the theorem `kStar_eq_four : IsKStar 4`.
 - The proof uses the earlier study's encoding plan as an *untrusted certificate*.
 - It reduces the coverage of every legal tenpai hand to finite checks whose meaning is itself proved in Lean.
 - It discharges the 1,075 resulting checks by evaluation inside the Lean kernel, with no native code evaluation.
 
 **Assurance.** The final theorem depends only on Lean's three standard axioms, a property enforced at build time by a fail-closed gate. A from-scratch build, bound to a SHA-256 manifest of the sources, completes in 21 minutes 38 seconds on a 16-thread workstation. Continuous integration repeats the complete check from scratch on GitHub's standard Linux runner (4 CPUs, 16 GB of RAM) whenever the Lean sources change; there it completes in 31 minutes 37 seconds.
 
-**This paper.** We describe the kernel-oriented engineering that made a computation of this size feasible, an independent review and the changes it prompted, and the artefacts that let others reproduce the result locally or online.
+**This paper.** We describe the kernel-oriented engineering that made a computation of this size feasible, two independent reviews and the changes they prompted, and the artefacts that let others reproduce the result locally or online.
 
 **Keywords:** formal verification; Lean 4; proof by computation; kernel reduction; certificate checking; combinatorial coding; mahjong
 
@@ -46,11 +46,11 @@ The added tile *t* may not be a fifth copy of a type. The *wait set* of *H* is
 
 where *c<sub>H</sub>*(*t*) is the number of copies of *t* in *H* and 𝒢 is the set of winning 14-tile multisets.
 
-**The encoding game.** The puzzle was first posed in a Bilibili post by Lingzhi Shenpanzhe (Bilibili user 零之审判者; Lingzhi Shenpanzhe, 2026); the precise problem statement studied here is feierbuqiu (2026). It poses a cooperative game. Two parties agree on a protocol in advance:
+**The encoding game.** The puzzle was first posed in a Bilibili post by Lingzhi Shenpanzhe (Bilibili user 零之审判者; Lingzhi Shenpanzhe, 2026). It poses a cooperative game. Two parties agree on a protocol in advance:
 1. The first party sees a tenpai hand *H* and lays all thirteen tiles face down in an order of their choosing.
 2. The second party turns over *k* tiles at agreed positions and must then announce *W*(*H*) exactly.
 
-**From protocols to a combinatorial form.** The statement proves that adaptive and fixed-position viewing have the same optimum (its §6). It then eliminates positions entirely (its §7):
+**From protocols to a combinatorial form.** The second party may fix all *k* positions in advance or choose each position after seeing the earlier tiles. Both give the same optimum. An adaptive rule visits positions determined by the tiles already seen, so the first party, who knows the hand and the rule, can place exactly the tiles that would be seen, in the order they would be seen, at the first *k* positions. Positions can therefore be eliminated entirely:
 
 &nbsp;&nbsp;&nbsp;&nbsp;*k*\* = min { *k* ∈ {0, …, 13} : ∃ *f* : ℋ → *T<sup>k</sup>*, ∀*H* *f*(*H*) ∈ *A<sub>k</sub>*(*H*), ∀*H*, *H*′ (*f*(*H*) = *f*(*H*′) ⇒ *W*(*H*) = *W*(*H*′)) },
 
@@ -70,7 +70,7 @@ The answer *k*\* = 4 was obtained in an earlier computational study by Qianwan D
 
 We adopt that study's computation, construction and conclusion as they stand. **We did not alter its solution process or its construction.** Our contribution is the formal proof.
 
-The study also included a Lean development. Its definitions of feasibility and of a hand did not match the problem statement:
+The study also included a Lean development. Its definitions of feasibility and of a hand did not match the problem:
 - codes could contain values outside the 34 tile types;
 - hands were unconstrained arrays.
 
@@ -79,7 +79,7 @@ In addition, its large computations relied on native evaluation, which extends t
 ### 1.3 Contributions
 
 1. **A faithful specification.**
-   - A single 91-line file transcribes §2 and §7 of the problem statement.
+   - A single 91-line file transcribes the problem's definitions and its combinatorial form (Section 1.1).
    - It uses only Lean's core library and introduces none of the auxiliary notions (wait classes, code tables, decompositions) that the proof uses.
 2. **A kernel-only, end-to-end proof** of `kStar_eq_four : IsKStar 4` in Lean 4.35.0, the latest stable release at the time of writing (Lean FRO, 2026).
    - It contains no `sorry`, no custom axioms and no native evaluation.
@@ -94,7 +94,7 @@ In addition, its large computations relied on native evaluation, which extends t
 4. **Release engineering for trust and reproducibility:**
    - a fail-closed axiom gate;
    - a from-scratch build bound to a source manifest;
-   - an independent review whose findings were all adopted;
+   - two independent reviews, whose findings were all addressed;
    - an artefact that regenerates byte-for-byte;
    - continuous integration that repeats the complete kernel check online whenever the Lean sources change.
 
@@ -148,14 +148,14 @@ We are not aware of earlier work on the wait-set encoding problem itself.
 
 ### 3.1 Design principles
 
-The trusted statement is the single file [`Tenpai/Spec.lean`](lean_formal/lean_project/Tenpai/Spec.lean) (Appendix A). It was written against the problem statement, line by line, under three rules:
+The trusted statement is the single file [`Tenpai/Spec.lean`](lean_formal/lean_project/Tenpai/Spec.lean) (Appendix A). It was written line by line against the definitions of Section 1.1, under three rules:
 1. it imports nothing beyond Lean's core library;
-2. every definition corresponds to a clause of §2 or §7 of the statement;
+2. every definition corresponds to one of those definitions;
 3. the definitions are stated for readability, not for computation, so that no efficiency concern can distort their meaning.
 
 ### 3.2 Definitions
 
-| Problem statement | Lean definition |
+| Problem | Lean definition |
 |---|---|
 | 34 tile types *T* | `Tile := Fin 34` (0–8 characters, 9–17 dots, 18–26 bamboos, 27–33 honours) |
 | hand as a multiset | `Counts := Tile → Nat` |
@@ -172,14 +172,14 @@ The trusted statement is the single file [`Tenpai/Spec.lean`](lean_formal/lean_p
 
 ### 3.3 Fidelity
 
-Each rule of the statement has a visible counterpart:
+Each rule of the problem has a visible counterpart:
 - **Runs stay within a suit, and honours never form runs.** Enforced by `Meld.Valid`.
 - **Four copies of one type do not count as two pairs.** Enforced by `S.Nodup` together with exact counts.
 - **No winning multiset has more than four copies of a type, and a fifth copy cannot be a wait.** Enforced by `∀ s, G s ≤ 4` and by `H t < 4` respectively.
 - **Every legal tenpai hand is an input.** Enforced by the universal quantification over `{H // InH H}`.
 - **Messages are ordered and respect stock.** Enforced by `Fin k → Tile` with the multiplicity bound in `Admissible`.
 - **Equal messages force equal wait sets.** Expressed by `f H = f H' → W H.1 = W H'.1`.
-- **No computability or uniformity requirement is added.** As in §7, `f` is an arbitrary function.
+- **One function serves every hand, with no computability or efficiency requirement.** As in the combinatorial form, `f` is an arbitrary function, fixed once for all inputs.
 
 The exact multiset decomposition in `IsStandard` already forces a total of 14 tiles, so no separate cardinality clause is needed. An independent review reached the same assessment (Section 5.5).
 
@@ -223,7 +223,7 @@ The argument is proved for each *k* ≤ 3 directly, without any monotonicity ass
 - `admissible_of_fits` turns the packed containment test into the multiplicity bound of `Admissible`;
 - `validCode` and `tupleOf_inj` ensure that integer codes correspond one-to-one to four-tuples of tiles.
 
-The selection is made with `Classical.choose`, which is the source of the `Classical.choice` axiom. The theorem therefore asserts that such a function *exists*, which is exactly what §7 requires; no executable encoder is certified.
+The selection is made with `Classical.choose`, which is the source of the `Classical.choice` axiom. The theorem therefore asserts that such a function *exists*, which is exactly what the combinatorial form requires; no executable encoder is certified.
 
 **Decoding.** A decoding table maps each ordered code to a wait mask. The kernel check `decodeOK` confirms that every code of every class maps back to that class. Equal messages therefore imply equal wait sets.
 
@@ -281,7 +281,7 @@ Codes were reordered *within* each class by usefulness, solely to shorten kernel
 **Other data.**
 - The 347 lower-bound witnesses and the seven-pairs group boundaries are likewise data.
 - All data and all 1,075 leaf statements are produced by generator scripts. These are outside the trusted base: a wrong datum can only make a check fail, never make a false theorem pass.
-- Regenerating every data and leaf file from the inputs reproduces the published files byte for byte.
+- Regenerating every data and leaf file from the inputs reproduces the published files byte for byte, on any platform; continuous integration checks this on every change (Section 6.5).
 
 ### 4.6 Independent cross-check of the computational result
 
@@ -290,7 +290,7 @@ Before formalising, we independently re-derived the earlier study's principal re
 - **Lower bound.** Three independent implementations confirmed the counts 7,875, 5,628 and 347.
 - **A distinct construction.** We built an encoding plan of our own (11,123 ordered codes). Both it and the original plan were checked against every one of the 92,371,838 hands, with no failures.
 
-Our programs and their recorded outputs are published in [`src/`](src/) and [`out/`](out/). The computation and the conclusion of the earlier study withstood this independent scrutiny. The present paper is concerned with the formal proof.
+Our programs and their recorded outputs are published in [`src/`](src/) and [`out/`](out/). After the second independent review (Section 5.5) the programs were changed to fail loudly on any incomplete or failed check; a re-run reproduced every recorded output ([`out/recheck.log`](out/recheck.log)). The computation and the conclusion of the earlier study withstood this independent scrutiny. The present paper is concerned with the formal proof.
 
 ### 4.7 Use of AI assistance
 
@@ -300,7 +300,7 @@ The formalisation was carried out with the assistance of Claude Opus 5.5 (Anthro
 - made the key decisions on scope and direction;
 - reviewed the outcomes.
 
-The Lean kernel is the safeguard for correctness: AI-written definitions are reviewed against the problem statement, and AI-written proofs are accepted only if the kernel checks them. Details are given in the Declaration of Generative AI Use.
+The Lean kernel is the safeguard for correctness: AI-written definitions are reviewed against the problem's definitions, and AI-written proofs are accepted only if the kernel checks them. Details are given in the Declaration of Generative AI Use.
 
 ---
 
@@ -363,10 +363,10 @@ A manifest tool records the SHA-256 digest of every source file and a combined d
 - **Before and after.** The digest of the 126 Lean sources was identical before and after the authoritative build: `a179bd53953a21dc4b38489f9cc13e10c698a23b034555ae413b85e68ef191d2`. It equals the digest of the distributed copy.
 - **Relation to the reviewed snapshot.** Compared with the snapshot examined by the independent review (`dd200c59…8278f`), exactly one file differs: `Main.lean`, to which the gate of Section 5.3 was appended.
 
-### 5.5 Independent review
+### 5.5 Independent reviews
 
 An independent, separately operated AI agent performed a static source-level review of the project (*Lean duli jingtai shenyue*, 2026). It concluded that:
-- the specification matches the problem statement;
+- the specification matches the problem's definition;
 - the chain from definitions to the final theorem is complete;
 - no additional trust entry point exists.
 
@@ -377,6 +377,21 @@ It raised three non-blocking findings, all of which we adopted:
 
 The review also noted a scope boundary, discussed in Section 7.3.
 
+A second, separately operated AI agent later audited the published repository at commit `0c786e3` (*mahjong-tenpai-proof duli jishu shenhe baogao*, 2026). It found no error in the specification or in the proof. Its own checks included:
+- an independently written enumeration of the sub-universe {2m, …, 8m}, which reproduced the counts 7,875, 5,628 and 347;
+- a local rebuild of the 27 hand-written and data modules and of ten representative leaves;
+- a stratified sample of 17,910 tenpai hands, every one of which contains a code of its class.
+
+It raised seven engineering findings outside the main theorem. We addressed all of them:
+- **F01.** The cross-check programs of Section 4.6 could report success without enumerating anything, for example with zero threads, and some failed checks did not affect the exit code. They now confirm that every work item was processed and exit with a non-zero code on any failed check. A re-run reproduced every recorded output.
+- **F02.** On Linux, regenerating the four data modules wrote LF line endings instead of the published CRLF. The generator now writes CRLF explicitly.
+- **F03.** Continuous integration did not regenerate the generated files or test the failure paths of the cross-check programs. Both now run on every relevant change (Section 6.5).
+- **F04.** The digest check covered the Lean files but not the build configuration. It now covers both.
+- **F05, F06.** Two statements of scope, mainly in the repository README, were too broad. The end-to-end claim now notes that the physical viewing protocols are connected to the theorem by a prose argument (Section 7.3). The acceptance gate is now described as checking the final theorem's dependency cone, which is what it does.
+- **F07.** A demonstration script in the third-party mirror refers to a file name that differs in case from the mirrored file. We documented a workaround outside the mirror, which stays unmodified.
+
+Its further suggestions, such as readable boundary examples of the specification and an executable encoder, are listed as future work (Section 7.4).
+
 ### 5.6 Trustworthiness
 
 **Trusted base.** The result depends on:
@@ -385,16 +400,16 @@ The review also noted a scope boundary, discussed in Section 7.3.
 - the core-library definitions it uses (`Fin`, `List.finRange`, `List.countP`, `List.Nodup`, `List.sum`);
 - the integrity of the toolchain binaries.
 
-Everything else is checked rather than trusted: the plan, the tables, the 1,075 generated leaves, the generators, our census programs and the original study's verification scripts.
+Everything else lies outside the trusted base. The plan, the tables and the 1,075 generated leaves are checked by the kernel. The generators, our census programs and the original study's scripts are not themselves verified; the proof checks the properties of their outputs that it needs.
 
 **Threats to validity and their mitigations:**
 1. **Kernel soundness.** The kernel is small and widely used. An independent re-check with a second kernel implementation remains possible; see Section 7.4.
-2. **Specification fidelity.** This is the main human-judged step. It was addressed by line-by-line comparison with the statement, by our own review and by the independent review (Section 5.5), and the specification is short enough to be read in full (Appendix A).
+2. **Specification fidelity.** This is the main human-judged step. It was addressed by line-by-line comparison with the problem's definitions, by our own review and by the two independent reviews (Section 5.5), and the specification is short enough to be read in full (Appendix A).
 3. **Toolchain integrity.** The toolchain is the official release, pinned in `lean-toolchain`.
 4. **Environment.** Kernel checking does not depend on timing or scheduling. Three complete builds produced the same result: two on Windows and one on Linux in continuous integration (Section 5.2).
 5. **Scope.** See Section 7.3.
 
-**Overall assessment.** The statement *k*\* = 4, as defined in §7 of the problem statement, holds with the assurance of a machine-checked proof whose trusted base is the Lean kernel and a short specification.
+**Overall assessment.** The statement *k*\* = 4, in the combinatorial form of Section 1.1, holds with the assurance of a machine-checked proof whose trusted base is the Lean kernel and a short specification.
 
 ---
 
@@ -439,17 +454,17 @@ Starting from the original plan file and our witness certificate:
 2. `tools/plan_split.exe`, compiled from [`tools/plan_split.c`](lean_formal/tools/plan_split.c), regenerates the split plan;
 3. [`tools/gen_split.py`](lean_formal/tools/gen_split.py) regenerates the 97 check modules and `Main.lean`.
 
-The output is byte-identical to the distributed files (102 files compared, none differing). Appendix B lists the commands.
+The output is byte-identical to the distributed files on every platform (102 files compared, none differing), and continuous integration repeats the comparison on every change. Appendix B lists the commands.
 
 ### 6.5 Online reproduction
 
 Three complementary routes support re-execution by others:
 1. **Continuous integration.**
-   - The workflow [`.github/workflows/lean-kernel-build.yml`](../.github/workflows/lean-kernel-build.yml), adapted from the template [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml), runs on GitHub Actions whenever the Lean sources change. It checks the source digest, installs the pinned toolchain, runs `lake build` from scratch, so that the acceptance gate of Section 5.3 decides the outcome, and keeps the log, timing and memory samples.
+   - The workflow [`.github/workflows/lean-kernel-build.yml`](../.github/workflows/lean-kernel-build.yml), adapted from the template [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml), runs on GitHub Actions whenever the Lean sources change. It checks the source and configuration digests, installs the pinned toolchain, runs `lake build` from scratch, so that the acceptance gate of Section 5.3 decides the outcome, and keeps the log, timing and memory samples.
    - It uses GitHub's standard Linux runner for public repositories, which provides 4 CPUs and 16 GB of RAM (GitHub, n.d.). The [run](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/runs/39360643654) of 20 October 2026 completed the build in 31 minutes 37 seconds with a combined memory peak of 9.5 GB, which confirms that the six-chain configuration fits this runner. Its log is kept in [`logs/ci_build/`](lean_formal/logs/ci_build/).
-   - A second workflow, [`.github/workflows/integrity.yml`](../.github/workflows/integrity.yml), checks on every change that the third-party mirror is byte-for-byte unchanged and that the Lean sources match the recorded digest.
+   - Further workflows run on every relevant change. [`integrity.yml`](../.github/workflows/integrity.yml) checks that the third-party mirror is byte-for-byte unchanged, that the Lean sources and the build configuration match their recorded digests, and that every generated file regenerates byte for byte. [`cross-check.yml`](../.github/workflows/cross-check.yml) rebuilds the cross-check programs of Section 4.6 on Windows and re-runs them against their recorded outputs, including negative tests. [`codeql.yml`](../.github/workflows/codeql.yml) runs CodeQL code scanning on the workflows, the Python tools and the C programs.
    - GitHub's runner for private repositories provides only 2 CPUs and 8 GB. There the checks would have to be regenerated with fewer chains, which changes the source digest.
-2. **Archiving.** Depositing the artefact with a long-term archive that issues persistent identifiers (for example Zenodo, https://zenodo.org, or Software Heritage, https://www.softwareheritage.org) would let readers cite the exact version together with its digest.
+2. **Archiving.** The version described in this paper is frozen as release v1 of the repository (Git tag `v1`). Depositing it with a long-term archive that issues persistent identifiers (for example Zenodo, https://zenodo.org, or Software Heritage, https://www.softwareheritage.org) would add an identifier that does not depend on GitHub.
 3. **External re-checking.** Lean's documentation describes tools that replay stored declarations through the kernel (`lean4checker`) or compare them using the official kernel and the independent checker nanoda (Bailey, n.d.; Lean FRO, n.d.-c). Because our proof uses no native evaluation, it is eligible for such re-checking.
 
 ---
@@ -459,7 +474,7 @@ Three complementary routes support re-execution by others:
 ### 7.1 Work completed
 
 1. **Toolchain.** We upgraded to the latest stable Lean release, 4.35.0, with no dependencies beyond the core library.
-2. **Specification.** We wrote the 91-line specification and checked it clause by clause against the problem statement.
+2. **Specification.** We wrote the 91-line specification and checked it clause by clause against the problem's definitions.
 3. **Semantic layer.** We proved the semantic layer in about 5,000 lines:
    - greedy meld test correctness;
    - per-suit factorisation of standard waits;
@@ -471,7 +486,7 @@ Three complementary routes support re-execution by others:
 4. **Data.** We converted the original plan into Lean data, reordering codes only within classes and verifying that the code multisets are unchanged.
 5. **Kernel engineering.** We diagnosed and removed kernel-scale bottlenecks: memoisation by value, packed representations, prefix-tree enumeration in place of structurally recursive list functions, and cost-model-driven splitting into 1,075 leaves. Each step was guided by isolated measurements, including a failed first full run.
 6. **Generation and assembly.** We generated and assembled the leaves (prefix-tree joins, shape-range merges) and completed the end-to-end kernel build.
-7. **Trust and evidence.** After the independent review, we added the fail-closed axiom gate and its tests. We bound a from-scratch build to a source manifest and narrowed the scope of our claims.
+7. **Trust and evidence.** After the first independent review, we added the fail-closed axiom gate and its tests. We bound a from-scratch build to a source manifest and narrowed the scope of our claims. After the second, we made the cross-check programs fail loudly, made regeneration byte-identical on every platform, extended continuous integration and corrected two statements of scope.
 8. **Packaging and continuous integration.** We packaged the artefact for local reproduction and set up continuous integration that repeats the complete kernel check online.
 
 ### 7.2 Lessons
@@ -482,7 +497,7 @@ Three complementary routes support re-execution by others:
 
 ### 7.3 Limitations
 
-1. **The physical protocols are not formalised.** The theorem concerns the combinatorial form of §7. The equivalence between the two physical viewing protocols (§6 of the problem statement), and their identification with §7, rest on the statement's prose proofs.
+1. **The physical protocols are not formalised.** The theorem concerns the combinatorial form. Its equivalence with the two physical viewing protocols, adaptive and fixed-position, rests on the prose argument of Section 1.1.
 2. **No executable encoder.** The encoding function is shown to exist; no executable encoder is certified.
 3. **The original programs are not verified.** The theorem certifies the original plan as a certificate and the optimum *k*\* = 4. It does not certify the programs, intermediate statistics or construction history of the earlier study (cf. finding R1).
 4. **The data conversion is not formalised.** The conversion of the original JSON plan into Lean literals is not itself formalised. The theorem is about the Lean constants, whose identity with the original plan was confirmed by external comparison (Section 4.5).
@@ -490,12 +505,13 @@ Three complementary routes support re-execution by others:
 
 ### 7.4 Future work
 
-1. **Formalise the viewing protocols.** Formalise both physical protocols of §§4–6 and their equivalence with §7, so that the result covers the physical game directly.
+1. **Formalise the viewing protocols.** Formalise both physical viewing protocols and their equivalence with the combinatorial form, so that the result covers the physical game directly.
 2. **Replay with an independent kernel.** Replay the development in a second kernel implementation, such as nanoda via Lean's comparison tooling (Bailey, n.d.; Lean FRO, n.d.-c).
 3. **Formalise the census figures.** Prove in Lean the exact number of wait classes (2,846) and the exact number of tenpai hands (92,371,838).
 4. **Extract a verified encoder and decoder.**
 5. **Study rule variants.** Investigate how the optimum changes under rule variants.
 6. **Contribute kernel-friendly libraries.** Package the kernel-friendly enumeration and memoisation techniques as reusable components.
+7. **Add specification examples.** Add readable boundary examples of the specification, such as the thirteen-sided thirteen orphans wait and the nine-sided pure nine gates wait, so that any later change to it is caught early.
 
 ---
 
@@ -516,7 +532,7 @@ The work confirms, by a machine-checked proof, the answer that the earlier compu
 
 **AI assistance.** We acknowledge the substantial contribution of Anthropic's Claude Code (Anthropic, 2026a), and in particular of the Claude Opus 5.5 model (Anthropic, 2026b). Almost all of the formalisation was developed with its assistance: the specification, the proofs, the kernel-performance engineering, the generators and build tooling, and the drafting of this paper. It was an indispensable tool throughout.
 
-**Independent review.** We also thank the independent AI review (*Lean duli jingtai shenyue*, 2026). Its findings substantially improved the rigour of our claims and of the release process.
+**Independent reviews.** We also thank the two independent AI reviews (*Lean duli jingtai shenyue*, 2026; *mahjong-tenpai-proof duli jishu shenhe baogao*, 2026). Their findings substantially improved the rigour of our claims, our tools and the release process.
 
 ---
 
@@ -533,7 +549,7 @@ The work confirms, by a machine-checked proof, the answer that the earlier compu
 
 **Human oversight.** The human investigators defined the problem and the requirements, set the scope, approved the approach at each stage and reviewed the outputs. Technical choices within that scope were proposed and implemented with the AI system.
 
-**Safeguards.** The correctness of every proof was established by the Lean kernel, not by the AI system. The specification was reviewed against the problem statement by the investigators and by an independent AI review (*Lean duli jingtai shenyue*, 2026), conducted by a separately operated agent.
+**Safeguards.** The correctness of every proof was established by the Lean kernel, not by the AI system. The specification was reviewed against the problem's definitions by the investigators and by two independent AI reviews (*Lean duli jingtai shenyue*, 2026; *mahjong-tenpai-proof duli jishu shenhe baogao*, 2026), each conducted by a separately operated agent.
 
 **Responsibility.** The investigators take full responsibility for the content of this paper.
 
@@ -541,7 +557,7 @@ The work confirms, by a machine-checked proof, the answer that the earlier compu
 
 ## Data and Code Availability
 
-All sources, data, generators, logs and the workflow template are contained in the artefact [`claude_independent_review/lean_formal/`](lean_formal/) (Section 6.1). The continuous-integration workflows are in [`.github/workflows/`](../.github/workflows/).
+All sources, data, generators, logs and the workflow template are contained in the artefact [`claude_independent_review/lean_formal/`](lean_formal/) (Section 6.1). The continuous-integration workflows are in [`.github/workflows/`](../.github/workflows/). The version described in this paper is release v1 (Git tag `v1`) of the repository.
 
 All of it is published at <https://github.com/feierbuqiu/mahjong-tenpai-proof>. The original computational package (Qianwan Dangliang, 2026) is mirrored there, unmodified, under [`third_party/qianwan-dangliang/`](../third_party/qianwan-dangliang/). Its final plan is the file [`third_party/qianwan-dangliang/work/verify/plan_k4_final.json`](../third_party/qianwan-dangliang/work/verify/plan_k4_final.json) (SHA-256 `b95f5523bae86db71fabd62380fb6820b3d83c4e794eb92043b7ca8f4fa57163`).
 
@@ -567,8 +583,6 @@ de Moura, L., & Ullrich, S. (2021). The Lean 4 theorem prover and programming la
 
 *Duli fuhe baogao: Dai Bing wenti (er)—"zui shao fan 4 zhang" shifou chengli* [Independent re-verification report: The Dai–Bing problem (II)—Do four tiles at minimum suffice?] [Unpublished report]. (2026).
 
-feierbuqiu. (2026). *The Dai–Bing problem (II): Permutation encoding of tenpai wait information* [Problem statement, translated from the Chinese original]. GitHub. https://github.com/feierbuqiu/mahjong-tenpai-proof/blob/main/docs/problem-statement.md
-
 GitHub. (n.d.). *GitHub-hosted runners reference*. GitHub Docs. Retrieved October 20, 2026, from https://docs.github.com/en/actions/reference/runners/github-hosted-runners
 
 Gonthier, G. (2008). Formal proof—The four-color theorem. *Notices of the American Mathematical Society, 55*(11), 1382–1393. https://www.ams.org/notices/200811/tx081101382p.pdf
@@ -591,11 +605,15 @@ Lean FRO. (2026). *Lean 4* (Version 4.35.0) [Computer software]. GitHub. https:/
 
 Lingzhi Shenpanzhe [零之审判者]. (2026, September). [Mahjong tenpai wait-encoding puzzle] [Post]. Bilibili. https://www.bilibili.com/opus/1246853448736964611
 
+*mahjong-tenpai-proof duli jishu shenhe baogao* [Independent technical audit report on mahjong-tenpai-proof] [Unpublished report]. (2026).
+
 Qianwan Dangliang [千万当量]. (2026). *Majiang "fan pai cai tingpai" zuizhong baogao: Python zhengming lian + Lean xingshihua jinzhan* [Final report on the mahjong "turn over tiles to guess the waits" problem: Python proof chain and Lean formalisation progress] [Report and software package]. Baidu Netdisk. https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx
 
 ---
 
 ## Appendix A. The Trusted Specification (`Tenpai/Spec.lean`)
+
+The header comment names the document from which the specification was transcribed, and its section numbers refer to that document. The definitions themselves are those of Section 1.1.
 
 ```lean
 /-!

@@ -8,7 +8,7 @@
  */
 #include "tenpai_enum.h"
 
-static volatile int64_t NEXT;
+static volatile int64_t NEXT, DONE;
 static int64_t cnt_all[64], cnt_src_std[64], cnt_src_all[64];
 
 static DWORD __stdcall worker(void *arg) {
@@ -54,6 +54,7 @@ static DWORD __stdcall worker(void *arg) {
                         }
                     }
             }
+        __atomic_fetch_add(&DONE, 1, __ATOMIC_RELAXED);
     }
     return 0;
 }
@@ -62,14 +63,17 @@ int main(void) {
     mj_init();
     enum_prepare();
     int nth = 15;
-    HANDLE h[64];
+    void *args[64];
+    for (int i = 0; i < nth; i++) args[i] = (void *)(intptr_t)i;
     NEXT = 0;
-    for (int i = 0; i < nth; i++) h[i] = CreateThread(0, 0, worker, (void *)(intptr_t)i, 0, 0);
-    for (int i = 0; i < nth; i++) { WaitForSingleObject(h[i], INFINITE); CloseHandle(h[i]); }
+    DONE = 0;
+    int ok = run_threads(worker, args, nth);
+    if (DONE != nOPT_N) { printf("ENUMERATION INCOMPLETE: %lld of %d work items processed\n", (long long)DONE, nOPT_N); ok = 0; }
     int64_t a = 0, b = 0, d = 0;
     for (int i = 0; i < nth; i++) { a += cnt_all[i]; b += cnt_src_std[i]; d += cnt_src_all[i]; }
     printf("distinct standard 14-tile winning hands: %lld\n", (long long)a);
     printf("  ... that are H + min W_std(H) for some standard-tenpai H: %lld\n", (long long)b);
     printf("  ... that are H + min W(H) for some tenpai H:              %lld\n", (long long)d);
-    return 0;
+    printf("RESULT: %s\n", ok ? "OK" : "FAILED");
+    return ok ? 0 : 1;
 }

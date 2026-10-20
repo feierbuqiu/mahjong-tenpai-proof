@@ -56,10 +56,13 @@ def main(plan_path, cert_path, outdir):
     rows = load_plan(plan_path)
     rows.sort(key=lambda r: r[0])
     os.makedirs(os.path.join(outdir, 'Tenpai', 'Data'), exist_ok=True)
+    # The published data modules use CRLF line endings (they were first generated on Windows).
+    # Writing them with an explicit newline keeps regeneration byte-identical on every platform.
+    NL = '\r\n'
     hdr = 'namespace Tenpai' + chr(10) + chr(10)
     IMPORT = 'import Tenpai.Checks' + chr(10) + chr(10)
     # class tree
-    with open(os.path.join(outdir, 'Tenpai/Data/ClassTree.lean'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(outdir, 'Tenpai/Data/ClassTree.lean'), 'w', encoding='utf-8', newline=NL) as f:
         f.write(IMPORT)
         f.write('/-! The k = 4 plan of the original authors (2846 classes, 17,579 ordered codes),\n'
                 '    as a search tree: wait mask ↦ encoded codes (same code sets, reordered by usefulness). -/\n')
@@ -75,7 +78,7 @@ def main(plan_path, cert_path, outdir):
             assert e not in dec, 'duplicate ordered code'
             dec[e] = m
     items = sorted(dec.items())
-    with open(os.path.join(outdir, 'Tenpai/Data/DecodeTree.lean'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(outdir, 'Tenpai/Data/DecodeTree.lean'), 'w', encoding='utf-8', newline=NL) as f:
         f.write(IMPORT)
         f.write('/-! The decoding table of the plan: encoded code ↦ wait mask. -/\n')
         f.write(hdr)
@@ -110,7 +113,7 @@ def main(plan_path, cert_path, outdir):
                 members = [t]
         assert len(cuts) <= 4, (z, cuts)
         cuts_all.append(cuts)
-    with open(os.path.join(outdir, 'Tenpai/Data/Cuts.lean'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(outdir, 'Tenpai/Data/Cuts.lean'), 'w', encoding='utf-8', newline=NL) as f:
         f.write(IMPORT)
         f.write('/-! Seven pairs: for each single `z`, the other 33 tiles are cut into ≤ 5 consecutive groups. -/\n')
         f.write(hdr)
@@ -135,7 +138,7 @@ def main(plan_path, cert_path, outdir):
         wits.append((mask, u))
     wits.sort()
     assert len(wits) == 347 and len(set(m for m, _ in wits)) == 347
-    with open(os.path.join(outdir, 'Tenpai/Data/Witness.lean'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(outdir, 'Tenpai/Data/Witness.lean'), 'w', encoding='utf-8', newline=NL) as f:
         f.write(IMPORT)
         f.write('/-! 347 hands inside 2m … 8m with pairwise different wait sets (sorted by wait mask). -/\n')
         f.write(hdr)

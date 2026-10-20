@@ -157,14 +157,49 @@ static void enum_item(EnumThread *et, int64_t item) {
     }
 }
 
+static volatile int64_t g_items_done;   /* work items fully processed */
+
 static DWORD __stdcall enum_worker(void *arg) {
     EnumThread *et = (EnumThread *)arg;
     for (;;) {
         int64_t it = __atomic_fetch_add(&g_next_item, 1, __ATOMIC_RELAXED);
         if (it >= g_items_total) break;
         enum_item(et, it);
+        __atomic_fetch_add(&g_items_done, 1, __ATOMIC_RELAXED);
     }
     return 0;
+}
+
+#define ENUM_MAX_THREADS 64
+
+/* parse a thread count: decimal digits only, 1..ENUM_MAX_THREADS; returns 0 if invalid */
+static int parse_threads(const char *s) {
+    long v = 0;
+    if (!s || !*s) return 0;
+    for (const char *p = s; *p; p++) {
+        if (*p < '0' || *p > '9') return 0;
+        v = v * 10 + (*p - '0');
+        if (v > ENUM_MAX_THREADS) return 0;
+    }
+    return (int)v;
+}
+
+/* start n threads running fn(args[i]) and wait for all of them;
+   returns 1 only if every thread was created and finished normally */
+static int run_threads(LPTHREAD_START_ROUTINE fn, void **args, int n) {
+    HANDLE h[ENUM_MAX_THREADS];
+    int started = 0, ok = 1;
+    if (n < 1 || n > ENUM_MAX_THREADS) { printf("thread count %d outside 1..%d\n", n, ENUM_MAX_THREADS); return 0; }
+    for (int i = 0; i < n; i++) {
+        h[i] = CreateThread(0, 0, fn, args ? args[i] : 0, 0, 0);
+        if (!h[i]) { printf("CreateThread failed for worker %d\n", i); ok = 0; break; }
+        started++;
+    }
+    for (int i = 0; i < started; i++) {
+        if (WaitForSingleObject(h[i], INFINITE) != 0) { printf("waiting for worker %d failed\n", i); ok = 0; }
+        CloseHandle(h[i]);
+    }
+    return ok;
 }
 
 static void enum_prepare(void) {
@@ -175,12 +210,20 @@ static void enum_prepare(void) {
     g_items_total = (int64_t)nOPT_N + nCHI + 1;
 }
 
-/* run enumeration with nthreads workers; ets[i].ctx / .fn must be set by caller */
-static void enum_run(EnumThread *ets, int nthreads) {
+/* run enumeration with nthreads workers; ets[i].ctx / .fn must be set by caller.
+   Returns 1 only if every worker ran and every work item was processed. */
+static int enum_run(EnumThread *ets, int nthreads) {
+    void *args[ENUM_MAX_THREADS];
+    if (nthreads < 1 || nthreads > ENUM_MAX_THREADS) { printf("thread count %d outside 1..%d\n", nthreads, ENUM_MAX_THREADS); return 0; }
+    for (int i = 0; i < nthreads; i++) args[i] = &ets[i];
     g_next_item = 0;
-    HANDLE h[64];
-    for (int i = 0; i < nthreads; i++) h[i] = CreateThread(0, 0, enum_worker, &ets[i], 0, 0);
-    for (int i = 0; i < nthreads; i++) { WaitForSingleObject(h[i], INFINITE); CloseHandle(h[i]); }
+    g_items_done = 0;
+    int ok = run_threads(enum_worker, args, nthreads);
+    if (g_items_done != g_items_total) {
+        printf("ENUMERATION INCOMPLETE: %lld of %lld work items processed\n", (long long)g_items_done, (long long)g_items_total);
+        ok = 0;
+    }
+    return ok;
 }
 
 #endif

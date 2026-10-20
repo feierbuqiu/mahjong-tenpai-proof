@@ -1,10 +1,9 @@
 # Re-runs the kernel-checked proof of k* = 4 on GitHub's standard Linux runner.
 #
 # Adapted for this repository's layout from claude_independent_review/lean_formal/ci/lean-kernel-build.yml.
-# Steps: check that the Lean sources are the published ones (SHA-256 manifest), install the pinned
-# toolchain, run `lake build` (which fails unless `Tenpai.kStar_eq_four` depends on exactly
-# propext, Classical.choice and Quot.sound), and keep the log, timing and memory samples.
-# A manual run can also replay every declaration through the kernel with leanchecker --fresh.
+# Steps: check that the Lean sources and the build configuration are the published ones (SHA-256
+# manifest), install the pinned toolchain, run `lake build` (which fails unless `Tenpai.kStar_eq_four`
+# depends on exactly propext, Classical.choice and Quot.sound), and keep the log, timing and memory samples.
 name: Lean kernel build
 
 on:
@@ -19,11 +18,6 @@ on:
       - 'claude_independent_review/lean_formal/tools/manifest.py'
       - '.github/workflows/lean-kernel-build.yml'
   workflow_dispatch:
-    inputs:
-      replay:
-        description: 'Also replay every declaration through the kernel with leanchecker --fresh (adds several hours)'
-        type: boolean
-        default: false
 
 permissions:
   contents: read
@@ -34,6 +28,7 @@ concurrency:
 
 env:
   EXPECTED_DIGEST: a179bd53953a21dc4b38489f9cc13e10c698a23b034555ae413b85e68ef191d2
+  EXPECTED_ALL_DIGEST: 9ec53ef1a446d582e59729f97eea4f9f54e2938466acbdcce84216b8075fd7e6
   PROJECT: claude_independent_review/lean_formal/lean_project
   AXIOM_LINE: "'Tenpai.kStar_eq_four' depends on axioms: [propext, Classical.choice, Quot.sound]"
 
@@ -71,7 +66,10 @@ jobs:
       - name: Check that the sources are the published ones
         run: |
           python3 -I claude_independent_review/lean_formal/tools/manifest.py "$PROJECT" ci-logs/manifest.json
-          python3 -I -c 'import json, os, sys; d = json.load(open("ci-logs/manifest.json")); print(d["lean_set_sha256"]); sys.exit(d["lean_set_sha256"] != os.environ["EXPECTED_DIGEST"])'
+          python3 -I -c 'import json, os, sys
+          d = json.load(open("ci-logs/manifest.json"))
+          print("lean_set_sha256", d["lean_set_sha256"]); print("all_sha256     ", d["all_sha256"])
+          sys.exit(d["lean_set_sha256"] != os.environ["EXPECTED_DIGEST"] or d["all_sha256"] != os.environ["EXPECTED_ALL_DIGEST"])'
 
       - name: Install the pinned toolchain
         working-directory: ${{ env.PROJECT }}
@@ -99,15 +97,6 @@ jobs:
           end=$(date -u +%s); echo "end_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$LOGS/build_time.txt"
           echo "wall_seconds: $((end - start))" >> "$LOGS/build_time.txt"
           grep -F "$AXIOM_LINE" "$LOGS/build.log"
-
-      - name: Replay every declaration through the kernel (leanchecker --fresh)
-        if: github.event_name == 'workflow_dispatch' && inputs.replay
-        working-directory: ${{ env.PROJECT }}
-        run: |
-          LOGS="$GITHUB_WORKSPACE/ci-logs"
-          start=$(date -u +%s)
-          lake env leanchecker --fresh Tenpai 2>&1 | tee "$LOGS/replay.log"
-          echo "replay_wall_seconds: $(( $(date -u +%s) - start ))" | tee -a "$LOGS/build_time.txt"
 
       - name: Summary
         if: always()

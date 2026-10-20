@@ -1,0 +1,31 @@
+# Cross-check re-run: programs against the recorded outputs in out/
+== ./census.exe out/their_plan_k4_FINAL.txt -usage -classes .recheck-tmp/classes.txt
+   exit code: 0 ; RESULT: OK
+   output: identical to out/census_with_their_plan.log apart from timing
+   class list: same lines as out/classes_census.txt (line order follows hash slots)
+== ./census.exe out/my_plan_v1.txt -usage
+   exit code: 0 ; RESULT: OK
+   output: identical to out/census_with_my_plan_v1.log apart from timing
+== ./census.exe out/my_plan_v1.txt -naive
+   exit code: 0 ; RESULT: OK
+   output: identical to out/census_naive_recheck.log apart from timing
+== ./completeness.exe
+   exit code: 0 ; RESULT: OK
+   output: identical to out/completeness.log apart from timing
+== ./g_sources.exe
+   exit code: 0 ; RESULT: OK
+   output: identical to out/g_sources.log apart from timing
+== ./build.exe out/classes_census.txt .recheck-tmp/plan.txt
+   exit code: 0
+   output: identical to out/build_v1.log apart from timing
+   rebuilt plan: byte-identical to out/my_plan_v1.txt
+
+# Negative tests
+== census.exe -threads 0 -> exit code 2 (expected 2): invalid -threads value '0' (expected 1..64) 
+== census.exe -threads 65 -> exit code 2 (expected 2): invalid -threads value '65' (expected 1..64) 
+== census.exe -threads abc -> exit code 2 (expected 2): invalid -threads value 'abc' (expected 1..64) 
+== census.exe <plan without its first class> -> exit code 1 (expected 1): [plan] classes=2845 codes=17429 k=4  bad_tile_index=0 mult>4=0 duplicate_ordered_codes=0 empty_classes=0 TENPAI HANDS (distinct 13-tile multisets): 92371838 [plan check] VERDICT: PLAN FAILS RESULT: FAILED 
+== census.exe <plan with tile index 34> -> exit code 1 (expected 1): [plan] classes=2846 codes=17579 k=4  bad_tile_index=1 mult>4=0 duplicate_ordered_codes=0 empty_classes=0 TENPAI HANDS (distinct 13-tile multisets): 92371838 [plan check] VERDICT: every tenpai hand has a code of its own class (coverage OK) RESULT: FAILED 
+== census.exe -threads 1 -> exit code 0 (expected 0): [plan] classes=2846 codes=17579 k=4  bad_tile_index=0 mult>4=0 duplicate_ordered_codes=0 empty_classes=0 TENPAI HANDS (distinct 13-tile multisets): 92371838 [plan check] VERDICT: every tenpai hand has a code of its own class (coverage OK) RESULT: OK 
+
+RECHECK: OK

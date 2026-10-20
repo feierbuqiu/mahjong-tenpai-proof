@@ -192,7 +192,11 @@ static int *TOUCH; static int nTOUCH;
 int main(int argc, char **argv) {
     if (argc < 3) { printf("usage: build classes.txt plan_out.txt [-threads N]\n"); return 1; }
     int nthreads = 14;
-    for (int i = 3; i < argc; i++) if (!strcmp(argv[i], "-threads") && i + 1 < argc) nthreads = atoi(argv[++i]);
+    for (int i = 3; i < argc; i++)
+        if (!strcmp(argv[i], "-threads") && i + 1 < argc) {
+            nthreads = parse_threads(argv[++i]);
+            if (!nthreads) { printf("invalid -threads value '%s' (expected 1..%d)\n", argv[i], ENUM_MAX_THREADS); return 2; }
+        }
     uint64_t t0 = GetTickCount64();
     mj_init();
     /* classes */
@@ -208,8 +212,9 @@ int main(int argc, char **argv) {
     enum_prepare();
     EnumThread *ets = calloc(nthreads, sizeof(EnumThread));
     BCtx *bc = calloc(nthreads, sizeof(BCtx));
+    if (!ets || !bc) { printf("out of memory\n"); return 1; }
     for (int i = 0; i < nthreads; i++) { hs_init(&bc[i].units, 1 << 20); ets[i].ctx = &bc[i]; ets[i].fn = on_hand; }
-    enum_run(ets, nthreads);
+    if (!enum_run(ets, nthreads)) { printf("enumeration failed; no plan written\n"); return 1; }
     int64_t tot = 0, tank = 0, chio = 0, kok = 0, uh = 0, odd = 0;
     for (int i = 0; i < nthreads; i++) {
         tot += bc[i].units.n; tank += bc[i].n_tanki; chio += bc[i].n_chi_only; kok += bc[i].n_kok;

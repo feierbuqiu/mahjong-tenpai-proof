@@ -42,6 +42,7 @@ sha256sum -c qianwan-dangliang.SHA256SUMS
 - The scripts contain absolute paths from the author's own machine and were written for that environment.
 - **Images of unknown origin.** According to the author's [`web/README.md`](qianwan-dangliang/web/README.md), the tile images in [`web/pai-images/`](qianwan-dangliang/web/pai-images/), also embedded in [`web/mahjong_demo.html`](qianwan-dangliang/web/mahjong_demo.html), were supplied to the author. Their original source and licence are not documented, and any rights in them remain with their owners.
 - **Removal.** The author or any rights holder can ask for the mirror to be changed or removed by opening an issue.
+- **Rebuilding the web demonstration.** [`web/build_demo.py`](qianwan-dangliang/web/build_demo.py) reads `work/verify/plan_k4_FINAL.json`, but the mirrored file is named `plan_k4_final.json`. On a case-sensitive file system (Linux, for example), run the script on a copy of the package in which the file is also available under the upper-case name. The mirror itself is left unchanged. The prebuilt `web/mahjong_demo.html` works as it is.
 
 ### A guide to the package
 

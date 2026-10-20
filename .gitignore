@@ -21,3 +21,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Scratch folder of src/recheck.sh
+.recheck-tmp/
