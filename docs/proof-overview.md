@@ -4,7 +4,7 @@ This is a short guide to the Lean development in [`claude_independent_review/lea
 
 ## The statement
 
-The trusted statement is [`Tenpai/Spec.lean`](../claude_independent_review/lean_formal/lean_project/Tenpai/Spec.lean): 91 lines, Lean core only, transcribing §2 and §7 of the [problem statement](problem-statement.md). The final theorem is
+The trusted statement is [`Tenpai/Spec.lean`](../claude_independent_review/lean_formal/lean_project/Tenpai/Spec.lean): 91 lines, Lean core only, transcribing the problem's definitions and its combinatorial form (Section 1.1 of the [paper](../claude_independent_review/Four_Tiles_Suffice_Lean_Verification_Paper.md)). Its header comment names the document it was transcribed from; the definitions are those of the paper. The final theorem is
 
 ```lean
 theorem Tenpai.kStar_eq_four : Tenpai.IsKStar 4
@@ -70,7 +70,7 @@ The leaves are generated into [`Tenpai/Run/`](../claude_independent_review/lean_
 #print axioms Tenpai.kStar_eq_four
 ```
 
-so the build fails unless the final theorem depends on exactly Lean's three standard axioms. A `sorry` anywhere would add `sorryAx`; an extra axiom would be listed by name.
+so the build fails unless the final theorem depends on exactly Lean's three standard axioms. A `sorry` anywhere in the final theorem's dependency cone would add `sorryAx`, and an extra axiom there would be listed by name. Declarations that the final theorem does not use are outside the gate's scope.
 
 ## Trusted base
 
@@ -79,4 +79,4 @@ The result depends on:
 - [`Spec.lean`](../claude_independent_review/lean_formal/lean_project/Tenpai/Spec.lean);
 - the few core-library definitions that `Spec.lean` uses.
 
-Everything else is checked, not trusted: the plan, the tables, the generated leaves, the generators and the original author's programs.
+Everything else lies outside the trusted base. The plan, the tables and the generated leaves are checked by the kernel. The generators, the cross-check programs and the original author's programs are not themselves verified; the proof checks only the properties of their outputs that it needs.

@@ -9,12 +9,12 @@ These parts are by **feierbuqiu** and are released under the [MIT Licence](LICEN
 | Path | Contents |
 |---|---|
 | [`claude_independent_review/`](claude_independent_review/) | The kernel-only Lean 4 formal proof, its generators and tools, its build evidence, the independent cross-check programs and their outputs, and the paper |
-| [`docs/`](docs/) | The problem statement (Chinese original and English translation) and the documentation |
+| [`docs/`](docs/) | The documentation |
 | Repository files | [`README.md`](README.md), [`NOTICE.md`](NOTICE.md), [`SECURITY.md`](SECURITY.md), [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`CITATION.cff`](CITATION.cff), [`.github/`](.github/), [`.gitignore`](.gitignore), [`.gitattributes`](.gitattributes) |
 
 **AI assistance.** This work was produced with substantial assistance from Anthropic's Claude Code, running the Claude Opus 5.5 model. The correctness of every proof is established by the Lean kernel, not by the AI system. See the paper's Declaration of Generative AI Use.
 
-**The puzzle itself** was first posed by **Lingzhi Shenpanzhe (Bilibili user 零之审判者)** in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>. The problem statement in [`docs/`](docs/) is feierbuqiu's precise formulation of that puzzle.
+**The puzzle itself** was first posed by **Lingzhi Shenpanzhe (Bilibili user 零之审判者)** in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>. The [paper](claude_independent_review/Four_Tiles_Suffice_Lean_Verification_Paper.md) (Section 1.1) gives its precise formulation.
 
 ## 2. Third-party material (not covered by the MIT Licence)
 

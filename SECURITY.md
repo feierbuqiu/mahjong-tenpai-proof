@@ -9,7 +9,7 @@ This repository's main product is a machine-checked proof. Its security therefor
    - its axiom set differs from `[propext, Classical.choice, Quot.sound]`.
 
    For example, a flaw in the acceptance gate, or an option or construct that bypasses kernel checking.
-2. **Specification problems.** A place where `Tenpai/Spec.lean` does not faithfully express the problem statement in [`docs/problem-statement.md`](docs/problem-statement.md).
+2. **Specification problems.** A place where `Tenpai/Spec.lean` does not faithfully express the problem as defined in the [paper](claude_independent_review/Four_Tiles_Suffice_Lean_Verification_Paper.md) (Section 1.1).
 3. **Integrity problems.** These include:
    - files that do not match the source manifest recorded in [`claude_independent_review/lean_formal/logs/`](claude_independent_review/lean_formal/logs/) or the checksums in [`third_party/qianwan-dangliang.SHA256SUMS`](third_party/qianwan-dangliang.SHA256SUMS);
    - commits that are not shown as Verified.
@@ -28,7 +28,7 @@ Please include:
 
 ## Supported versions
 
-Only the latest commit on the default branch (`main`) is maintained.
+The frozen [release v1](https://github.com/feierbuqiu/mahjong-tenpai-proof/releases/tag/v1) is the version described in the paper. Reports against it or against the latest commit on the default branch (`main`) are welcome.
 
 ## Commit integrity
 

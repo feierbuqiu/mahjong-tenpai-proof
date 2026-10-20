@@ -10,6 +10,7 @@ type: software
 authors:
   - alias: feierbuqiu
 date-released: 2026-10-20
+version: v1
 url: "https://github.com/feierbuqiu/mahjong-tenpai-proof"
 repository-code: "https://github.com/feierbuqiu/mahjong-tenpai-proof"
 license: MIT
