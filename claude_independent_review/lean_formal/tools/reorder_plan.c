@@ -1,17 +1,17 @@
 /*
- * analyze_plan.c -- structural analysis of a k=4 plan, to design the Lean proof.
- * Checks the plan against the active/inert decomposition of tenpai hands:
- *   T0 tanki: class {z} must contain z+meld for every meld outside cat(z)
- *   T1 single-category active part a (|a| in 4,7,10,13): some code of class WP(a) inside a
- *   T2 two-category active part (ax,ay): some code of class W0 inside ax+ay
- *   T3 seven-pairs-only hands: clique cover (<=5 groups) of the (z,x,x,y) graph
- *   T4 hands that are standard tenpai AND seven-pairs shaped: direct check
- *   K  kokushi hands: direct check
- * usage: analyze_plan.exe plan.txt
+ * reorder_plan.c -- reorder the codes within each class of a k=4 plan, most useful first.
+ * For every active part of a tenpai hand (the units of the coverage proof) it counts which codes
+ * of the unit's class fit in it, then sorts each class's codes by that count (ties keep the
+ * original order).  Only the order within a class changes: every class keeps exactly its codes,
+ * so kernel look-ups find a fitting code sooner without changing what the proof checks.
+ * usage: reorder_plan.exe in.txt out.txt
  */
 #include "../../src/mjcore.h"
 
 static int PK, nPC, nCodes;
+#define MAX_CLASSES (1 << 16)         /* capacity of PC_mask, PC_start, PC_n */
+#define CODE_BYTES (1 << 22)          /* capacity of CODE */
+#define MAX_CLASS_CODES 4096          /* capacity of the sort buffer in main */
 static uint64_t *PC_mask;
 static int *PC_start, *PC_n;
 static uint8_t *CODE;
@@ -35,17 +35,24 @@ static int load_plan(const char *path) {
     if (!f) return 0;
     int cap = 1 << 20;
     char *line = malloc(cap);
-    PC_mask = malloc(8 << 16); PC_start = malloc(4 << 16); PC_n = malloc(4 << 16); CODE = malloc(1 << 22);
+    PC_mask = malloc(sizeof(uint64_t) * MAX_CLASSES); PC_start = malloc(sizeof(int) * MAX_CLASSES);
+    PC_n = malloc(sizeof(int) * MAX_CLASSES); CODE = malloc(CODE_BYTES);
+    if (!line || !PC_mask || !PC_start || !PC_n || !CODE) { printf("out of memory\n"); fclose(f); return 0; }
     while (fgets(line, cap, f)) {
         char *p = line, *e;
         if (*p == '#' || *p == '\n' || !*p) continue;
         uint64_t mask = strtoull(p, &e, 16); p = e;
         int n = (int)strtol(p, &e, 10); p = e;
         int k = (int)strtol(p, &e, 10); p = e;
+        if (k < 1 || k > 8 || (PK && k != PK) || n < 0 || n > MAX_CLASS_CODES || nPC >= MAX_CLASSES ||
+            (size_t)(nCodes + n) * (size_t)k > CODE_BYTES) {
+            printf("plan exceeds the supported size or is malformed (class %d)\n", nPC);
+            fclose(f); return 0;
+        }
         PK = k;
         PC_mask[nPC] = mask; PC_start[nPC] = nCodes; PC_n[nPC] = n;
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < k; j++) { CODE[nCodes * k + j] = (uint8_t)strtol(p, &e, 10); p = e; }
+            for (int j = 0; j < k; j++) { CODE[(size_t)nCodes * k + j] = (uint8_t)strtol(p, &e, 10); p = e; }
             nCodes++;
         }
         uint32_t h = hmix(mask) & (PM_SIZE - 1);
@@ -183,6 +190,7 @@ int main(int argc, char **argv) {
     mj_init();
     if (argc < 3 || !load_plan(argv[1])) { printf("usage: reorder_plan in.txt out.txt\n"); return 1; }
     FITCNT = calloc(nCodes, sizeof(int64_t));
+    if (!FITCNT) { printf("out of memory\n"); return 1; }
     for (int k = 0; k < 4; k++) {
         nl[k] = 0;
         for (int idx = 0; idx < NV(k); idx++) {
@@ -196,23 +204,30 @@ int main(int argc, char **argv) {
     for_all_units(0);
     printf("before: units %lld, average scan length %.2f\n", (long long)scan_units, (double)scan_sum / scan_units);
     KEYCNT = FITCNT;
-    uint8_t *NEW = malloc(nCodes * PK);
-    int *ord = malloc(sizeof(int) * 4096);
+    size_t code_bytes = (size_t)nCodes * (size_t)PK;
+    uint8_t *NEW = malloc(code_bytes);
+    int *ord = malloc(sizeof(int) * MAX_CLASS_CODES);
+    if (!NEW || !ord) { printf("out of memory\n"); return 1; }
     for (int ci = 0; ci < nPC; ci++) {
         for (int i = 0; i < PC_n[ci]; i++) ord[i] = PC_start[ci] + i;
         qsort(ord, PC_n[ci], sizeof(int), cmp_code);
-        for (int i = 0; i < PC_n[ci]; i++) memcpy(NEW + (PC_start[ci] + i) * PK, CODE + ord[i] * PK, PK);
+        for (int i = 0; i < PC_n[ci]; i++)
+            memcpy(NEW + (size_t)(PC_start[ci] + i) * PK, CODE + (size_t)ord[i] * PK, PK);
     }
-    memcpy(CODE, NEW, nCodes * PK);
+    memcpy(CODE, NEW, code_bytes);
     scan_sum = scan_units = 0;
     for_all_units(1);
     printf("after:  units %lld, average scan length %.2f\n", (long long)scan_units, (double)scan_sum / scan_units);
     FILE *f = fopen(argv[2], "wb");
+    if (!f) { printf("cannot write %s\n", argv[2]); return 1; }
     char buf[64];
     for (int ci = 0; ci < nPC; ci++) {
         int L = snprintf(buf, sizeof buf, "%llx %d %d", (unsigned long long)PC_mask[ci], PC_n[ci], PK);
         fwrite(buf, 1, L, f);
-        for (int i = 0; i < PC_n[ci] * PK; i++) { L = snprintf(buf, sizeof buf, " %d", CODE[PC_start[ci] * PK + i]); fwrite(buf, 1, L, f); }
+        for (int i = 0; i < PC_n[ci] * PK; i++) {
+            L = snprintf(buf, sizeof buf, " %d", CODE[(size_t)PC_start[ci] * PK + i]);
+            fwrite(buf, 1, L, f);
+        }
         fwrite("\n", 1, 1, f);
     }
     fclose(f);
