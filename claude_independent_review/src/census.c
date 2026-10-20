@@ -4,6 +4,10 @@
  *
  * usage: census.exe [plan.txt] [-threads N] [-classes out.txt] [-usage]
  *
+ * exit code: 0 only if every work item was enumerated and every check passed
+ *            (sanity, naive recheck when asked, plan structure, plan coverage);
+ *            1 if any of them failed; 2 for an invalid -threads value.
+ *
  * plan.txt format (one class per line, produced by tools/plan_json_to_txt.py):
  *     <W as hex mask> <ncodes> <k> t1 t2 ... tk  t1 t2 ... tk ...
  */
@@ -115,8 +119,9 @@ static int cmp_u32(const void *a, const void *b) {
     return x < y ? -1 : x > y;
 }
 
-/* structural checks: tile range, multiplicity <= 4, ordered codes pairwise distinct */
-static void plan_structure_report(void) {
+/* structural checks: tile range, multiplicity <= 4, ordered codes pairwise distinct;
+   returns the number of problems found */
+static int plan_structure_report(void) {
     int bad_range = 0, bad_mult = 0;
     uint32_t *keys = malloc(sizeof(uint32_t) * (nCodes + 1));
     int *owner = malloc(sizeof(int) * (nCodes + 1));
@@ -140,6 +145,7 @@ static void plan_structure_report(void) {
     printf("[plan] classes=%d codes=%d k=%d  bad_tile_index=%d mult>4=%d duplicate_ordered_codes=%d empty_classes=%d\n",
            nPC, nCodes, PK, bad_range, bad_mult, dup, empty);
     free(keys); free(owner);
+    return bad_range + bad_mult + dup + empty;
 }
 
 /* ---------------- per-thread context ---------------- */
@@ -242,7 +248,10 @@ int main(int argc, char **argv) {
     int nthreads = 14;
     const char *plan = 0, *classes_out = 0, *critical_out = 0;
     for (int i = 1; i < argc; i++) {
-        if (!strcmp(argv[i], "-threads") && i + 1 < argc) nthreads = atoi(argv[++i]);
+        if (!strcmp(argv[i], "-threads") && i + 1 < argc) {
+            nthreads = parse_threads(argv[++i]);
+            if (!nthreads) { printf("invalid -threads value '%s' (expected 1..%d)\n", argv[i], ENUM_MAX_THREADS); return 2; }
+        }
         else if (!strcmp(argv[i], "-classes") && i + 1 < argc) classes_out = argv[++i];
         else if (!strcmp(argv[i], "-usage")) want_usage = 1;
         else if (!strcmp(argv[i], "-naive")) want_naive = 1;
@@ -254,9 +263,10 @@ int main(int argc, char **argv) {
     enum_prepare();
     printf("number-suit options (M or P, <=14 tiles): %d ; honor options: %d ; work items: %lld\n",
            nOPT_N, nOPT_Z, (long long)g_items_total);
+    int failures = 0;   /* every check below that fails adds to this; the exit code is non-zero if any did */
     if (plan) {
         if (!load_plan(plan)) return 1;
-        plan_structure_report();
+        if (plan_structure_report()) { printf("[plan] structural problems found\n"); failures++; }
         if (want_critical) {
             CRIT = calloc(nCodes + 1, sizeof(*CRIT));
             CRIT_EX = calloc(nCodes + 1, sizeof(*CRIT_EX));
@@ -264,8 +274,10 @@ int main(int argc, char **argv) {
     }
     EnumThread *ets = calloc(nthreads, sizeof(EnumThread));
     Ctx *ctx = calloc(nthreads, sizeof(Ctx));
+    if (!ets || !ctx) { printf("out of memory\n"); return 1; }
     for (int i = 0; i < nthreads; i++) {
         ctx[i].cm = calloc(1, sizeof(ClassMap));
+        if (!ctx[i].cm) { printf("out of memory\n"); return 1; }
         if (plan_loaded) {
             ctx[i].code_used = calloc(nCodes + 1, sizeof(int64_t));
             ctx[i].code_first = calloc(nCodes + 1, sizeof(int64_t));
@@ -273,7 +285,7 @@ int main(int argc, char **argv) {
         ets[i].ctx = &ctx[i];
         ets[i].fn = on_hand;
     }
-    enum_run(ets, nthreads);
+    if (!enum_run(ets, nthreads)) failures++;
 
     int64_t nG_std = 0, nG_chi = 0, nG_chi_std = 0, nG_kok = 0, nH = 0, bad = 0;
     int64_t nstd = 0, nchi = 0, nkok = 0, nboth = 0, nsc[4] = {0, 0, 0, 0}, pmiss = 0, punc = 0;
@@ -299,6 +311,8 @@ int main(int argc, char **argv) {
     if (want_naive)
         printf("naive recursive W recomputed for every hand: mismatches with table-driven W = %lld\n",
                (long long)naive_mismatch);
+    if (bad) failures++;
+    if (want_naive && naive_mismatch) failures++;
     printf("TENPAI HANDS (distinct 13-tile multisets): %lld\n", (long long)nH);
     printf("  standard-form tenpai: %lld\n  seven-pairs tenpai: %lld\n  both standard & seven-pairs: %lld\n  kokushi tenpai: %lld\n",
            (long long)nstd, (long long)nchi, (long long)nboth, (long long)nkok);
@@ -319,6 +333,7 @@ int main(int argc, char **argv) {
     printf("\n");
     if (classes_out) {
         FILE *f = fopen(classes_out, "wb");
+        if (!f) { printf("cannot write %s\n", classes_out); return 1; }
         char buf[512];
         for (int s = 0; s < CM_SIZE; s++)
             if (g->key[s]) {
@@ -358,8 +373,10 @@ int main(int argc, char **argv) {
             }
         printf("[plan check] VERDICT: %s\n",
                (pmiss == 0 && punc == 0) ? "every tenpai hand has a code of its own class (coverage OK)" : "PLAN FAILS");
+        if (classes_not_in_plan || plan_classes_unused || pmiss || punc) failures++;
         if (want_critical && critical_out) {
             FILE *f = fopen(critical_out, "wb");
+            if (!f) { printf("cannot write %s\n", critical_out); return 1; }
             int64_t tot[HT_N] = {0}, ncrit[HT_N] = {0};
             int *owner = malloc(sizeof(int) * (nCodes + 1));
             for (int cc = 0; cc < nPC; cc++) for (int i = PC_start[cc]; i < PC_start[cc] + PC_n[cc]; i++) owner[i] = cc;
@@ -388,5 +405,6 @@ int main(int argc, char **argv) {
         }
     }
     printf("elapsed %.1f s\n", (GetTickCount64() - t0) / 1000.0);
-    return 0;
+    printf("RESULT: %s\n", failures ? "FAILED" : "OK");
+    return failures ? 1 : 0;
 }
