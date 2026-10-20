@@ -5,7 +5,7 @@
 **Author:** Qianwan Dangliang (Bilibili user 千万当量).
 
 **Where it was published:**
-- posted in reply to the Bilibili puzzle <https://www.bilibili.com/opus/1246853448736964611>;
+- posted in reply to the Bilibili puzzle posed by Lingzhi Shenpanzhe (零之审判者): <https://www.bilibili.com/opus/1246853448736964611>;
 - shared on Baidu Netdisk: <https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx>.
 
 **What it is.** The study that first established the answer *k*\* = 4:

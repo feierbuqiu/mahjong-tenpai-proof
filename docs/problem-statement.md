@@ -2,7 +2,7 @@
 
 > **Author of this formulation:** feierbuqiu. This is an English translation of the author's [Chinese original](呆饼问题（二）：听牌信息的排列编码问题.md) (research version of 19 October 2026, a draft giving the definitions and the equivalence proof).
 >
-> **Origin of the puzzle:** the puzzle was first posed in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>. This document makes the puzzle's inputs, permitted operations, outputs, quantifiers and optimality requirement precise. It defines the two viewing models, *adaptive one-by-one viewing* and *pre-fixed-position viewing*, and proves them equivalent.
+> **Origin of the puzzle:** the puzzle was first posed by Lingzhi Shenpanzhe (Bilibili user 零之审判者) in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>. This document makes the puzzle's inputs, permitted operations, outputs, quantifiers and optimality requirement precise. It defines the two viewing models, *adaptive one-by-one viewing* and *pre-fixed-position viewing*, and proves them equivalent.
 >
 > **Status of the original document:** as written, it gives a rigorous definition of the problem and a proof that the two viewing models are equivalent. It does **not** claim that the optimum is 4.
 >

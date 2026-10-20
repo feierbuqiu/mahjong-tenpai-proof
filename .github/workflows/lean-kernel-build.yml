@@ -1,0 +1,136 @@
+# Re-runs the kernel-checked proof of k* = 4 on GitHub's standard Linux runner.
+#
+# Adapted for this repository's layout from claude_independent_review/lean_formal/ci/lean-kernel-build.yml.
+# Steps: check that the Lean sources are the published ones (SHA-256 manifest), install the pinned
+# toolchain, run `lake build` (which fails unless `Tenpai.kStar_eq_four` depends on exactly
+# propext, Classical.choice and Quot.sound), and keep the log, timing and memory samples.
+# A manual run can also replay every declaration through the kernel with leanchecker --fresh.
+name: Lean kernel build
+
+on:
+  push:
+    paths:
+      - 'claude_independent_review/lean_formal/lean_project/**'
+      - 'claude_independent_review/lean_formal/tools/manifest.py'
+      - '.github/workflows/lean-kernel-build.yml'
+  pull_request:
+    paths:
+      - 'claude_independent_review/lean_formal/lean_project/**'
+      - 'claude_independent_review/lean_formal/tools/manifest.py'
+      - '.github/workflows/lean-kernel-build.yml'
+  workflow_dispatch:
+    inputs:
+      replay:
+        description: 'Also replay every declaration through the kernel with leanchecker --fresh (adds several hours)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-kernel-build-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  EXPECTED_DIGEST: a179bd53953a21dc4b38489f9cc13e10c698a23b034555ae413b85e68ef191d2
+  PROJECT: claude_independent_review/lean_formal/lean_project
+  AXIOM_LINE: "'Tenpai.kStar_eq_four' depends on axioms: [propext, Classical.choice, Quot.sound]"
+
+jobs:
+  build:
+    # Pull requests from branches of this repository are already built by their push run.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    defaults:
+      run:
+        shell: bash   # bash -eo pipefail: a failing `lake build` fails the step even through `tee`
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Runner
+        run: |
+          mkdir -p ci-logs
+          {
+            echo "date_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "commit: $GITHUB_SHA"
+            echo "os: $(. /etc/os-release && echo "$PRETTY_NAME"), kernel $(uname -r)"
+            echo "cpu: $(nproc) x $(lscpu | sed -n 's/^Model name: *//p')"
+            echo "memory_mb: $(free -m | awk '/^Mem:/ {print $2}'), swap_mb: $(free -m | awk '/^Swap:/ {print $2}')"
+          } | tee ci-logs/runner.txt
+
+      - name: Install elan (the toolchain itself is pinned by lean-toolchain)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/227caca133724d5516bee25c2aeb3e609478f2d8/elan-init.sh -o elan-init.sh  # elan v4.2.4
+          sh elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Check that the sources are the published ones
+        run: |
+          python3 -I claude_independent_review/lean_formal/tools/manifest.py "$PROJECT" ci-logs/manifest.json
+          python3 -I -c 'import json, os, sys; d = json.load(open("ci-logs/manifest.json")); print(d["lean_set_sha256"]); sys.exit(d["lean_set_sha256"] != os.environ["EXPECTED_DIGEST"])'
+
+      - name: Install the pinned toolchain
+        working-directory: ${{ env.PROJECT }}
+        run: |
+          lean --version | tee -a "$GITHUB_WORKSPACE/ci-logs/runner.txt"
+          lake --version | tee -a "$GITHUB_WORKSPACE/ci-logs/runner.txt"
+
+      - name: Kernel build (fails unless kStar_eq_four uses only propext, Classical.choice, Quot.sound)
+        working-directory: ${{ env.PROJECT }}
+        run: |
+          LOGS="$GITHUB_WORKSPACE/ci-logs"
+          echo "# time_utc used_mb lean_procs lean_total_mb lean_single_mb" > "$LOGS/memwatch.txt"
+          # Sample memory every 5 s: total used, and the Lean processes (count, combined and largest RSS).
+          ( set +e +o pipefail
+            while true; do
+              used=$(free -m | awk '/^Mem:/ {print $3}')
+              lean=$(ps -C lean -o rss= | awk '{s += $1; if ($1 > m) m = $1} END {printf "%d %d %d", NR, s / 1024, m / 1024}')
+              echo "$(date -u +%H:%M:%S) $used $lean" >> "$LOGS/memwatch.txt"
+              sleep 5
+            done ) &
+          WATCH=$!
+          trap 'kill "$WATCH" 2>/dev/null || true' EXIT
+          start=$(date -u +%s); echo "start_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$LOGS/build_time.txt"
+          lake build 2>&1 | tee "$LOGS/build.log"
+          end=$(date -u +%s); echo "end_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$LOGS/build_time.txt"
+          echo "wall_seconds: $((end - start))" >> "$LOGS/build_time.txt"
+          grep -F "$AXIOM_LINE" "$LOGS/build.log"
+
+      - name: Replay every declaration through the kernel (leanchecker --fresh)
+        if: github.event_name == 'workflow_dispatch' && inputs.replay
+        working-directory: ${{ env.PROJECT }}
+        run: |
+          LOGS="$GITHUB_WORKSPACE/ci-logs"
+          start=$(date -u +%s)
+          lake env leanchecker --fresh Tenpai 2>&1 | tee "$LOGS/replay.log"
+          echo "replay_wall_seconds: $(( $(date -u +%s) - start ))" | tee -a "$LOGS/build_time.txt"
+
+      - name: Summary
+        if: always()
+        run: |
+          LOGS=ci-logs
+          {
+            echo "### Lean kernel build"
+            echo '```'
+            cat "$LOGS/runner.txt" 2>/dev/null || true
+            cat "$LOGS/build_time.txt" 2>/dev/null || true
+            if [ -s "$LOGS/memwatch.txt" ]; then
+              awk 'NR > 1 { if ($2 > u) u = $2; if ($4 > t) t = $4; if ($5 > s) s = $5; if ($3 > p) p = $3 }
+                   END { printf "peak_used_mb: %d\npeak_lean_total_mb: %d\npeak_lean_single_mb: %d\nmax_lean_procs: %d\n", u, t, s, p }' "$LOGS/memwatch.txt" | tee "$LOGS/memory_peaks.txt"
+            fi
+            grep -F "$AXIOM_LINE" "$LOGS/build.log" 2>/dev/null || echo "axiom line not found"
+            tail -n 3 "$LOGS/build.log" 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the logs
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
+        with:
+          name: lean-kernel-build-logs
+          path: ci-logs/
+          if-no-files-found: warn

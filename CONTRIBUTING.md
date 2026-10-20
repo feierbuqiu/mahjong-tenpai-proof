@@ -32,7 +32,7 @@ The project lives in [`claude_independent_review/lean_formal/lean_project/`](cla
    - [`Tenpai/Main.lean`](claude_independent_review/lean_formal/lean_project/Tenpai/Main.lean).
 
    Regenerate them with the tools in [`claude_independent_review/lean_formal/tools/`](claude_independent_review/lean_formal/tools/) (see [`docs/reproducing.md`](docs/reproducing.md)).
-3. Run `lake build`. It must succeed, which includes the acceptance gate at the end of `Main.lean`.
+3. Run `lake build`. It must succeed, which includes the acceptance gate at the end of `Main.lean`. Continuous integration repeats this check on GitHub Actions for every change to the Lean sources.
 4. If the sources change, record the new source manifest with [`tools/manifest.py`](claude_independent_review/lean_formal/tools/manifest.py). Update the digest wherever it is quoted ([`docs/reproducing.md`](docs/reproducing.md), the paper and the workflow template), and add the new build log under [`claude_independent_review/lean_formal/logs/`](claude_independent_review/lean_formal/logs/).
 
 ## Pull requests

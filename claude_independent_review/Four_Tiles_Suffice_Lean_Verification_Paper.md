@@ -19,7 +19,7 @@ We present an end-to-end formal verification, in the Lean 4 proof assistant, of 
 - It reduces the coverage of every legal tenpai hand to finite checks whose meaning is itself proved in Lean.
 - It discharges the 1,075 resulting checks by evaluation inside the Lean kernel, with no native code evaluation.
 
-**Assurance.** The final theorem depends only on Lean's three standard axioms, a property enforced at build time by a fail-closed gate. A from-scratch build, bound to a SHA-256 manifest of the sources, completes in 21 minutes 38 seconds on a 16-thread workstation.
+**Assurance.** The final theorem depends only on Lean's three standard axioms, a property enforced at build time by a fail-closed gate. A from-scratch build, bound to a SHA-256 manifest of the sources, completes in 21 minutes 38 seconds on a 16-thread workstation. Continuous integration repeats the complete check from scratch on GitHub's standard Linux runner (4 CPUs, 16 GB of RAM) whenever the Lean sources change; there it completes in 31 minutes 37 seconds.
 
 **This paper.** We describe the kernel-oriented engineering that made a computation of this size feasible, an independent review and the changes it prompted, and the artefacts that let others reproduce the result locally or online.
 
@@ -46,7 +46,7 @@ The added tile *t* may not be a fifth copy of a type. The *wait set* of *H* is
 
 where *c<sub>H</sub>*(*t*) is the number of copies of *t* in *H* and 𝒢 is the set of winning 14-tile multisets.
 
-**The encoding game.** The puzzle was first posed in a post on Bilibili ([Mahjong tenpai wait-encoding puzzle], n.d.); the precise problem statement studied here is feierbuqiu (2026). It poses a cooperative game. Two parties agree on a protocol in advance:
+**The encoding game.** The puzzle was first posed in a Bilibili post by Lingzhi Shenpanzhe (Bilibili user 零之审判者; Lingzhi Shenpanzhe, n.d.); the precise problem statement studied here is feierbuqiu (2026). It poses a cooperative game. Two parties agree on a protocol in advance:
 1. The first party sees a tenpai hand *H* and lays all thirteen tiles face down in an order of their choosing.
 2. The second party turns over *k* tiles at agreed positions and must then announce *W*(*H*) exactly.
 
@@ -95,7 +95,8 @@ In addition, its large computations relied on native evaluation, which extends t
    - a fail-closed axiom gate;
    - a from-scratch build bound to a source manifest;
    - an independent review whose findings were all adopted;
-   - an artefact that regenerates byte-for-byte, together with a template for online re-execution.
+   - an artefact that regenerates byte-for-byte;
+   - continuous integration that repeats the complete kernel check online whenever the Lean sources change.
 
 ### 1.4 Organisation
 
@@ -340,6 +341,7 @@ The authoritative build was run from scratch on 20 October 2026, in a fresh copy
 - **Module times:** each of the 96 check modules took between 17 and 110 seconds (median 74 s). The assembly module, with 323 theorems, took 5.2 seconds.
 - **Memory:** combined peak 11.8 GB; peak for a single process 4.8 GB.
 - **Earlier build:** an earlier build of the same sources, made before the acceptance gate was appended to [`Main.lean`](lean_formal/lean_project/Tenpai/Main.lean), took 22 minutes 11 seconds.
+- **Online build:** the continuous-integration build of Section 6.5 ran from scratch on GitHub's standard Linux runner (Ubuntu 24.04, 4 CPUs, 16 GB of RAM) on 20 October 2026. It completed in 31 minutes 37 seconds, with a combined memory peak of 9.5 GB (5.0 GB for a single process), the same source digest and the same axiom footprint.
 
 ### 5.3 Acceptance gate and negative tests
 
@@ -389,7 +391,7 @@ Everything else is checked rather than trusted: the plan, the tables, the 1,075 
 1. **Kernel soundness.** The kernel is small and widely used. An independent re-check with a second kernel implementation remains possible; see Section 7.4.
 2. **Specification fidelity.** This is the main human-judged step. It was addressed by line-by-line comparison with the statement, by our own review and by the independent review (Section 5.5), and the specification is short enough to be read in full (Appendix A).
 3. **Toolchain integrity.** The toolchain is the official release, pinned in `lean-toolchain`.
-4. **Environment.** Kernel checking does not depend on timing or scheduling, and two complete builds (Section 5.2) produced the same result.
+4. **Environment.** Kernel checking does not depend on timing or scheduling. Three complete builds produced the same result: two on Windows and one on Linux in continuous integration (Section 5.2).
 5. **Scope.** See Section 7.3.
 
 **Overall assessment.** The statement *k*\* = 4, as defined in §7 of the problem statement, holds with the assurance of a machine-checked proof whose trusted base is the Lean kernel and a short specification.
@@ -406,8 +408,8 @@ The artefact is the folder [`claude_independent_review/lean_formal/`](lean_forma
 |---|---|
 | [`lean_project/`](lean_formal/lean_project/) | 126 Lean files: the root module [`Tenpai.lean`](lean_formal/lean_project/Tenpai.lean), 23 hand-written modules (about 5,000 lines), 4 [data modules](lean_formal/lean_project/Tenpai/Data/), 97 [generated check modules](lean_formal/lean_project/Tenpai/Run/) and the generated assembly [`Main.lean`](lean_formal/lean_project/Tenpai/Main.lean); plus [`lakefile.toml`](lean_formal/lean_project/lakefile.toml), [`lean-toolchain`](lean_formal/lean_project/lean-toolchain) and [`lake-manifest.json`](lean_formal/lean_project/lake-manifest.json) |
 | [`tools/`](lean_formal/tools/) | generators, the split planner and its cost model, the manifest tool and analysis utilities |
-| [`logs/`](lean_formal/logs/) | logs of the authoritative and earlier builds, the source manifests, the gate tests and calibration measurements |
-| [`ci/`](lean_formal/ci/) | a workflow template for online re-execution |
+| [`logs/`](lean_formal/logs/) | logs of the authoritative, earlier and online builds, the source manifests, the gate tests and calibration measurements |
+| [`ci/`](lean_formal/ci/) | the workflow template from which the repository's continuous integration was derived (Section 6.5) |
 
 ### 6.2 Local reproduction
 
@@ -443,9 +445,10 @@ The output is byte-identical to the distributed files (102 files compared, none 
 
 Three complementary routes support re-execution by others:
 1. **Continuous integration.**
-   - [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml) is a GitHub Actions workflow template. It installs elan, checks the source digest, runs `lake build` and keeps the log. It has *not* yet been run online.
-   - GitHub's standard Linux runner for public repositories provides 4 CPUs and 16 GB of RAM; the runner for private repositories provides 2 CPUs and 8 GB (GitHub, n.d.).
-   - Our measured peak of 11.8 GB suggests that the six-chain configuration fits the former, although this has not been tested. For the latter, the checks should be regenerated with fewer chains. Doing so changes the source digest, which must then be re-recorded.
+   - The workflow [`.github/workflows/lean-kernel-build.yml`](../.github/workflows/lean-kernel-build.yml), adapted from the template [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml), runs on GitHub Actions whenever the Lean sources change. It checks the source digest, installs the pinned toolchain, runs `lake build` from scratch, so that the acceptance gate of Section 5.3 decides the outcome, and keeps the log, timing and memory samples.
+   - It uses GitHub's standard Linux runner for public repositories, which provides 4 CPUs and 16 GB of RAM (GitHub, n.d.). The [run](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/runs/39360643654) of 20 October 2026 completed the build in 31 minutes 37 seconds with a combined memory peak of 9.5 GB, which confirms that the six-chain configuration fits this runner. Its log is kept in [`logs/ci_build/`](lean_formal/logs/ci_build/).
+   - A second workflow, [`.github/workflows/integrity.yml`](../.github/workflows/integrity.yml), checks on every change that the third-party mirror is byte-for-byte unchanged and that the Lean sources match the recorded digest.
+   - GitHub's runner for private repositories provides only 2 CPUs and 8 GB. There the checks would have to be regenerated with fewer chains, which changes the source digest.
 2. **Archiving.** Depositing the artefact with a long-term archive that issues persistent identifiers (for example Zenodo, https://zenodo.org, or Software Heritage, https://www.softwareheritage.org) would let readers cite the exact version together with its digest.
 3. **External re-checking.** Lean's documentation describes tools that replay stored declarations through the kernel (`lean4checker`) or compare them using the official kernel and the independent checker nanoda (Bailey, n.d.; Lean FRO, n.d.-c). Because our proof uses no native evaluation, it is eligible for such re-checking.
 
@@ -469,7 +472,7 @@ Three complementary routes support re-execution by others:
 5. **Kernel engineering.** We diagnosed and removed kernel-scale bottlenecks: memoisation by value, packed representations, prefix-tree enumeration in place of structurally recursive list functions, and cost-model-driven splitting into 1,075 leaves. Each step was guided by isolated measurements, including a failed first full run.
 6. **Generation and assembly.** We generated and assembled the leaves (prefix-tree joins, shape-range merges) and completed the end-to-end kernel build.
 7. **Trust and evidence.** After the independent review, we added the fail-closed axiom gate and its tests. We bound a from-scratch build to a source manifest and narrowed the scope of our claims.
-8. **Packaging.** We packaged the artefact for local and online reproduction.
+8. **Packaging and continuous integration.** We packaged the artefact for local reproduction and set up continuous integration that repeats the complete kernel check online.
 
 ### 7.2 Lessons
 
@@ -501,7 +504,7 @@ Three complementary routes support re-execution by others:
 We have given a complete, kernel-only Lean 4 proof that four tiles suffice, and that fewer do not, for communicating the full wait set of any legal tenpai hand.
 - The proof rests on a short, readable specification and on Lean's standard axioms.
 - It checks the earlier study's encoding plan as a certificate rather than trusting the programs that produced it.
-- It is fail-closed by construction and reproducible from a hash-identified artefact.
+- It is fail-closed by construction, reproducible from a hash-identified artefact, and re-checked online by continuous integration.
 
 The work confirms, by a machine-checked proof, the answer that the earlier computational study had found.
 
@@ -509,7 +512,7 @@ The work confirms, by a machine-checked proof, the answer that the earlier compu
 
 ## Acknowledgements
 
-**The original study.** We gratefully acknowledge Qianwan Dangliang (Bilibili user 千万当量), the author of the earlier computational study (Qianwan Dangliang, 2026), and the poser of the original puzzle on Bilibili ([Mahjong tenpai wait-encoding puzzle], n.d.). That work carried out the computation, devised the construction and reached the result *k*\* = 4. Our contribution is confined to the formal proof. We did not modify the original solution process or construction. Our only change to the original data was to reorder codes within each class, for efficiency, leaving every class's code set unchanged.
+**The original puzzle and study.** We gratefully acknowledge Lingzhi Shenpanzhe (Bilibili user 零之审判者), who posed the original puzzle on Bilibili (Lingzhi Shenpanzhe, n.d.), and Qianwan Dangliang (Bilibili user 千万当量), the author of the earlier computational study (Qianwan Dangliang, 2026). The study carried out the computation, devised the construction and reached the result *k*\* = 4. Our contribution is confined to the formal proof. We did not modify the original solution process or construction. Our only change to the original data was to reorder codes within each class, for efficiency, leaving every class's code set unchanged.
 
 **AI assistance.** We acknowledge the substantial contribution of Anthropic's Claude Code (Anthropic, 2026a), and in particular of the Claude Opus 5.5 model (Anthropic, 2026b). Almost all of the formalisation was developed with its assistance: the specification, the proofs, the kernel-performance engineering, the generators and build tooling, and the drafting of this paper. It was an indispensable tool throughout.
 
@@ -538,7 +541,7 @@ The work confirms, by a machine-checked proof, the answer that the earlier compu
 
 ## Data and Code Availability
 
-All sources, data, generators, logs and the workflow template are contained in the artefact [`claude_independent_review/lean_formal/`](lean_formal/) (Section 6.1).
+All sources, data, generators, logs and the workflow template are contained in the artefact [`claude_independent_review/lean_formal/`](lean_formal/) (Section 6.1). The continuous-integration workflows are in [`.github/workflows/`](../.github/workflows/).
 
 All of it is published at <https://github.com/feierbuqiu/mahjong-tenpai-proof>. The original computational package (Qianwan Dangliang, 2026) is mirrored there, unmodified, under [`third_party/qianwan-dangliang/`](../third_party/qianwan-dangliang/). Its final plan is the file [`third_party/qianwan-dangliang/work/verify/plan_k4_final.json`](../third_party/qianwan-dangliang/work/verify/plan_k4_final.json) (SHA-256 `b95f5523bae86db71fabd62380fb6820b3d83c4e794eb92043b7ca8f4fa57163`).
 
@@ -586,7 +589,7 @@ Lean FRO. (n.d.-c). Validating a Lean proof. In *The Lean language reference* (L
 
 Lean FRO. (2026). *Lean 4* (Version 4.35.0) [Computer software]. GitHub. https://github.com/leanprover/lean4/releases/tag/v4.35.0
 
-[Mahjong tenpai wait-encoding puzzle] [Post]. (n.d.). Bilibili. Retrieved October 20, 2026, from https://www.bilibili.com/opus/1246853448736964611
+Lingzhi Shenpanzhe [零之审判者]. (n.d.). [Mahjong tenpai wait-encoding puzzle] [Post]. Bilibili. Retrieved October 20, 2026, from https://www.bilibili.com/opus/1246853448736964611
 
 Qianwan Dangliang [千万当量]. (2026). *Majiang "fan pai cai tingpai" zuizhong baogao: Python zhengming lian + Lean xingshihua jinzhan* [Final report on the mahjong "turn over tiles to guess the waits" problem: Python proof chain and Lean formalisation progress] [Report and software package]. Baidu Netdisk. https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx
 
@@ -717,4 +720,5 @@ end Tenpai
 | [`tools/`](lean_formal/tools/) | [`gen_data.py`](lean_formal/tools/gen_data.py), [`gen_split.py`](lean_formal/tools/gen_split.py), [`plan_split.c`](lean_formal/tools/plan_split.c), [`manifest.py`](lean_formal/tools/manifest.py), [`timing.py`](lean_formal/tools/timing.py), analysis utilities |
 | [`logs/clean_build/`](lean_formal/logs/clean_build/) | authoritative from-scratch build: log, timing, memory samples, source manifests before and after, axiom printout |
 | [`logs/first_build/`](lean_formal/logs/first_build/), [`logs/gate_tests/`](lean_formal/logs/gate_tests/), [`logs/calibration_runs.txt`](lean_formal/logs/calibration_runs.txt) | earlier build, gate tests, calibration runs |
-| [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml) | GitHub Actions workflow template (not yet run online) |
+| [`logs/ci_build/`](lean_formal/logs/ci_build/) | the online build: runner details, log, timing, memory samples, source manifest |
+| [`ci/lean-kernel-build.yml`](lean_formal/ci/lean-kernel-build.yml) | GitHub Actions workflow template, adapted as the repository's continuous integration |

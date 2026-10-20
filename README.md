@@ -1,5 +1,8 @@
 # mahjong-tenpai-proof
 
+[![Lean kernel build](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/lean-kernel-build.yml/badge.svg?branch=main)](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/lean-kernel-build.yml)
+[![Repository integrity](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/integrity.yml/badge.svg?branch=main)](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/integrity.yml)
+
 **A kernel-checked Lean 4 proof that four tiles suffice, and fewer do not, for the mahjong tenpai wait-set encoding puzzle (*k*\* = 4).**
 
 ## The puzzle
@@ -24,7 +27,7 @@ This repository brings together the work of several people. Every part is credit
 
 | Contribution | By | Where |
 |---|---|---|
-| The original puzzle | the poser of a Bilibili post | <https://www.bilibili.com/opus/1246853448736964611> |
+| The original puzzle | **Lingzhi Shenpanzhe (Bilibili user 零之审判者)**, in a Bilibili post | <https://www.bilibili.com/opus/1246853448736964611> |
 | The precise problem statement (definitions, two viewing models and their equivalence) | **feierbuqiu** | [`docs/problem-statement.md`](docs/problem-statement.md) (English translation) and the [Chinese original](docs/呆饼问题（二）：听牌信息的排列编码问题.md) |
 | The computation, the construction and the answer *k*\* = 4 (exhaustive search, the 2,846-class / 17,579-code encoding plan, the lower-bound argument, their own Python verifiers and a Lean attempt) | **Qianwan Dangliang (Bilibili user 千万当量)**, posted in reply to the Bilibili puzzle and originally shared on Baidu Netdisk: <https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx> | [`third_party/qianwan-dangliang/`](third_party/qianwan-dangliang/), mirrored unmodified (see [`third_party/README.md`](third_party/README.md)) |
 | The kernel-only Lean 4 formal proof, the independent cross-check of the computation and the paper | **feierbuqiu**, with AI assistance (Claude Code, Claude Opus 5.5) | [`claude_independent_review/`](claude_independent_review/) |
@@ -55,6 +58,7 @@ lake build
 
 - **Success is the acceptance check.** The project ends with an acceptance gate (`#guard_msgs` on `#print axioms`), so the build fails unless the final theorem depends on exactly Lean's three standard axioms. Any `sorry` or extra axiom therefore makes it fail.
 - **Expected cost.** About 22 minutes on a 16-thread, 32 GB machine, with peak memory of about 12 GB in total.
+- **Online.** The same check runs on GitHub Actions whenever the Lean sources change (badge above); the recorded run took 31 minutes 37 seconds on a standard 4-CPU, 16 GB runner.
 - **More.** See [`docs/reproducing.md`](docs/reproducing.md) for source-identity checks, regenerating every generated file and online re-execution.
 
 ## Documentation
@@ -85,4 +89,4 @@ See [`CITATION.cff`](CITATION.cff), or cite:
 
 > feierbuqiu. (2026). *Four tiles suffice: A kernel-only, end-to-end Lean 4 formalisation of the optimal encoding length for mahjong wait sets*. GitHub. https://github.com/feierbuqiu/mahjong-tenpai-proof
 
-Please also credit Qianwan Dangliang for the computation and construction, and the original Bilibili post for the puzzle.
+Please also credit Lingzhi Shenpanzhe (零之审判者) for the original puzzle, and Qianwan Dangliang (千万当量) for the computation and construction.

@@ -1,0 +1,39 @@
+# Fast checks on every change: the third-party mirror is byte-for-byte unchanged, and the
+# Lean sources match the digest of the recorded builds.
+name: Repository integrity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    # Pull requests from branches of this repository are already checked by their push run.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Third-party mirror is unchanged
+        working-directory: third_party
+        run: |
+          sha256sum --check --strict --quiet qianwan-dangliang.SHA256SUMS
+          # No file may be added to or removed from the mirror either.
+          diff <(sed -E 's/^[0-9a-f]{64} [ *]//' qianwan-dangliang.SHA256SUMS | LC_ALL=C sort) \
+               <(find qianwan-dangliang -type f | LC_ALL=C sort)
+          echo "All $(wc -l < qianwan-dangliang.SHA256SUMS) mirrored files match their checksums."
+
+      - name: Lean sources match the recorded digest
+        run: |
+          python3 -I claude_independent_review/lean_formal/tools/manifest.py claude_independent_review/lean_formal/lean_project manifest.json
+          python3 -I -c 'import json, sys; d = json.load(open("manifest.json")); print(d["lean_set_sha256"]); sys.exit(d["lean_set_sha256"] != "a179bd53953a21dc4b38489f9cc13e10c698a23b034555ae413b85e68ef191d2")'

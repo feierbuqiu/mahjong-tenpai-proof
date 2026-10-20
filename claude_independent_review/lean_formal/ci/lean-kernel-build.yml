@@ -1,7 +1,8 @@
 # GitHub Actions workflow template for re-running the kernel-checked proof online.
 #
-# STATUS: template only -- it has NOT yet been run on GitHub.  The authoritative evidence is the
-# local from-scratch build recorded in ../logs/clean_build/.
+# STATUS: adapted for the public repository as .github/workflows/lean-kernel-build.yml, which runs on
+# GitHub Actions; its recorded run is in ../logs/ci_build/.  The local from-scratch build in
+# ../logs/clean_build/ remains the reference build.
 #
 # Usage: publish the folder `claude_independent_review/lean_formal/` as a repository (so that
 # `lean_project/` and `tools/` are at the repository root) and copy this file to
