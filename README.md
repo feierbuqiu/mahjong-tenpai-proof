@@ -1,5 +1,8 @@
 # mahjong-tenpai-proof
 
+[![Lean kernel build](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/lean-kernel-build.yml/badge.svg?branch=main)](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/lean-kernel-build.yml)
+[![Repository integrity](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/integrity.yml/badge.svg?branch=main)](https://github.com/feierbuqiu/mahjong-tenpai-proof/actions/workflows/integrity.yml)
+
 **A kernel-checked Lean 4 proof that four tiles suffice, and fewer do not, for the mahjong tenpai wait-set encoding puzzle (*k*\* = 4).**
 
 ## The puzzle
