@@ -1,0 +1,351 @@
+{
+ "plan": "work/verify/plan_k4_final.json",
+ "k": 4,
+ "n_classes": 2846,
+ "n_codes": 411508,
+ "check1_class_set_equal": true,
+ "check1_symdiff": 0,
+ "check2_empty_classes": 0,
+ "check3_code_collisions": 0,
+ "check3_multiset_over_capacity": 0,
+ "check3_max_use": 24,
+ "check4_total": 411508,
+ "check4_unverified": 87734,
+ "check4_via": {
+  "full_hand": 6646,
+  "element": 18040,
+  "source_embedding": 299088,
+  "chiitoi_construction": 0,
+  "tanki_criterion": 0
+ },
+ "check4_tanki_sample_witness_fail": 0,
+ "check4_tanki_sample_examples": [],
+ "check5_typeI_blocks_scanned": 20001,
+ "check5_typeI_uncovered": 5,
+ "check5_typeI_uncovered_examples": [
+  {
+   "W": [
+    "1m",
+    "4m"
+   ],
+   "cat": "m",
+   "A": "011000020",
+   "m": 9,
+   "witness_hand": [
+    "2m",
+    "3m",
+    "8m",
+    "8m",
+    "1s",
+    "2s",
+    "3s",
+    "4s",
+    "5s",
+    "6s",
+    "7s",
+    "8s",
+    "9s"
+   ]
+  },
+  {
+   "W": [
+    "3m",
+    "4m"
+   ],
+   "cat": "m",
+   "A": "030100000",
+   "m": 9,
+   "witness_hand": [
+    "2m",
+    "2m",
+    "2m",
+    "4m",
+    "E",
+    "E",
+    "E",
+    "S",
+    "S",
+    "S",
+    "W",
+    "W",
+    "W"
+   ]
+  },
+  {
+   "W": [
+    "3m",
+    "4m"
+   ],
+   "cat": "m",
+   "A": "002200000",
+   "m": 9,
+   "witness_hand": [
+    "3m",
+    "3m",
+    "4m",
+    "4m",
+    "E",
+    "E",
+    "E",
+    "S",
+    "S",
+    "S",
+    "W",
+    "W",
+    "W"
+   ]
+  },
+  {
+   "W": [
+    "2m",
+    "5m"
+   ],
+   "cat": "m",
+   "A": "001102000",
+   "m": 9,
+   "witness_hand": [
+    "3m",
+    "4m",
+    "6m",
+    "6m",
+    "1s",
+    "2s",
+    "3s",
+    "4s",
+    "5s",
+    "6s",
+    "7s",
+    "8s",
+    "9s"
+   ]
+  },
+  {
+   "W": [
+    "2m",
+    "5m"
+   ],
+   "cat": "m",
+   "A": "001100200",
+   "m": 9,
+   "witness_hand": [
+    "3m",
+    "4m",
+    "7m",
+    "7m",
+    "1s",
+    "2s",
+    "3s",
+    "4s",
+    "5s",
+    "6s",
+    "7s",
+    "8s",
+    "9s"
+   ]
+  }
+ ],
+ "check6_chiitoi_descriptors": 97,
+ "check6_chiitoi_fail": 77,
+ "check6_chiitoi_fail_examples": [
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7m"
+   ],
+   "z": "7m",
+   "bad_K": [
+    "1m",
+    "8m",
+    "9m",
+    "1p",
+    "2p",
+    "3p"
+   ]
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7m"
+   ],
+   "z": "4m",
+   "bad_K": [
+    "1m",
+    "5m",
+    "1p",
+    "2p",
+    "3p",
+    "4p"
+   ]
+  },
+  {
+   "W": [
+    "1m",
+    "4m",
+    "7m"
+   ],
+   "z": "1m",
+   "bad_K": [
+    "2m",
+    "3m",
+    "9m",
+    "1p",
+    "2p",
+    "3p"
+   ]
+  },
+  {
+   "W": [
+    "8m"
+   ],
+   "z": "8m",
+   "bad_K": [
+    "1m",
+    "7m",
+    "1p",
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "W": [
+    "3p"
+   ],
+   "z": "3p",
+   "bad_K": [
+    "1m",
+    "4p",
+    "5p",
+    "7p",
+    "5s",
+    "S"
+   ]
+  },
+  {
+   "W": [
+    "4p"
+   ],
+   "z": "4p",
+   "bad_K": [
+    "1m",
+    "1p",
+    "3p",
+    "8p",
+    "5s",
+    "S"
+   ]
+  }
+ ],
+ "check7_kokushi_fail": 0,
+ "check8_sim_target": 30000,
+ "check8_sim_result": {
+  "listening": 12766,
+  "fail": 1483,
+  "no_class": 245
+ },
+ "check8_fail_examples": [
+  {
+   "W": [
+    "9s"
+   ],
+   "hand": [
+    "1m",
+    "9m",
+    "1p",
+    "1p",
+    "9p",
+    "1s",
+    "E",
+    "S",
+    "W",
+    "N",
+    "Haku",
+    "Hatsu",
+    "Chun"
+   ]
+  },
+  {
+   "W": [
+    "S"
+   ],
+   "hand": [
+    "1m",
+    "9m",
+    "1p",
+    "9p",
+    "1s",
+    "9s",
+    "E",
+    "W",
+    "N",
+    "Haku",
+    "Hatsu",
+    "Chun",
+    "Chun"
+   ]
+  },
+  {
+   "W": [
+    "1s"
+   ],
+   "hand": [
+    "1m",
+    "9m",
+    "1p",
+    "9p",
+    "9s",
+    "9s",
+    "E",
+    "S",
+    "W",
+    "N",
+    "Haku",
+    "Hatsu",
+    "Chun"
+   ]
+  },
+  {
+   "W": [
+    "Haku"
+   ],
+   "hand": [
+    "1m",
+    "9m",
+    "1p",
+    "9p",
+    "1s",
+    "9s",
+    "E",
+    "S",
+    "W",
+    "N",
+    "Hatsu",
+    "Chun",
+    "Chun"
+   ]
+  },
+  {
+   "W": [
+    "S"
+   ],
+   "hand": [
+    "E",
+    "W",
+    "N",
+    "N",
+    "N",
+    "Haku",
+    "Haku",
+    "Haku",
+    "Hatsu",
+    "Chun",
+    "Chun",
+    "Chun",
+    "Chun"
+   ]
+  }
+ ],
+ "VERDICT_k4_plan_ok": false
+}

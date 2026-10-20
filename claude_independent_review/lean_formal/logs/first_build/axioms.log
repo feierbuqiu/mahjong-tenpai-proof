@@ -1,0 +1,18 @@
+Tenpai.kStar_eq_four : Tenpai.IsKStar 4
+def Tenpai.IsKStar : Nat → Prop :=
+fun n => n ≤ 13 ∧ Tenpai.Feasible n ∧ ∀ (k : Nat), k ≤ 13 → Tenpai.Feasible k → n ≤ k
+def Tenpai.Feasible : Nat → Prop :=
+fun k =>
+  ∃ f,
+    (∀ (H : { H // Tenpai.InH H }), Tenpai.Admissible H.val (f H)) ∧
+      ∀ (H H' : { H // Tenpai.InH H }), f H = f H' → Tenpai.W H.val = Tenpai.W H'.val
+def Tenpai.Admissible : Tenpai.Counts → {k : Nat} → (Fin k → Tenpai.Tile) → Prop :=
+fun H {k} v => ∀ (t : Tenpai.Tile), List.countP (fun j => decide (v j = t)) (List.finRange k) ≤ H t
+def Tenpai.InH : Tenpai.Counts → Prop :=
+fun H => Tenpai.IsHand H ∧ ∃ t, Tenpai.W H t
+def Tenpai.W : Tenpai.Counts → Tenpai.Tile → Prop :=
+fun H t => H t < 4 ∧ Tenpai.IsWinning (Tenpai.addTile H t)
+def Tenpai.IsWinning : Tenpai.Counts → Prop :=
+fun G => (∀ (s : Tenpai.Tile), G s ≤ 4) ∧ (Tenpai.IsStandard G ∨ Tenpai.IsSevenPairs G ∨ Tenpai.IsKokushi G)
+'Tenpai.kStar_eq_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+exit=0

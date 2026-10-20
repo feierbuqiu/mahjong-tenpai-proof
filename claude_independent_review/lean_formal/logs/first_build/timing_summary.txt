@@ -1,0 +1,10 @@
+modules timed: 96 / 96
+family    leaves     est s  measured s
+T1           284      1339        1892
+T2           732      3276        4808
+T4            53       566         843
+small          6        73          98
+total       1075      5254        7641
+module time: min 17s  median 77s  max 151s
+other module Run.All: 0.9s
+other module Main: 4.0s

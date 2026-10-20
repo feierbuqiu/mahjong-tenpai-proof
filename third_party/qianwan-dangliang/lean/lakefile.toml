@@ -1,0 +1,40 @@
+name = "mj"
+# 显式 modules：Lake 的 glob 在 configure 时缓存，新增模块必须重新配置才会被 build 覆盖。
+# Upper / Upper2 各自定义了 reqOk 等同名常量，不能并入同一个 umbrella 模块，故分列目标。
+defaultTargets = ["Mj", "Mj.Data", "Mj.Upper", "Mj.Data2", "Mj.Upper2", "Mj.L6Total", "Mj.L6Bridge"]
+
+[[lean_lib]]
+name = "Mj"
+modules = [
+  "Mj.Basic",
+  "Mj.Protocol",
+  "Mj.Lemma",
+  "Mj.Disproof",
+  "Mj.Bridge",
+  "Mj.Data",
+  "Mj.Upper",
+  "Mj.Data2",
+  "Mj.Upper2",
+  "Mj.L6Probe0",
+  "Mj.L6Index",
+  "Mj.L6B00",
+  "Mj.L6B01",
+  "Mj.L6B02",
+  "Mj.L6B03",
+  "Mj.L6B04",
+  "Mj.L6B05",
+  "Mj.L6B06",
+  "Mj.L6B07",
+  "Mj.L6B08",
+  "Mj.L6B09",
+  "Mj.L6B10",
+  "Mj.L6B11",
+  "Mj.L6B12",
+  "Mj.L6B13",
+  "Mj.L6B14",
+  "Mj.L6B15",
+  "Mj.L6Total",
+  "Mj.L6Upper",
+  "Mj.L6Bridge",
+  "Mj.L6Len"
+]

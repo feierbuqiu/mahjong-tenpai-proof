@@ -1,0 +1,2 @@
+all hands (user's model, no red tiles): N=347  L3=52  N+L3=399  vs 7^3=343 -> k=3 impossible
+hands without the red 5m (at most 3 normal 5m): N=305  L3=40  N+L3=345  vs 7^3=343 -> k=3 impossible

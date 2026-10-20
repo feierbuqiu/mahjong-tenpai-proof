@@ -1,0 +1,14 @@
+[L5] ����ɫ 13 �ż�������: ֱ�����=93600 �ݳ�=93600 OK
+[������֤] ��һɫ 14 �ű�׼��ʤ��: A=13259 B=13259 OK
+[�ղ�] ��һɫ��������=40196 ��=387 (t=26.9s)
+[k=1] Sigma tau in [427, 427] (exact classes 387/387) | 9^1=9 -> ��֤ | #classes=387 vs 34^1=34 -> ��֤
+[k=2] Sigma tau in [447, 457] (exact classes 377/387) | 9^2=81 -> ��֤ | #classes=387 vs 34^2=1156 -> -
+[k=3] Sigma tau in [538, 569] (exact classes 361/387) | 9^3=729 -> ����(�Ͻ���) | #classes=387 vs 34^3=39304 -> -
+[k=4] Sigma tau in [578, 655] (exact classes 344/387) | 9^4=6561 -> ����(�Ͻ���) | #classes=387 vs 34^4=1336336 -> -
+[д��] D:\DSH\MJ2\work\lowerbound\certificate.json (807704 bytes)
+--- �ط��Լ� ---
+  k=1: Sigma tau in [427, 427]; 9^1=9 34^1=34
+  k=2: Sigma tau in [447, 457]; 9^2=81 34^2=1156
+  k=3: Sigma tau in [538, 569]; 9^3=729 34^3=39304
+  k=4: Sigma tau in [578, 655]; 9^4=6561 34^4=1336336
+CERTIFICATE VERIFIED

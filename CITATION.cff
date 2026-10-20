@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: >-
+  If you use this work, please cite it as below. Please also credit
+  Qianwan Dangliang for the computation and construction (see references),
+  and the original Bilibili post for the puzzle.
+title: >-
+  Four Tiles Suffice: A Kernel-Only, End-to-End Lean 4 Formalisation of the
+  Optimal Encoding Length for Mahjong Wait Sets
+type: software
+authors:
+  - alias: feierbuqiu
+date-released: 2026-10-20
+url: "https://github.com/feierbuqiu/mahjong-tenpai-proof"
+repository-code: "https://github.com/feierbuqiu/mahjong-tenpai-proof"
+license: MIT
+keywords:
+  - formal verification
+  - Lean 4
+  - kernel reduction
+  - certificate checking
+  - combinatorial coding
+  - mahjong
+references:
+  - type: software
+    title: >-
+      Final report on the mahjong "turn over tiles to guess the waits"
+      problem: Python proof chain and Lean formalisation progress
+    authors:
+      - alias: "Qianwan Dangliang (千万当量)"
+    year: 2026
+    url: "https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx"
+    notes: >-
+      Mirrored unmodified in third_party/qianwan-dangliang/ of this
+      repository. No licence; all rights reserved by its author.
+  - type: generic
+    title: Mahjong tenpai wait-encoding puzzle (Bilibili post)
+    authors:
+      - name: "Unknown (Bilibili post author)"
+    url: "https://www.bilibili.com/opus/1246853448736964611"

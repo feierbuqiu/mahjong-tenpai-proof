@@ -1,0 +1,28 @@
+Part 1: single-suit hands = 93600 ; tenpai under S/F/Q = 40196 / 40872 / 47933
+  U (tiles of one suit)   |U|  N_S  L3_S  N_F  L3_F  N_Q  L3_Q   |U|^1 |U|^2 |U|^3 |U|^4
+  234567   m               6   206   17   131   13   211   27       6    36   216  1296   <== N_S+L3_S > |U|^3
+  1234567  m               7   222   51   150   38   227   71       7    49   343  2401
+  345678   m               6   206   17   131   13   211   27       6    36   216  1296   <== N_S+L3_S > |U|^3
+  2345678  m               7   347   52   216   39   357   75       7    49   343  2401   <== N_S > |U|^3
+  3456789  m               7   222   51   150   38   227   71       7    49   343  2401
+  123456789m               9   387   87   271   57   408  150       9    81   729  6561
+  full suit, variant S: N=387  L1=40 L2=53 L3=87 L4=111   (k=1: N+L1=427 vs 9 ; k=2: N+L2=440 vs 81)
+  full suit, variant F: N=271  L1=22 L2=33 L3=57 L4=72   (k=1: N+L1=293 vs 9 ; k=2: N+L2=304 vs 81)
+  full suit, variant Q: N=408  L1=101 L2=132 L3=150 L4=178   (k=1: N+L1=509 vs 9 ; k=2: N+L2=540 vs 81)
+  variant S: max over U of (N+L3-|U|^3) = 56
+  variant F: max over U of (N+L3-|U|^3) = -1
+  variant Q: max over U of (N+L3-|U|^3) = 89
+Part 2: hands over (one suit + 7 honors) = 29695056 ; tenpai = 551203 ; classes = 562
+  subsets with N(U) > |U|^3: 1 ; best margin N-|U|^3 = 4 at U = { 2m 3m 4m 5m 6m 7m 8m } (N=347, |U|^3=343)
+  the 10 best U (by N - |U|^3):
+    N= 347 |U|= 7 |U|^3=  343 margin=    4  U={ 2m 3m 4m 5m 6m 7m 8m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 1m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 2m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 3m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 4m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 5m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 6m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 7m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 8m }
+    N=   0 |U|= 1 |U|^3=    1 margin=   -1  U={ 9m }
+elapsed 4.5 s

@@ -1,0 +1,5 @@
+[    0.5s] plan=work/verify/plan_k4_final.json: 2846 类 411508 码
+[   51.5s] ④ 重判: 通过 323774 ; 精确层待删 470 ; TypeII 待复核 87264
+[   51.8s] 写出 waste_list.json: 删除清单 470 条 / 94 类 ; review 87264 条 / 923 类
+[   53.0s] 抽样 200 条: 完备枚举扫描后仍无包含的 = 200 ; 反例 = 0
+[   53.0s] 写出 waste_sample_evidence.json

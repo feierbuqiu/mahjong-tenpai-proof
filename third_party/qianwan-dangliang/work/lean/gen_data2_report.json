@@ -1,0 +1,43 @@
+{
+ "task": "task-16 L6 step1 + step2 (block-level semantics, full run)",
+ "status": "step1 complete; block-level semantics implemented on BOTH sides; Python full run DONE (0 failures); Lean kernel full run NOT completed (time limit)",
+ "scale": {
+  "blocks": 309144,
+  "units": 5402697,
+  "profiles": 2469,
+  "groups": 16,
+  "data2_mb": 4.68
+ },
+ "crosscheck_step1": {
+  "python_keys": 2469,
+  "python_mismatches": 0,
+  "lean_profTableOk": true
+ },
+ "semantics_fix": {
+  "bug": "block-level DFS originally used only codes whose tiles lie in c1/c2; codes may legitimately use inert-category tiles, which produced 2,032,790 spurious failing units",
+  "fix": "strict check uses category-filtered codes (correct: code ⊆ A ⊆ c1∪c2), DFS uses the class's FULL code list",
+  "verified_by": "Python full run after fix: 0 failures; and the specific witness case (classIdx=6, key=(0,2,9,1,2,14)) is covered once the full list is used"
+ },
+ "python_full_run": {
+  "script": "work/lean/verify_l6.py",
+  "processes": 8,
+  "seconds": 93.9,
+  "total": [
+   309144,
+   0,
+   5402697,
+   0
+  ],
+  "per_batch": "work/lean/gen_data2_progress.jsonl (16 lines, all failed_blocks=0)",
+  "totals_json": "work/lean/gen_data2_totals.json"
+ },
+ "lean_kernel": {
+  "build": "lake build Mj.Upper2 => OK (333 s incl. the check)",
+  "verified": "blockStat ((l6Batches.getD 0 []).take 2000) = (2000, 0, 50935, 0) via native_decide  => 50,935 units, 0 failures",
+  "NOT_verified": "full 309,144 blocks / 5,402,697 units inside the kernel: 3 native_decide attempts (28 min, 18 min, 8+ min) were killed at the session time limit; theorem l6BatchStats_eq / l6Total_eq are left commented in Upper2.lean"
+ },
+ "assumptions_remaining": [
+  "Mj.Upper.lean: axiom iiUnitsComplete (still there; Upper2's block-level check is the intended replacement once the full Lean run completes)"
+ ],
+ "warning": "work/lean/gen_data2_progress.jsonl contains the 16 lines of this run (7 fields, semantics=block-level (strict + DFS), all zeros) PLUS foreign 6-field lines appended by another process/time (different numbers) — use the 7-field lines or gen_data2_totals.json"
+}

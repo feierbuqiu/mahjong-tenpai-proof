@@ -1,0 +1,9 @@
+✖ [23/23] Building Mj.L6Total (384s)
+trace: .> LEAN_PATH=D:\DSH\MJ2\lean\.lake\build\lib\lean c:\Users\19706\.elan\toolchains\leanprover--lean4---v4.33.1\bin\lean.exe D:\DSH\MJ2\lean\Mj\L6Total.lean -o D:\DSH\MJ2\lean\.lake\build\lib\lean\Mj\L6Total.olean -i D:\DSH\MJ2\lean\.lake\build\lib\lean\Mj\L6Total.ilean -c D:\DSH\MJ2\lean\.lake\build\ir\Mj\L6Total.c --setup D:\DSH\MJ2\lean\.lake\build\ir\Mj\L6Total.setup.json --json
+info: stderr:
+INTERNAL PANIC: out of memory
+error: Lean exited with code 1
+error: build failed
+Some required targets logged failures:
+- Mj.L6Total
+exit=1

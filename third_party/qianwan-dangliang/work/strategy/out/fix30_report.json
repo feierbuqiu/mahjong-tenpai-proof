@@ -1,0 +1,378 @@
+{
+ "base": "D:\\DSH\\MJ2\\work\\verify\\plan_k4_zero.json",
+ "n_classes": 2846,
+ "n_codes": 404185,
+ "n_empty": 0,
+ "over_capacity": 0,
+ "targets": 137,
+ "fixed": 61,
+ "missing": [
+  {
+   "W": [
+    2,
+    5,
+    9,
+    12
+   ],
+   "units": 108,
+   "uncovered": 2
+  },
+  {
+   "W": [
+    11,
+    14,
+    21,
+    24
+   ],
+   "units": 104,
+   "uncovered": 4
+  },
+  {
+   "W": [
+    5,
+    8,
+    11,
+    14
+   ],
+   "units": 108,
+   "uncovered": 9
+  },
+  {
+   "W": [
+    14,
+    17,
+    19,
+    22
+   ],
+   "units": 110,
+   "uncovered": 5
+  },
+  {
+   "W": [
+    9,
+    12,
+    31
+   ],
+   "units": 398,
+   "uncovered": 23
+  },
+  {
+   "W": [
+    18,
+    21,
+    29
+   ],
+   "units": 398,
+   "uncovered": 6
+  },
+  {
+   "W": [
+    14,
+    17,
+    32
+   ],
+   "units": 398,
+   "uncovered": 17
+  },
+  {
+   "W": [
+    14,
+    17,
+    28
+   ],
+   "units": 398,
+   "uncovered": 25
+  },
+  {
+   "W": [
+    14,
+    17,
+    29
+   ],
+   "units": 398,
+   "uncovered": 18
+  },
+  {
+   "W": [
+    20,
+    23,
+    33
+   ],
+   "units": 356,
+   "uncovered": 10
+  },
+  {
+   "W": [
+    21,
+    24,
+    31
+   ],
+   "units": 356,
+   "uncovered": 25
+  },
+  {
+   "W": [
+    21,
+    24,
+    32
+   ],
+   "units": 356,
+   "uncovered": 16
+  },
+  {
+   "W": [
+    0,
+    3,
+    11
+   ],
+   "units": 788,
+   "uncovered": 25
+  },
+  {
+   "W": [
+    0,
+    3,
+    23
+   ],
+   "units": 735,
+   "uncovered": 18
+  },
+  {
+   "W": [
+    0,
+    3,
+    15
+   ],
+   "units": 788,
+   "uncovered": 42
+  },
+  {
+   "W": [
+    0,
+    3,
+    17
+   ],
+   "units": 794,
+   "uncovered": 23
+  },
+  {
+   "W": [
+    0,
+    14,
+    17
+   ],
+   "units": 794,
+   "uncovered": 32
+  },
+  {
+   "W": [
+    9,
+    18,
+    21
+   ],
+   "units": 794,
+   "uncovered": 16
+  },
+  {
+   "W": [
+    1,
+    18,
+    21
+   ],
+   "units": 792,
+   "uncovered": 11
+  },
+  {
+   "W": [
+    1,
+    4,
+    10
+   ],
+   "units": 762,
+   "uncovered": 32
+  },
+  {
+   "W": [
+    1,
+    4,
+    20
+   ],
+   "units": 758,
+   "uncovered": 33
+  },
+  {
+   "W": [
+    1,
+    4,
+    25
+   ],
+   "units": 762,
+   "uncovered": 18
+  },
+  {
+   "W": [
+    1,
+    4,
+    17
+   ],
+   "units": 764,
+   "uncovered": 45
+  },
+  {
+   "W": [
+    1,
+    22,
+    25
+   ],
+   "units": 762,
+   "uncovered": 25
+  },
+  {
+   "W": [
+    10,
+    13,
+    21
+   ],
+   "units": 706,
+   "uncovered": 24
+  },
+  {
+   "W": [
+    10,
+    13,
+    24
+   ],
+   "units": 758,
+   "uncovered": 48
+  },
+  {
+   "W": [
+    10,
+    13,
+    25
+   ],
+   "units": 762,
+   "uncovered": 20
+  },
+  {
+   "W": [
+    11,
+    18,
+    21
+   ],
+   "units": 788,
+   "uncovered": 23
+  },
+  {
+   "W": [
+    11,
+    22,
+    25
+   ],
+   "units": 758,
+   "uncovered": 82
+  },
+  {
+   "W": [
+    3,
+    18,
+    21
+   ],
+   "units": 735,
+   "uncovered": 21
+  },
+  {
+   "W": [
+    3,
+    10,
+    13
+   ],
+   "units": 706,
+   "uncovered": 53
+  },
+  {
+   "W": [
+    3,
+    13,
+    16
+   ],
+   "units": 706,
+   "uncovered": 29
+  },
+  {
+   "W": [
+    3,
+    22,
+    25
+   ],
+   "units": 706,
+   "uncovered": 99
+  },
+  {
+   "W": [
+    3,
+    14,
+    17
+   ],
+   "units": 735,
+   "uncovered": 20
+  },
+  {
+   "W": [
+    12,
+    18,
+    21
+   ],
+   "units": 735,
+   "uncovered": 42
+  },
+  {
+   "W": [
+    12,
+    22,
+    25
+   ],
+   "units": 706,
+   "uncovered": 42
+  },
+  {
+   "W": [
+    12,
+    23,
+    26
+   ],
+   "units": 735,
+   "uncovered": 50
+  },
+  {
+   "W": [
+    4,
+    7,
+    10
+   ],
+   "units": 762,
+   "uncovered": 40
+  },
+  {
+   "W": [
+    4,
+    7,
+    21
+   ],
+   "units": 706,
+   "uncovered": 80
+  },
+  {
+   "W": [
+    4,
+    7,
+    24
+   ],
+   "units": 758,
+   "uncovered": 95
+  }
+ ],
+ "n_missing": 76,
+ "new_codes": 1996,
+ "empty_classes": []
+}

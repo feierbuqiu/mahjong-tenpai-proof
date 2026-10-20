@@ -1,0 +1,4 @@
+ℹ [126/128] Replayed Tenpai.Main
+info: Tenpai/Main.lean:2579:0: 'Tenpai.kStar_eq_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (128 jobs).
+exit=0 sec=0

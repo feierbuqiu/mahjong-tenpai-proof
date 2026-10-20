@@ -1,0 +1,12 @@
+{
+ "plan": "work/recon/plan_k4_leadC.json",
+ "total_codes": 17344,
+ "usable": 17344,
+ "waste_count": 0,
+ "waste_by_class": [],
+ "audit": {
+  "sampled": 0,
+  "false_positives": 0,
+  "examples": []
+ }
+}

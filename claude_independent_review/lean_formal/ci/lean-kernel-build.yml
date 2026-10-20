@@ -1,0 +1,52 @@
+# GitHub Actions workflow template for re-running the kernel-checked proof online.
+#
+# STATUS: template only -- it has NOT yet been run on GitHub.  The authoritative evidence is the
+# local from-scratch build recorded in ../logs/clean_build/.
+#
+# Usage: publish the folder `claude_independent_review/lean_formal/` as a repository (so that
+# `lean_project/` and `tools/` are at the repository root) and copy this file to
+# `.github/workflows/lean-kernel-build.yml`.
+#
+# Sizing: our build peaked at 11.8 GB in total with six concurrent Lean processes (six import
+# chains).  The standard Linux runner for public repositories has 4 CPUs and 16 GB of RAM; the one
+# for private repositories has 2 CPUs and 8 GB, which is not enough with six chains.  For small
+# runners, regenerate the modules with fewer chains (`python3 tools/gen_split.py tools/split.txt 3`
+# inside lean_project/); note that this changes the source digest checked below.
+name: kernel-build
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    defaults:
+      run:
+        shell: bash   # bash -eo pipefail: a failing `lake build` fails the step even through `tee`
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan (the toolchain itself is pinned by lean_project/lean-toolchain)
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Check that the sources are the published ones
+        run: |
+          python3 -I tools/manifest.py lean_project manifest.json
+          grep -q '"lean_set_sha256": "a179bd53953a21dc4b38489f9cc13e10c698a23b034555ae413b85e68ef191d2"' manifest.json
+
+      - name: Kernel build (fails unless kStar_eq_four uses only propext, Classical.choice, Quot.sound)
+        working-directory: lean_project
+        run: lake build 2>&1 | tee ../build.log
+
+      - name: Keep the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kernel-build-log
+          path: |
+            build.log
+            manifest.json

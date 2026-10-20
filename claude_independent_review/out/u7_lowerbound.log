@@ -1,0 +1,4 @@
+U = {2m, 3m, 4m, 5m, 6m, 7m, 8m}: hands=7875 tenpai=5628 distinct wait sets N=347 ; |U|^3=343
+k=3 impossible by pigeonhole
+whole m suit: tenpai=40196 distinct wait sets=387 ; 9^1=9, 9^2=81
+certificate written to out/u7_certificate.txt

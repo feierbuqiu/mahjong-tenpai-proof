@@ -1,0 +1,360 @@
+﻿start 10/20/2026 03:14:07
+     0s procs=6 totalMB=3,099
+     5s procs=6 totalMB=3,463
+    11s procs=6 totalMB=4,191
+    16s procs=6 totalMB=5,361
+    21s procs=6 totalMB=5,794
+    26s procs=6 totalMB=5,321
+    31s procs=6 totalMB=4,212
+    36s procs=6 totalMB=5,155
+    41s procs=6 totalMB=5,476
+    46s procs=6 totalMB=5,464
+    51s procs=6 totalMB=7,789
+    57s procs=5 totalMB=6,422
+    62s procs=5 totalMB=5,385
+    67s procs=5 totalMB=5,018
+    72s procs=3 totalMB=2,063
+    77s procs=3 totalMB=1,875
+    82s procs=2 totalMB=1,612
+    87s procs=1 totalMB=702
+    92s procs=1 totalMB=687
+    97s procs=1 totalMB=550
+   102s procs=6 totalMB=4,033
+   108s procs=6 totalMB=5,645
+   113s procs=6 totalMB=8,237
+   118s procs=6 totalMB=6,719
+   123s procs=6 totalMB=5,790
+   128s procs=6 totalMB=7,621
+   133s procs=6 totalMB=8,338
+   138s procs=6 totalMB=4,011
+   143s procs=6 totalMB=5,748
+   148s procs=6 totalMB=6,632
+   154s procs=6 totalMB=6,110
+   159s procs=5 totalMB=5,913
+   164s procs=5 totalMB=7,442
+   169s procs=6 totalMB=3,483
+   174s procs=5 totalMB=4,427
+   179s procs=4 totalMB=3,092
+   184s procs=4 totalMB=3,620
+   189s procs=4 totalMB=3,924
+   195s procs=6 totalMB=3,869
+   200s procs=6 totalMB=4,972
+   205s procs=6 totalMB=7,016
+   210s procs=6 totalMB=6,561
+   215s procs=6 totalMB=8,835
+   220s procs=6 totalMB=7,843
+   225s procs=6 totalMB=6,048
+   231s procs=6 totalMB=6,435
+   236s procs=6 totalMB=6,943
+   241s procs=6 totalMB=7,383
+   246s procs=6 totalMB=7,632
+   252s procs=6 totalMB=8,237
+   257s procs=6 totalMB=6,072
+   262s procs=6 totalMB=3,720
+   268s procs=6 totalMB=4,925
+   273s procs=6 totalMB=5,061
+   278s procs=6 totalMB=5,889
+   284s procs=6 totalMB=6,861
+   289s procs=5 totalMB=6,407
+   294s procs=5 totalMB=7,030
+   300s procs=5 totalMB=6,099
+   305s procs=5 totalMB=5,370
+   310s procs=5 totalMB=3,417
+   315s procs=5 totalMB=2,984
+   321s procs=5 totalMB=3,742
+   326s procs=5 totalMB=4,587
+   332s procs=5 totalMB=4,712
+   337s procs=5 totalMB=3,750
+   342s procs=6 totalMB=4,818
+   348s procs=6 totalMB=4,252
+   353s procs=6 totalMB=3,594
+   358s procs=6 totalMB=3,853
+   363s procs=6 totalMB=4,494
+   368s procs=6 totalMB=5,125
+   373s procs=6 totalMB=5,357
+   378s procs=6 totalMB=6,497
+   384s procs=6 totalMB=7,674
+   389s procs=6 totalMB=4,122
+   394s procs=6 totalMB=6,023
+   399s procs=6 totalMB=6,362
+   404s procs=6 totalMB=7,162
+   409s procs=6 totalMB=3,412
+   414s procs=6 totalMB=4,018
+   419s procs=6 totalMB=4,302
+   424s procs=6 totalMB=5,103
+   430s procs=6 totalMB=6,827
+   435s procs=6 totalMB=3,701
+   440s procs=6 totalMB=4,190
+   445s procs=6 totalMB=3,521
+   450s procs=6 totalMB=5,405
+   455s procs=6 totalMB=4,033
+   460s procs=6 totalMB=4,213
+   465s procs=6 totalMB=4,724
+   471s procs=6 totalMB=4,445
+   476s procs=6 totalMB=3,865
+   481s procs=6 totalMB=4,956
+   486s procs=6 totalMB=5,620
+   491s procs=6 totalMB=6,014
+   496s procs=6 totalMB=4,595
+   501s procs=6 totalMB=3,860
+   507s procs=6 totalMB=4,376
+   512s procs=6 totalMB=5,471
+   517s procs=6 totalMB=6,177
+   522s procs=6 totalMB=8,009
+   527s procs=6 totalMB=8,056
+   532s procs=6 totalMB=9,258
+   537s procs=6 totalMB=6,380
+   543s procs=6 totalMB=4,822
+   548s procs=6 totalMB=3,671
+   553s procs=6 totalMB=3,053
+   558s procs=6 totalMB=5,233
+   563s procs=6 totalMB=6,787
+   568s procs=6 totalMB=6,006
+   573s procs=6 totalMB=6,985
+   578s procs=6 totalMB=6,314
+   583s procs=6 totalMB=4,542
+   589s procs=6 totalMB=4,304
+   594s procs=6 totalMB=4,066
+   599s procs=6 totalMB=3,611
+   604s procs=6 totalMB=4,222
+   609s procs=6 totalMB=3,732
+   614s procs=6 totalMB=3,914
+   619s procs=6 totalMB=4,692
+   624s procs=6 totalMB=6,558
+   630s procs=6 totalMB=3,596
+   635s procs=6 totalMB=4,273
+   640s procs=6 totalMB=5,318
+   645s procs=6 totalMB=4,865
+   650s procs=6 totalMB=4,337
+   655s procs=6 totalMB=5,578
+   660s procs=6 totalMB=5,976
+   665s procs=6 totalMB=6,225
+   670s procs=6 totalMB=6,518
+   676s procs=6 totalMB=3,240
+   681s procs=6 totalMB=4,862
+   686s procs=6 totalMB=4,903
+   691s procs=6 totalMB=6,609
+   696s procs=6 totalMB=7,853
+   701s procs=6 totalMB=4,644
+   706s procs=6 totalMB=4,570
+   711s procs=6 totalMB=5,581
+   716s procs=6 totalMB=4,880
+   722s procs=6 totalMB=4,257
+   727s procs=6 totalMB=5,062
+   732s procs=6 totalMB=5,325
+   737s procs=6 totalMB=4,993
+   742s procs=6 totalMB=5,875
+   747s procs=6 totalMB=3,135
+   752s procs=6 totalMB=5,931
+   757s procs=6 totalMB=4,552
+   762s procs=6 totalMB=5,972
+   768s procs=6 totalMB=4,458
+   773s procs=6 totalMB=4,217
+   778s procs=6 totalMB=5,025
+   783s procs=6 totalMB=3,949
+   788s procs=6 totalMB=3,889
+   793s procs=6 totalMB=4,499
+   798s procs=6 totalMB=4,039
+   803s procs=6 totalMB=3,558
+   808s procs=6 totalMB=4,654
+   814s procs=6 totalMB=3,190
+   819s procs=6 totalMB=4,699
+   824s procs=6 totalMB=4,290
+   829s procs=6 totalMB=3,732
+   834s procs=6 totalMB=4,799
+   839s procs=6 totalMB=5,940
+   844s procs=6 totalMB=5,126
+   849s procs=6 totalMB=3,807
+   855s procs=6 totalMB=3,452
+   860s procs=6 totalMB=3,790
+   865s procs=6 totalMB=4,680
+   870s procs=6 totalMB=4,823
+   875s procs=6 totalMB=4,242
+   880s procs=6 totalMB=3,958
+   885s procs=6 totalMB=6,419
+   890s procs=6 totalMB=4,735
+   895s procs=6 totalMB=7,125
+   901s procs=6 totalMB=8,912
+   906s procs=6 totalMB=5,812
+   911s procs=6 totalMB=8,224
+   916s procs=6 totalMB=7,346
+   921s procs=6 totalMB=8,405
+   926s procs=6 totalMB=8,520
+   931s procs=6 totalMB=4,582
+   936s procs=6 totalMB=4,750
+   941s procs=6 totalMB=3,482
+   947s procs=6 totalMB=4,775
+   952s procs=6 totalMB=4,445
+   957s procs=6 totalMB=5,675
+   962s procs=6 totalMB=6,167
+   967s procs=6 totalMB=6,894
+   972s procs=6 totalMB=7,299
+   977s procs=6 totalMB=3,081
+   982s procs=6 totalMB=3,368
+   987s procs=6 totalMB=5,298
+   993s procs=6 totalMB=4,694
+   998s procs=6 totalMB=4,076
+  1003s procs=6 totalMB=6,009
+  1008s procs=6 totalMB=3,090
+  1013s procs=6 totalMB=3,866
+  1018s procs=6 totalMB=4,291
+  1023s procs=6 totalMB=6,189
+  1028s procs=6 totalMB=4,613
+  1034s procs=6 totalMB=4,738
+  1039s procs=6 totalMB=5,520
+  1044s procs=6 totalMB=6,003
+  1049s procs=6 totalMB=4,791
+  1054s procs=6 totalMB=4,776
+  1059s procs=6 totalMB=6,060
+  1064s procs=6 totalMB=7,356
+  1069s procs=6 totalMB=9,332
+  1074s procs=6 totalMB=7,428
+  1080s procs=6 totalMB=9,386
+  1085s procs=6 totalMB=10,125
+  1090s procs=6 totalMB=10,890
+  1095s procs=6 totalMB=9,897
+  1100s procs=6 totalMB=3,565
+  1105s procs=6 totalMB=5,649
+  1110s procs=6 totalMB=5,409
+  1115s procs=6 totalMB=3,857
+  1120s procs=6 totalMB=5,717
+  1126s procs=6 totalMB=7,713
+  1131s procs=6 totalMB=5,478
+  1136s procs=6 totalMB=5,640
+  1141s procs=6 totalMB=6,136
+  1146s procs=6 totalMB=6,224
+  1151s procs=6 totalMB=6,938
+  1156s procs=6 totalMB=3,748
+  1161s procs=6 totalMB=5,356
+  1166s procs=6 totalMB=5,031
+  1172s procs=6 totalMB=4,705
+  1177s procs=6 totalMB=4,439
+  1182s procs=6 totalMB=3,494
+  1187s procs=6 totalMB=3,175
+  1192s procs=6 totalMB=5,170
+  1197s procs=6 totalMB=6,759
+  1202s procs=6 totalMB=5,953
+  1207s procs=6 totalMB=4,469
+  1213s procs=6 totalMB=4,829
+  1218s procs=6 totalMB=6,911
+  1223s procs=6 totalMB=4,946
+  1228s procs=6 totalMB=4,703
+  1233s procs=6 totalMB=5,663
+  1238s procs=5 totalMB=4,837
+  1243s procs=5 totalMB=3,843
+  1248s procs=5 totalMB=5,022
+  1254s procs=5 totalMB=4,559
+  1259s procs=5 totalMB=4,156
+  1264s procs=5 totalMB=2,570
+  1269s procs=5 totalMB=4,652
+  1274s procs=4 totalMB=3,851
+  1279s procs=2 totalMB=1,382
+  1284s procs=2 totalMB=1,354
+  1289s procs=2 totalMB=1,037
+  1294s procs=1 totalMB=1,378
+  1300s procs=1 totalMB=737
+  1305s procs=1 totalMB=421
+  1310s procs=1 totalMB=550
+  1315s procs=1 totalMB=1,275
+  1320s procs=1 totalMB=618
+  1325s procs=1 totalMB=508
+  1330s procs=0 totalMB=0
+end 10/20/2026 03:36:17 peakTotalMB=10,890 peakSingleMB=4,777
+peak ? 1,661MB
+peak Tenpai\Main 508MB
+peak Tenpai\Run\K0_000 1,226MB
+peak Tenpai\Run\K0_001 3,607MB
+peak Tenpai\Run\K0_002 2,713MB
+peak Tenpai\Run\K0_003 1,532MB
+peak Tenpai\Run\K0_004 1,320MB
+peak Tenpai\Run\K0_005 1,405MB
+peak Tenpai\Run\K0_006 2,600MB
+peak Tenpai\Run\K0_007 1,416MB
+peak Tenpai\Run\K0_008 1,654MB
+peak Tenpai\Run\K0_009 1,124MB
+peak Tenpai\Run\K0_010 904MB
+peak Tenpai\Run\K0_011 1,262MB
+peak Tenpai\Run\K0_012 1,347MB
+peak Tenpai\Run\K0_013 2,691MB
+peak Tenpai\Run\K0_014 1,414MB
+peak Tenpai\Run\K0_015 1,433MB
+peak Tenpai\Run\K1_000 1,868MB
+peak Tenpai\Run\K1_001 1,879MB
+peak Tenpai\Run\K1_002 3,934MB
+peak Tenpai\Run\K1_003 1,453MB
+peak Tenpai\Run\K1_004 1,522MB
+peak Tenpai\Run\K1_005 3,151MB
+peak Tenpai\Run\K1_006 1,372MB
+peak Tenpai\Run\K1_007 1,401MB
+peak Tenpai\Run\K1_008 1,233MB
+peak Tenpai\Run\K1_009 1,567MB
+peak Tenpai\Run\K1_010 4,450MB
+peak Tenpai\Run\K1_011 1,391MB
+peak Tenpai\Run\K1_012 1,477MB
+peak Tenpai\Run\K1_013 2,824MB
+peak Tenpai\Run\K1_014 1,378MB
+peak Tenpai\Run\K1_015 1,275MB
+peak Tenpai\Run\K2_000 1,491MB
+peak Tenpai\Run\K2_001 1,447MB
+peak Tenpai\Run\K2_002 1,520MB
+peak Tenpai\Run\K2_003 1,442MB
+peak Tenpai\Run\K2_004 1,780MB
+peak Tenpai\Run\K2_005 1,511MB
+peak Tenpai\Run\K2_006 1,473MB
+peak Tenpai\Run\K2_007 3,316MB
+peak Tenpai\Run\K2_008 2,729MB
+peak Tenpai\Run\K2_009 1,501MB
+peak Tenpai\Run\K2_010 2,610MB
+peak Tenpai\Run\K2_011 1,581MB
+peak Tenpai\Run\K2_012 1,304MB
+peak Tenpai\Run\K2_013 1,247MB
+peak Tenpai\Run\K2_014 2,164MB
+peak Tenpai\Run\K2_015 968MB
+peak Tenpai\Run\K3_000 1,322MB
+peak Tenpai\Run\K3_001 1,065MB
+peak Tenpai\Run\K3_002 1,643MB
+peak Tenpai\Run\K3_003 1,529MB
+peak Tenpai\Run\K3_004 1,315MB
+peak Tenpai\Run\K3_005 1,501MB
+peak Tenpai\Run\K3_006 1,684MB
+peak Tenpai\Run\K3_007 1,253MB
+peak Tenpai\Run\K3_008 1,333MB
+peak Tenpai\Run\K3_009 1,390MB
+peak Tenpai\Run\K3_010 1,517MB
+peak Tenpai\Run\K3_011 1,535MB
+peak Tenpai\Run\K3_012 1,508MB
+peak Tenpai\Run\K3_013 2,586MB
+peak Tenpai\Run\K3_014 1,472MB
+peak Tenpai\Run\K3_015 1,881MB
+peak Tenpai\Run\K4_000 3,391MB
+peak Tenpai\Run\K4_001 3,927MB
+peak Tenpai\Run\K4_002 3,274MB
+peak Tenpai\Run\K4_003 3,083MB
+peak Tenpai\Run\K4_004 1,317MB
+peak Tenpai\Run\K4_005 3,286MB
+peak Tenpai\Run\K4_006 1,300MB
+peak Tenpai\Run\K4_007 1,231MB
+peak Tenpai\Run\K4_008 1,458MB
+peak Tenpai\Run\K4_009 1,411MB
+peak Tenpai\Run\K4_010 1,537MB
+peak Tenpai\Run\K4_011 3,123MB
+peak Tenpai\Run\K4_012 1,470MB
+peak Tenpai\Run\K4_013 1,468MB
+peak Tenpai\Run\K4_014 1,174MB
+peak Tenpai\Run\K4_015 1,315MB
+peak Tenpai\Run\K5_000 1,246MB
+peak Tenpai\Run\K5_001 1,411MB
+peak Tenpai\Run\K5_002 2,074MB
+peak Tenpai\Run\K5_003 3,348MB
+peak Tenpai\Run\K5_004 1,415MB
+peak Tenpai\Run\K5_005 1,182MB
+peak Tenpai\Run\K5_006 1,393MB
+peak Tenpai\Run\K5_007 1,175MB
+peak Tenpai\Run\K5_008 809MB
+peak Tenpai\Run\K5_009 1,883MB
+peak Tenpai\Run\K5_010 1,449MB
+peak Tenpai\Run\K5_011 1,619MB
+peak Tenpai\Run\K5_012 4,777MB
+peak Tenpai\Run\K5_013 1,673MB
+peak Tenpai\Run\K5_014 1,471MB
+peak Tenpai\Run\K5_015 988MB

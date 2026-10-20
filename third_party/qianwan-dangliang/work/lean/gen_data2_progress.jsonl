@@ -1,0 +1,31 @@
+{"batch": 0, "blocks": 20000, "failed_blocks": 0, "units": 486754, "failed_units": 0, "ms": 30197, "first_rec": 0, "semantics": "block-level (strict + DFS)"}
+{"batch": 1, "blocks": 20000, "failed_blocks": 0, "units": 458759, "failed_units": 0, "ms": 57298, "first_rec": 20000, "semantics": "block-level (strict + DFS)"}
+{"batch": 2, "blocks": 20000, "failed_blocks": 0, "units": 321558, "failed_units": 0, "ms": 58057, "first_rec": 40000, "semantics": "block-level (strict + DFS)"}
+{"batch": 3, "blocks": 20000, "failed_blocks": 0, "units": 413262, "failed_units": 0, "ms": 68029, "first_rec": 60000, "semantics": "block-level (strict + DFS)"}
+{"batch": 4, "blocks": 20000, "failed_blocks": 0, "units": 480024, "failed_units": 0, "ms": 65287, "first_rec": 80000, "semantics": "block-level (strict + DFS)"}
+{"batch": 5, "blocks": 20000, "failed_blocks": 0, "units": 327443, "failed_units": 0, "ms": 61795, "first_rec": 100000, "semantics": "block-level (strict + DFS)"}
+{"batch": 6, "blocks": 20000, "failed_blocks": 0, "units": 396347, "failed_units": 0, "ms": 78558, "first_rec": 120000, "semantics": "block-level (strict + DFS)"}
+{"batch": 7, "blocks": 20000, "failed_blocks": 0, "units": 476835, "failed_units": 0, "ms": 65401, "first_rec": 140000, "semantics": "block-level (strict + DFS)"}
+{"batch": 8, "blocks": 20000, "failed_blocks": 0, "units": 341394, "failed_units": 0, "ms": 51227, "first_rec": 160000, "semantics": "block-level (strict + DFS)"}
+{"batch": 9, "blocks": 20000, "failed_blocks": 0, "units": 305029, "failed_units": 0, "ms": 32451, "first_rec": 180000, "semantics": "block-level (strict + DFS)"}
+{"batch": 10, "blocks": 20000, "failed_blocks": 0, "units": 289353, "failed_units": 0, "ms": 2044, "first_rec": 200000, "semantics": "block-level (strict + DFS)"}
+{"batch": 11, "blocks": 20000, "failed_blocks": 0, "units": 297797, "failed_units": 0, "ms": 2573, "first_rec": 220000, "semantics": "block-level (strict + DFS)"}
+{"batch": 12, "blocks": 20000, "failed_blocks": 0, "units": 213877, "failed_units": 0, "ms": 1687, "first_rec": 240000, "semantics": "block-level (strict + DFS)"}
+{"batch": 13, "blocks": 20000, "failed_blocks": 0, "units": 308619, "failed_units": 0, "ms": 2658, "first_rec": 260000, "semantics": "block-level (strict + DFS)"}
+{"batch": 14, "blocks": 20000, "failed_blocks": 0, "units": 197866, "failed_units": 0, "ms": 1567, "first_rec": 280000, "semantics": "block-level (strict + DFS)"}
+{"batch": 15, "blocks": 9144, "failed_blocks": 0, "units": 87780, "failed_units": 0, "ms": 669, "first_rec": 300000, "semantics": "block-level (strict + DFS)"}
+{"batch": 1, "blocks": 20000, "failed_blocks": 19, "units": 458759, "failed_units": 20, "ms": 518498}
+{"batch": 2, "blocks": 20000, "failed_blocks": 0, "units": 321558, "failed_units": 0, "ms": 576471}
+{"batch": 3, "blocks": 20000, "failed_blocks": 13, "units": 413262, "failed_units": 13, "ms": 571098}
+{"batch": 4, "blocks": 20000, "failed_blocks": 19, "units": 480024, "failed_units": 19, "ms": 755205}
+{"batch": 5, "blocks": 20000, "failed_blocks": 0, "units": 327443, "failed_units": 0, "ms": 548758}
+{"batch": 6, "blocks": 20000, "failed_blocks": 17, "units": 396347, "failed_units": 18, "ms": 611889}
+{"batch": 7, "blocks": 20000, "failed_blocks": 21, "units": 476835, "failed_units": 25, "ms": 651910}
+{"batch": 8, "blocks": 20000, "failed_blocks": 0, "units": 341394, "failed_units": 0, "ms": 480600}
+{"batch": 9, "blocks": 20000, "failed_blocks": 0, "units": 305029, "failed_units": 0, "ms": 261255}
+{"batch": 10, "blocks": 20000, "failed_blocks": 0, "units": 289353, "failed_units": 0, "ms": 28820}
+{"batch": 11, "blocks": 20000, "failed_blocks": 0, "units": 297797, "failed_units": 0, "ms": 29024}
+{"batch": 12, "blocks": 20000, "failed_blocks": 0, "units": 213877, "failed_units": 0, "ms": 21730}
+{"batch": 13, "blocks": 20000, "failed_blocks": 0, "units": 308619, "failed_units": 0, "ms": 28795}
+{"batch": 14, "blocks": 20000, "failed_blocks": 0, "units": 197866, "failed_units": 0, "ms": 19045}
+{"batch": 15, "blocks": 9144, "failed_blocks": 0, "units": 87780, "failed_units": 0, "ms": 7985}

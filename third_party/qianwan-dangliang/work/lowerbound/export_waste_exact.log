@@ -1,0 +1,5 @@
+[    0.5s] plan=work/verify/plan_k4_final.json: 2846 类 411508 码
+[   16.4s] 精确④: 通过 406259 ; 待删 **5249** 条 / 350 类
+[   16.4s] 写出 waste_list.json (total=5249)
+[   16.5s] 抽样 200 条: 重新独立判定后仍为'不可用'的 = 200 ; 反例 = 0
+[   16.5s] 写出 waste_sample_evidence.json

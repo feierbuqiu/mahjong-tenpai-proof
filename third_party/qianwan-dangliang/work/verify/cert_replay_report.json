@@ -1,0 +1,59 @@
+{
+ "structural": [
+  [
+   "L5 flush enumeration = 93600",
+   true
+  ],
+  [
+   "crosscheck win = 13259 (my standard-only 14-tile wins)",
+   true
+  ],
+  [
+   "flush census 40196/387",
+   true
+  ],
+  [
+   "my flush hands/classes = 40196/387",
+   true
+  ],
+  [
+   "T3 class W-set == verifier class W-set (k=1..4)",
+   true
+  ]
+ ],
+ "per_k": {
+  "1": {
+   "T3_sum_tau_lb": 427,
+   "my_sum_tau_lb(greedy clique)": 396,
+   "T3_sum_tau_ub": 427,
+   "my_sum_tau_ub": 427,
+   "T3_n_exact": 387,
+   "my_n_exact": 387,
+   "budget_sub_universe": 9,
+   "k_refuted_by_my_lb": true,
+   "T3_conclusion": true
+  },
+  "2": {
+   "T3_sum_tau_lb": 447,
+   "my_sum_tau_lb(greedy clique)": 415,
+   "T3_sum_tau_ub": 457,
+   "my_sum_tau_ub": 457,
+   "T3_n_exact": 377,
+   "my_n_exact": 387,
+   "budget_sub_universe": 81,
+   "k_refuted_by_my_lb": true,
+   "T3_conclusion": true
+  },
+  "3": {
+   "T3_sum_tau_lb": 538,
+   "my_sum_tau_lb(greedy clique)": 444,
+   "T3_sum_tau_ub": 569,
+   "my_sum_tau_ub": 565,
+   "T3_n_exact": 361,
+   "my_n_exact": 380,
+   "budget_sub_universe": 729,
+   "k_refuted_by_my_lb": false,
+   "T3_conclusion": false
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "plan": "work/verify/plan_k4_FINAL.json",
+ "struct": {
+  "classes": 2846,
+  "class_set_ok": true,
+  "empty_classes": 0,
+  "codes": 17579,
+  "ordered_unique": true,
+  "code_len": [
+   4
+  ]
+ },
+ "typeI": {
+  "blocks": 166746,
+  "uncovered": 0,
+  "examples": []
+ },
+ "chiitoi": {
+  "descriptors": 97,
+  "fail": 0,
+  "examples": []
+ },
+ "sim": {
+  "samples": 200000,
+  "listening": 73069,
+  "classes_hit": 339,
+  "fail": 0
+ },
+ "single_suit_uncovered": {
+  "classes": 0,
+  "hands": 0,
+  "examples": []
+ },
+ "timing": {
+  "typeI_s": 13.3,
+  "chiitoi_s": 15.1,
+  "sim_s": 2.7,
+  "su_s": 0.1,
+  "total_s": 31.5,
+  "nproc": 12
+ }
+}

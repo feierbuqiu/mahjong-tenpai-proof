@@ -1,0 +1,22 @@
+{
+ "variant": "full",
+ "n_hands": 40196,
+ "n_classes": 387,
+ "k1": {
+  "sum_tau": 427,
+  "no_common": 40,
+  "tau_dist": {
+   "1": 347,
+   "2": 40
+  }
+ },
+ "k2": {
+  "no_common": 53
+ },
+ "k3": {
+  "no_common": 87
+ },
+ "k4": {
+  "no_common": 111
+ }
+}

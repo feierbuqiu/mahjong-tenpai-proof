@@ -1,0 +1,12 @@
+{
+ "plan": "work/verify/plan_k4_FINAL.json",
+ "total_codes": 17579,
+ "usable": 17579,
+ "waste_count": 0,
+ "waste_by_class": [],
+ "audit": {
+  "sampled": 0,
+  "false_positives": 0,
+  "examples": []
+ }
+}

@@ -1,0 +1,19 @@
+hand-picked examples:
+  1112345678999m         (13 tiles) W={1m,2m,3m,4m,5m,6m,7m,8m,9m}
+  19m19p19s1234567z      (13 tiles) W={1m,9m,1p,9p,1s,9s,E,S,W,N,P,F,C}
+  19m19p19s1234566z      (13 tiles) W={C}
+  23m456p789s111z55s     (13 tiles) W={1m,4m}
+  1111p3p456m789m22z     (13 tiles) W={2p}
+  1111m234p567p789s      (13 tiles) W={}
+  1111m22m33p44p55s6s    (13 tiles) W={}
+  11m22m33m44p55p66s7s   (13 tiles) W={7s}
+  1112223334445m         (13 tiles) W={2m,3m,4m,5m,6m}
+  2223334445556m         (13 tiles) W={1m,3m,4m,5m,6m,7m}
+  2345678m22233344p      (15 tiles) W={}
+  5m                     (1 tiles) W={5m}   <-- MISMATCH with naive
+all single-suit 13-tile hands (m):
+  checked 93600, mismatches 0
+all honor-only 13-tile hands:
+  checked 101475, mismatches 0
+random hands:
+  total checked 2874155, mismatches 0
