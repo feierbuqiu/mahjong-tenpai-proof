@@ -14,11 +14,11 @@ These parts are by **feierbuqiu** and are released under the [MIT Licence](LICEN
 
 **AI assistance.** This work was produced with substantial assistance from Anthropic's Claude Code, running the Claude Opus 5.5 model. The correctness of every proof is established by the Lean kernel, not by the AI system. See the paper's Declaration of Generative AI Use.
 
-**The puzzle itself** was first posed in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>. The problem statement in [`docs/`](docs/) is feierbuqiu's precise formulation of that puzzle.
+**The puzzle itself** was first posed by **Lingzhi Shenpanzhe (Bilibili user 零之审判者)** in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>. The problem statement in [`docs/`](docs/) is feierbuqiu's precise formulation of that puzzle.
 
 ## 2. Third-party material (not covered by the MIT Licence)
 
-**[`third_party/qianwan-dangliang/`](third_party/qianwan-dangliang/)** is the computational study by **Qianwan Dangliang (Bilibili user 千万当量)**. It was posted in reply to the Bilibili puzzle above and originally shared on Baidu Netdisk: <https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx>.
+**[`third_party/qianwan-dangliang/`](third_party/qianwan-dangliang/)** is the computational study by **Qianwan Dangliang (Bilibili user 千万当量)**. It was posted in reply to Lingzhi Shenpanzhe's Bilibili post above and originally shared on Baidu Netdisk: <https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx>.
 
 **What it contains:**
 - the computation and the construction that established *k*\* = 4;

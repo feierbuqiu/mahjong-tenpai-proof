@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: >-
   If you use this work, please cite it as below. Please also credit
-  Qianwan Dangliang for the computation and construction (see references),
-  and the original Bilibili post for the puzzle.
+  Lingzhi Shenpanzhe (零之审判者) for the original puzzle and Qianwan
+  Dangliang (千万当量) for the computation and construction (see references).
 title: >-
   Four Tiles Suffice: A Kernel-Only, End-to-End Lean 4 Formalisation of the
   Optimal Encoding Length for Mahjong Wait Sets
@@ -35,5 +35,5 @@ references:
   - type: generic
     title: Mahjong tenpai wait-encoding puzzle (Bilibili post)
     authors:
-      - name: "Unknown (Bilibili post author)"
+      - alias: "Lingzhi Shenpanzhe (零之审判者)"
     url: "https://www.bilibili.com/opus/1246853448736964611"

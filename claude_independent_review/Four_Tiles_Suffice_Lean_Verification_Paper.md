@@ -46,7 +46,7 @@ The added tile *t* may not be a fifth copy of a type. The *wait set* of *H* is
 
 where *c<sub>H</sub>*(*t*) is the number of copies of *t* in *H* and 𝒢 is the set of winning 14-tile multisets.
 
-**The encoding game.** The puzzle was first posed in a post on Bilibili ([Mahjong tenpai wait-encoding puzzle], n.d.); the precise problem statement studied here is feierbuqiu (2026). It poses a cooperative game. Two parties agree on a protocol in advance:
+**The encoding game.** The puzzle was first posed in a Bilibili post by Lingzhi Shenpanzhe (Bilibili user 零之审判者; Lingzhi Shenpanzhe, n.d.); the precise problem statement studied here is feierbuqiu (2026). It poses a cooperative game. Two parties agree on a protocol in advance:
 1. The first party sees a tenpai hand *H* and lays all thirteen tiles face down in an order of their choosing.
 2. The second party turns over *k* tiles at agreed positions and must then announce *W*(*H*) exactly.
 
@@ -509,7 +509,7 @@ The work confirms, by a machine-checked proof, the answer that the earlier compu
 
 ## Acknowledgements
 
-**The original study.** We gratefully acknowledge Qianwan Dangliang (Bilibili user 千万当量), the author of the earlier computational study (Qianwan Dangliang, 2026), and the poser of the original puzzle on Bilibili ([Mahjong tenpai wait-encoding puzzle], n.d.). That work carried out the computation, devised the construction and reached the result *k*\* = 4. Our contribution is confined to the formal proof. We did not modify the original solution process or construction. Our only change to the original data was to reorder codes within each class, for efficiency, leaving every class's code set unchanged.
+**The original puzzle and study.** We gratefully acknowledge Lingzhi Shenpanzhe (Bilibili user 零之审判者), who posed the original puzzle on Bilibili (Lingzhi Shenpanzhe, n.d.), and Qianwan Dangliang (Bilibili user 千万当量), the author of the earlier computational study (Qianwan Dangliang, 2026). The study carried out the computation, devised the construction and reached the result *k*\* = 4. Our contribution is confined to the formal proof. We did not modify the original solution process or construction. Our only change to the original data was to reorder codes within each class, for efficiency, leaving every class's code set unchanged.
 
 **AI assistance.** We acknowledge the substantial contribution of Anthropic's Claude Code (Anthropic, 2026a), and in particular of the Claude Opus 5.5 model (Anthropic, 2026b). Almost all of the formalisation was developed with its assistance: the specification, the proofs, the kernel-performance engineering, the generators and build tooling, and the drafting of this paper. It was an indispensable tool throughout.
 
@@ -586,7 +586,7 @@ Lean FRO. (n.d.-c). Validating a Lean proof. In *The Lean language reference* (L
 
 Lean FRO. (2026). *Lean 4* (Version 4.35.0) [Computer software]. GitHub. https://github.com/leanprover/lean4/releases/tag/v4.35.0
 
-[Mahjong tenpai wait-encoding puzzle] [Post]. (n.d.). Bilibili. Retrieved October 20, 2026, from https://www.bilibili.com/opus/1246853448736964611
+Lingzhi Shenpanzhe [零之审判者]. (n.d.). [Mahjong tenpai wait-encoding puzzle] [Post]. Bilibili. Retrieved October 20, 2026, from https://www.bilibili.com/opus/1246853448736964611
 
 Qianwan Dangliang [千万当量]. (2026). *Majiang "fan pai cai tingpai" zuizhong baogao: Python zhengming lian + Lean xingshihua jinzhan* [Final report on the mahjong "turn over tiles to guess the waits" problem: Python proof chain and Lean formalisation progress] [Report and software package]. Baidu Netdisk. https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx
 

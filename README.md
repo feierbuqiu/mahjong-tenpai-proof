@@ -24,7 +24,7 @@ This repository brings together the work of several people. Every part is credit
 
 | Contribution | By | Where |
 |---|---|---|
-| The original puzzle | the poser of a Bilibili post | <https://www.bilibili.com/opus/1246853448736964611> |
+| The original puzzle | **Lingzhi Shenpanzhe (Bilibili user 零之审判者)**, in a Bilibili post | <https://www.bilibili.com/opus/1246853448736964611> |
 | The precise problem statement (definitions, two viewing models and their equivalence) | **feierbuqiu** | [`docs/problem-statement.md`](docs/problem-statement.md) (English translation) and the [Chinese original](docs/呆饼问题（二）：听牌信息的排列编码问题.md) |
 | The computation, the construction and the answer *k*\* = 4 (exhaustive search, the 2,846-class / 17,579-code encoding plan, the lower-bound argument, their own Python verifiers and a Lean attempt) | **Qianwan Dangliang (Bilibili user 千万当量)**, posted in reply to the Bilibili puzzle and originally shared on Baidu Netdisk: <https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx> | [`third_party/qianwan-dangliang/`](third_party/qianwan-dangliang/), mirrored unmodified (see [`third_party/README.md`](third_party/README.md)) |
 | The kernel-only Lean 4 formal proof, the independent cross-check of the computation and the paper | **feierbuqiu**, with AI assistance (Claude Code, Claude Opus 5.5) | [`claude_independent_review/`](claude_independent_review/) |
@@ -85,4 +85,4 @@ See [`CITATION.cff`](CITATION.cff), or cite:
 
 > feierbuqiu. (2026). *Four tiles suffice: A kernel-only, end-to-end Lean 4 formalisation of the optimal encoding length for mahjong wait sets*. GitHub. https://github.com/feierbuqiu/mahjong-tenpai-proof
 
-Please also credit Qianwan Dangliang for the computation and construction, and the original Bilibili post for the puzzle.
+Please also credit Lingzhi Shenpanzhe (零之审判者) for the original puzzle, and Qianwan Dangliang (千万当量) for the computation and construction.

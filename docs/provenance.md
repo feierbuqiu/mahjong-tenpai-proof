@@ -2,9 +2,9 @@
 
 This page records where each part of the repository came from. Licence terms are in [`NOTICE.md`](../NOTICE.md).
 
-## The puzzle
+## The puzzle: Lingzhi Shenpanzhe (零之审判者)
 
-The puzzle was first posed on Bilibili: <https://www.bilibili.com/opus/1246853448736964611>.
+The puzzle was first posed by Lingzhi Shenpanzhe (Bilibili user 零之审判者) in a Bilibili post: <https://www.bilibili.com/opus/1246853448736964611>.
 
 ## The problem statement: feierbuqiu
 
@@ -19,7 +19,7 @@ The original fixes the definitions, defines the two viewing models (adaptive and
 
 ## The computation and the construction: Qianwan Dangliang (千万当量)
 
-Qianwan Dangliang's study is in [`third_party/qianwan-dangliang/`](../third_party/qianwan-dangliang/). It was posted in reply to the Bilibili puzzle and shared on Baidu Netdisk (<https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx>). The study established *k*\* = 4. It produced:
+Qianwan Dangliang's study is in [`third_party/qianwan-dangliang/`](../third_party/qianwan-dangliang/). It was posted in reply to Lingzhi Shenpanzhe's Bilibili post and shared on Baidu Netdisk (<https://pan.baidu.com/s/1qdCW0N75TZzIRsUYx-75Tw?pwd=utfx>). The study established *k*\* = 4. It produced:
 - the census;
 - the lower-bound argument;
 - the encoding plan [`work/verify/plan_k4_final.json`](../third_party/qianwan-dangliang/work/verify/plan_k4_final.json) (2,846 classes, 17,579 ordered codes, SHA-256 `b95f5523bae86db71fabd62380fb6820b3d83c4e794eb92043b7ca8f4fa57163`, matching the hash distributed with it).
